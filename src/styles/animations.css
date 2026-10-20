@@ -1,0 +1,49 @@
+:root { --ease: cubic-bezier(0.2, 0.7, 0.2, 1); }
+
+/* Blocs : fondu + glissement (12-16 px), seulement si le script a posé la classe js */
+.js .reveal:not(.in) { opacity: 0; transform: translateY(14px); }
+.js .reveal { transition: opacity 500ms var(--ease), transform 500ms var(--ease); transition-delay: var(--d, 0ms); }
+
+/* Compteurs : la valeur finale est déjà dans le HTML, l'animation est purement visuelle */
+
+/* Graphiques : cases/barres qui se dessinent, puis étiquettes */
+.js [data-anim]:not(.in) svg[role="img"] :is(rect, text) { opacity: 0; }
+.js [data-anim].in svg[role="img"] rect {
+  transform-box: fill-box;
+  animation: pop 450ms var(--ease) both;
+  animation-delay: var(--d, 0ms);
+}
+.js [data-anim].in svg[role="img"] text { animation: fondu 400ms var(--ease) both; animation-delay: var(--d, 0ms); }
+.js [data-anim].in svg[role="img"] g.barre-pos rect { transform-origin: left center; animation-name: pousse; }
+.js [data-anim].in svg[role="img"] g.barre-neg rect { transform-origin: right center; animation-name: pousse; }
+.js [data-anim].in svg[role="img"] g.case-objectif rect { animation-name: relief; }
+@keyframes pop { from { opacity: 0; transform: scale(0.85); } }
+@keyframes pousse { from { opacity: 0; transform: scaleX(0); } }
+@keyframes relief { from { opacity: 0; transform: scale(0.7); } 70% { transform: scale(1.06); } }
+@keyframes fondu { from { opacity: 0; } }
+
+/* Barre de progression de lecture */
+#progression {
+  position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60;
+  background: #085e51; transform-origin: left; transform: scaleX(0);
+}
+@supports (animation-timeline: scroll()) {
+  #progression { animation: lire linear both; animation-timeline: scroll(root); }
+  @keyframes lire { to { transform: scaleX(1); } }
+}
+
+/* Léger décalage du bandeau d'ouverture (≤ 20 px) */
+@supports (animation-timeline: view()) {
+  .hero-decor { animation: decale linear both; animation-timeline: view(); animation-range: exit; }
+  @keyframes decale { to { transform: translateY(18px); } }
+}
+
+/* Mouvement réduit : tout est visible tout de suite */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal:not(.in) { opacity: 1; transform: none; }
+  .js [data-anim]:not(.in) svg[role="img"] :is(rect, text) { opacity: 1; }
+  .js [data-anim].in svg[role="img"] :is(rect, text) { animation: none !important; }
+  .reveal, .menu-item { transition: none !important; }
+  #progression, .hero-decor { animation: none !important; }
+  .sticky-v3 { position: static !important; }
+}
