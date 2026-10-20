@@ -1,0 +1,656 @@
+{
+ "total": 40000,
+ "exploitables": 36609,
+ "stats": {
+  "OpenAI": {
+   "n": 5482,
+   "med": 0.164,
+   "moy": 1.04,
+   "min": 0.0000831,
+   "max": 81.2
+  },
+  "Google": {
+   "n": 6927,
+   "med": 0.168,
+   "moy": 3.04,
+   "min": 0.0000904,
+   "max": 261
+  },
+  "Mistral": {
+   "n": 4918,
+   "med": 0.109,
+   "moy": 1.39,
+   "min": 0.000094,
+   "max": 113
+  }
+ },
+ "modeles": [
+  {
+   "modele": "gemma-3-4b",
+   "entreprise": "Google",
+   "conversations": 967,
+   "mediane_wh": 0.0946,
+   "wh_1000_tokens": 0.0843
+  },
+  {
+   "modele": "gemma-3-27b",
+   "entreprise": "Google",
+   "conversations": 903,
+   "mediane_wh": 0.13,
+   "wh_1000_tokens": 0.112
+  },
+  {
+   "modele": "gpt-4.1-mini",
+   "entreprise": "OpenAI",
+   "conversations": 895,
+   "mediane_wh": 0.333,
+   "wh_1000_tokens": 0.682
+  },
+  {
+   "modele": "gemma-3-12b",
+   "entreprise": "Google",
+   "conversations": 869,
+   "mediane_wh": 0.103,
+   "wh_1000_tokens": 0.094
+  },
+  {
+   "modele": "gemini-2.0-flash",
+   "entreprise": "Google",
+   "conversations": 867,
+   "mediane_wh": 4.86,
+   "wh_1000_tokens": 3.93
+  },
+  {
+   "modele": "gpt-4o-mini-2024-07-18",
+   "entreprise": "OpenAI",
+   "conversations": 775,
+   "mediane_wh": 0.0566,
+   "wh_1000_tokens": 0.101
+  },
+  {
+   "modele": "mistral-medium-2508",
+   "entreprise": "Mistral",
+   "conversations": 714,
+   "mediane_wh": 1.28,
+   "wh_1000_tokens": 0.915
+  },
+  {
+   "modele": "gemini-1.5-pro",
+   "entreprise": "Google",
+   "conversations": 664,
+   "mediane_wh": 7.74,
+   "wh_1000_tokens": 11.1
+  },
+  {
+   "modele": "gpt-4.1-nano",
+   "entreprise": "OpenAI",
+   "conversations": 637,
+   "mediane_wh": 0.0517,
+   "wh_1000_tokens": 0.107
+  },
+  {
+   "modele": "mistral-small-2506",
+   "entreprise": "Mistral",
+   "conversations": 622,
+   "mediane_wh": 0.069,
+   "wh_1000_tokens": 0.109
+  },
+  {
+   "modele": "mistral-nemo-2407",
+   "entreprise": "Mistral",
+   "conversations": 593,
+   "mediane_wh": 0.039,
+   "wh_1000_tokens": 0.094
+  },
+  {
+   "modele": "mistral-small-3.1-24b",
+   "entreprise": "Mistral",
+   "conversations": 522,
+   "mediane_wh": 0.0727,
+   "wh_1000_tokens": 0.109
+  },
+  {
+   "modele": "gemma-3n-e4b-it",
+   "entreprise": "Google",
+   "conversations": 518,
+   "mediane_wh": 0.0796,
+   "wh_1000_tokens": 0.0843
+  },
+  {
+   "modele": "mistral-large-2512",
+   "entreprise": "Mistral",
+   "conversations": 509,
+   "mediane_wh": 7.13,
+   "wh_1000_tokens": 4.13
+  },
+  {
+   "modele": "gpt-4o-2024-08-06",
+   "entreprise": "OpenAI",
+   "conversations": 485,
+   "mediane_wh": 2.21,
+   "wh_1000_tokens": 3.93
+  },
+  {
+   "modele": "mistral-saba",
+   "entreprise": "Mistral",
+   "conversations": 473,
+   "mediane_wh": 0.0731,
+   "wh_1000_tokens": 0.109
+  },
+  {
+   "modele": "mixtral-8x22b-instruct-v0.1",
+   "entreprise": "Mistral",
+   "conversations": 444,
+   "mediane_wh": 0.456,
+   "wh_1000_tokens": 1.06
+  },
+  {
+   "modele": "gemma-2-9b-it",
+   "entreprise": "Google",
+   "conversations": 436,
+   "mediane_wh": 0.0471,
+   "wh_1000_tokens": 0.0904
+  },
+  {
+   "modele": "gemini-2.5-flash",
+   "entreprise": "Google",
+   "conversations": 395,
+   "mediane_wh": 4.89,
+   "wh_1000_tokens": 3.93
+  },
+  {
+   "modele": "gpt-oss-20b",
+   "entreprise": "OpenAI",
+   "conversations": 360,
+   "mediane_wh": 0.0844,
+   "wh_1000_tokens": 0.0831
+  },
+  {
+   "modele": "gemini-3.1-flash-lite-preview",
+   "entreprise": "Google",
+   "conversations": 353,
+   "mediane_wh": 0.184,
+   "wh_1000_tokens": 0.878
+  },
+  {
+   "modele": "o4-mini",
+   "entreprise": "OpenAI",
+   "conversations": 331,
+   "mediane_wh": 0.0757,
+   "wh_1000_tokens": 0.101
+  },
+  {
+   "modele": "gemini-3-flash-preview",
+   "entreprise": "Google",
+   "conversations": 296,
+   "mediane_wh": 3.61,
+   "wh_1000_tokens": 3.93
+  },
+  {
+   "modele": "gpt-5.4",
+   "entreprise": "OpenAI",
+   "conversations": 294,
+   "mediane_wh": 2.19,
+   "wh_1000_tokens": 3.1
+  },
+  {
+   "modele": "gemini-3.1-pro-preview",
+   "entreprise": "Google",
+   "conversations": 288,
+   "mediane_wh": 7.22,
+   "wh_1000_tokens": 4.29
+  },
+  {
+   "modele": "mistral-small-24b-instruct-2501",
+   "entreprise": "Mistral",
+   "conversations": 277,
+   "mediane_wh": 0.0718,
+   "wh_1000_tokens": 0.109
+  },
+  {
+   "modele": "gpt-oss-120b",
+   "entreprise": "OpenAI",
+   "conversations": 273,
+   "mediane_wh": 0.655,
+   "wh_1000_tokens": 0.342
+  },
+  {
+   "modele": "mixtral-8x7b-instruct-v0.1",
+   "entreprise": "Mistral",
+   "conversations": 248,
+   "mediane_wh": 0.0926,
+   "wh_1000_tokens": 0.193
+  },
+  {
+   "modele": "magistral-small-2506",
+   "entreprise": "Mistral",
+   "conversations": 236,
+   "mediane_wh": 0.0658,
+   "wh_1000_tokens": 0.109
+  },
+  {
+   "modele": "gpt-5-mini",
+   "entreprise": "OpenAI",
+   "conversations": 232,
+   "mediane_wh": 0.166,
+   "wh_1000_tokens": 0.198
+  },
+  {
+   "modele": "gpt-5-nano",
+   "entreprise": "OpenAI",
+   "conversations": 199,
+   "mediane_wh": 0.0927,
+   "wh_1000_tokens": 0.0843
+  },
+  {
+   "modele": "o3-mini",
+   "entreprise": "OpenAI",
+   "conversations": 168,
+   "mediane_wh": 0.0826,
+   "wh_1000_tokens": 0.101
+  },
+  {
+   "modele": "gpt-5.2",
+   "entreprise": "OpenAI",
+   "conversations": 161,
+   "mediane_wh": 2.66,
+   "wh_1000_tokens": 3.1
+  },
+  {
+   "modele": "gpt-5.3",
+   "entreprise": "OpenAI",
+   "conversations": 148,
+   "mediane_wh": 1.13,
+   "wh_1000_tokens": 3.1
+  },
+  {
+   "modele": "magistral-medium",
+   "entreprise": "Mistral",
+   "conversations": 148,
+   "mediane_wh": 0.77,
+   "wh_1000_tokens": 0.915
+  },
+  {
+   "modele": "gpt-5",
+   "entreprise": "OpenAI",
+   "conversations": 141,
+   "mediane_wh": 1.69,
+   "wh_1000_tokens": 3.1
+  },
+  {
+   "modele": "mistral-small-2603",
+   "entreprise": "Mistral",
+   "conversations": 132,
+   "mediane_wh": 0.392,
+   "wh_1000_tokens": 0.347
+  },
+  {
+   "modele": "gemini-3-pro-preview",
+   "entreprise": "Google",
+   "conversations": 127,
+   "mediane_wh": 6.57,
+   "wh_1000_tokens": 4.29
+  },
+  {
+   "modele": "gpt-5.4-mini",
+   "entreprise": "OpenAI",
+   "conversations": 124,
+   "mediane_wh": 0.0969,
+   "wh_1000_tokens": 0.198
+  },
+  {
+   "modele": "gpt-5.4-nano",
+   "entreprise": "OpenAI",
+   "conversations": 107,
+   "mediane_wh": 0.0504,
+   "wh_1000_tokens": 0.0843
+  },
+  {
+   "modele": "gpt-5.1",
+   "entreprise": "OpenAI",
+   "conversations": 102,
+   "mediane_wh": 2.91,
+   "wh_1000_tokens": 3.1
+  },
+  {
+   "modele": "gemma-4-31b-it",
+   "entreprise": "Google",
+   "conversations": 97,
+   "mediane_wh": 0.0997,
+   "wh_1000_tokens": 0.117
+  },
+  {
+   "modele": "gemma-2-27b-it-q8",
+   "entreprise": "Google",
+   "conversations": 82,
+   "mediane_wh": 0.0606,
+   "wh_1000_tokens": 0.112
+  },
+  {
+   "modele": "gemma-4-26b-a4b-it",
+   "entreprise": "Google",
+   "conversations": 65,
+   "mediane_wh": 0.0826,
+   "wh_1000_tokens": 0.0843
+  },
+  {
+   "modele": "gpt-5.5",
+   "entreprise": "OpenAI",
+   "conversations": 50,
+   "mediane_wh": 2.43,
+   "wh_1000_tokens": 3.1
+  }
+ ],
+ "controle": {
+  "sansKwh": 3118,
+  "kwhNul": 273,
+  "parEntreprise": [
+   {
+    "entreprise": "OpenAI",
+    "conversations": 5505
+   },
+   {
+    "entreprise": "Autres",
+    "conversations": 20789
+   },
+   {
+    "entreprise": "Google",
+    "conversations": 7002
+   },
+   {
+    "entreprise": "Mistral",
+    "conversations": 6704
+   }
+  ],
+  "autres": [
+   {
+    "modele": "llama-3.3-70b",
+    "conversations": 990
+   },
+   {
+    "modele": "phi-4",
+    "conversations": 944
+   },
+   {
+    "modele": "llama-3.1-405b",
+    "conversations": 941
+   },
+   {
+    "modele": "llama-3.1-8b",
+    "conversations": 935
+   },
+   {
+    "modele": "claude-4-5-sonnet",
+    "conversations": 898
+   },
+   {
+    "modele": "llama-4-scout",
+    "conversations": 828
+   },
+   {
+    "modele": "qwen2.5-coder-32b-instruct",
+    "conversations": 731
+   },
+   {
+    "modele": "llama-3.1-nemotron-70b-instruct",
+    "conversations": 717
+   },
+   {
+    "modele": "command-a",
+    "conversations": 699
+   },
+   {
+    "modele": "hermes-3-llama-3.1-405b",
+    "conversations": 688
+   },
+   {
+    "modele": "c4ai-command-r-08-2024",
+    "conversations": 632
+   },
+   {
+    "modele": "claude-3-7-sonnet",
+    "conversations": 570
+   },
+   {
+    "modele": "deepseek-v3-0324",
+    "conversations": 567
+   },
+   {
+    "modele": "claude-3-5-sonnet-v2",
+    "conversations": 548
+   },
+   {
+    "modele": "aya-expanse-32b",
+    "conversations": 520
+   },
+   {
+    "modele": "deepseek-v3-chat",
+    "conversations": 517
+   },
+   {
+    "modele": "llama-3.1-70b",
+    "conversations": 514
+   },
+   {
+    "modele": "llama-maverick",
+    "conversations": 474
+   },
+   {
+    "modele": "claude-4-6-sonnet",
+    "conversations": 445
+   },
+   {
+    "modele": "grok-4.1-fast",
+    "conversations": 416
+   },
+   {
+    "modele": "qwen3-max-2025-09-23",
+    "conversations": 372
+   },
+   {
+    "modele": "lfm-40b",
+    "conversations": 352
+   },
+   {
+    "modele": "Apertus-70B-Instruct-2509",
+    "conversations": 347
+   },
+   {
+    "modele": "deepseek-r1",
+    "conversations": 342
+   },
+   {
+    "modele": "hermes-4-70b",
+    "conversations": 339
+   },
+   {
+    "modele": "DeepSeek-V3.2",
+    "conversations": 331
+   },
+   {
+    "modele": "deepseek-r1-distill-llama-70b",
+    "conversations": 285
+   },
+   {
+    "modele": "claude-4-sonnet",
+    "conversations": 256
+   },
+   {
+    "modele": "kimi-k2",
+    "conversations": 253
+   },
+   {
+    "modele": "phi-3.5-mini-instruct",
+    "conversations": 250
+   },
+   {
+    "modele": "lfm2-8b-a1b",
+    "conversations": 221
+   },
+   {
+    "modele": "deepseek-r1-0528",
+    "conversations": 203
+   },
+   {
+    "modele": "grok-4-fast",
+    "conversations": 194
+   },
+   {
+    "modele": "deepseek-chat-v3.1",
+    "conversations": 193
+   },
+   {
+    "modele": "grok-3-mini-beta",
+    "conversations": 176
+   },
+   {
+    "modele": "chocolatine-2-14b-instruct-v2.0.3-q8",
+    "conversations": 172
+   },
+   {
+    "modele": "EuroLLM-22B-Instruct-2512",
+    "conversations": 159
+   },
+   {
+    "modele": "qwq-32b",
+    "conversations": 158
+   },
+   {
+    "modele": "qwen3.5-35b-a3b",
+    "conversations": 154
+   },
+   {
+    "modele": "qwen3.5-397b-a17b",
+    "conversations": 151
+   },
+   {
+    "modele": "qwen2.5-7b-instruct",
+    "conversations": 150
+   },
+   {
+    "modele": "glm-5",
+    "conversations": 147
+   },
+   {
+    "modele": "glm-4.7",
+    "conversations": 144
+   },
+   {
+    "modele": "kimi-k2.5",
+    "conversations": 137
+   },
+   {
+    "modele": "qwen3-coder-next",
+    "conversations": 133
+   },
+   {
+    "modele": "trinity-large-preview",
+    "conversations": 131
+   },
+   {
+    "modele": "minimax-m2.5",
+    "conversations": 129
+   },
+   {
+    "modele": "minimax-m2",
+    "conversations": 125
+   },
+   {
+    "modele": "aya-expanse-8b",
+    "conversations": 110
+   },
+   {
+    "modele": "Qwen3-Coder-480B-A35B-Instruct",
+    "conversations": 104
+   },
+   {
+    "modele": "qwen3-32b",
+    "conversations": 102
+   },
+   {
+    "modele": "kimi-k2-thinking",
+    "conversations": 100
+   },
+   {
+    "modele": "olmo-3-32b-think",
+    "conversations": 92
+   },
+   {
+    "modele": "qwen3-30b-a3b",
+    "conversations": 85
+   },
+   {
+    "modele": "glm-4.6",
+    "conversations": 78
+   },
+   {
+    "modele": "glm-4.5",
+    "conversations": 74
+   },
+   {
+    "modele": "nemotron-3-super-120b-a12b",
+    "conversations": 66
+   },
+   {
+    "modele": "lfm2-24b-a2b",
+    "conversations": 52
+   },
+   {
+    "modele": "kimi-k2.6",
+    "conversations": 44
+   },
+   {
+    "modele": "qwen-3-8b",
+    "conversations": 41
+   },
+   {
+    "modele": "grok-4.20",
+    "conversations": 37
+   },
+   {
+    "modele": "minimax-m2.7",
+    "conversations": 36
+   },
+   {
+    "modele": "qwen3.6-plus",
+    "conversations": 35
+   },
+   {
+    "modele": "glm-5.1",
+    "conversations": 35
+   },
+   {
+    "modele": "chocolatine-14b-instruct-dpo-v1.2-q4",
+    "conversations": 34
+   },
+   {
+    "modele": "deepseek-v4-pro",
+    "conversations": 25
+   },
+   {
+    "modele": "qwen2.5-32b-instruct",
+    "conversations": 15
+   },
+   {
+    "modele": "deepseek-v4-flash",
+    "conversations": 14
+   },
+   {
+    "modele": "Apertus-8B-Instruct-2509",
+    "conversations": 12
+   },
+   {
+    "modele": "jamba-1.5-large",
+    "conversations": 12
+   },
+   {
+    "modele": "Yi-1.5-9B-Chat",
+    "conversations": 4
+   },
+   {
+    "modele": "qwen2-7b-instruct",
+    "conversations": 4
+   }
+  ]
+ }
+}

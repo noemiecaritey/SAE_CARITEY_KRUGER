@@ -1,0 +1,20 @@
+[
+ {
+  "critere": "Energy usage for final training run",
+  "Google": 0,
+  "OpenAI": 0,
+  "Mistral": 0
+ },
+ {
+  "critere": "Carbon emissions for final training run",
+  "Google": 0,
+  "OpenAI": 0,
+  "Mistral": 0
+ },
+ {
+  "critere": "Water usage for final training run",
+  "Google": 0,
+  "OpenAI": 0,
+  "Mistral": 0
+ }
+]
