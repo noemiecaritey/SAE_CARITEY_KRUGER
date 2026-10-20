@@ -6,15 +6,15 @@ const c = Object.values(modules)[0] as any | undefined;
 const f = (x: number | null) => (x == null ? "—" : x.toLocaleString("fr-FR", { maximumFractionDigits: x < 1 ? 2 : 1 }));
 const g = (x: number | null) => (x == null ? "—" : x.toLocaleString("fr-FR", { maximumSignificantDigits: 2 }));
 const E = ["OpenAI", "Google", "Mistral"];
-const rapports = c ? E.map((e) => Math.round(c.stats[e].moy / c.stats[e].med)) : [];
 ---
 
 {c ? (
   <div class="grid gap-8">
     <div class="prose-sae">
-      <h3>Ce que Compar:IA apprend, et ce qu'elle n'apprend pas</h3>
-      <p><strong>Ce qu'elle apprend.</strong> Sur {c.exploitables} conversations exploitables, la conversation médiane consomme {f(c.stats.OpenAI.med)} Wh avec un modèle d'OpenAI, {f(c.stats.Google.med)} Wh avec un modèle de Google et {f(c.stats.Mistral.med)} Wh avec un modèle de Mistral. La moyenne est de {Math.min(...rapports)} à {Math.max(...rapports)} fois la médiane : quelques conversations, surtout avec les modèles les plus lourds, consomment beaucoup plus que les autres. Une moyenne seule donnerait donc une image fausse.</p>
-      <p><strong>Ce qu'elle n'apprend pas.</strong> Ce sont des estimations (EcoLogits) pour l'usage seulement, sans la fabrication des serveurs ni l'entraînement, sur un public surtout français. Elles ne donnent ni le total annuel d'une entreprise, ni sa trajectoire. Elles ne permettent donc pas de vérifier un objectif climatique : elles donnent un ordre de grandeur, pas une preuve.</p>
+      <h3>Ce qu'il faut retenir : les estimations Compar:IA</h3>
+      <p>Sur <strong>{c.exploitables} réponses exploitables</strong>, les consommations estimées varient fortement. La médiane est de <strong>{f(c.stats.OpenAI.med)} Wh</strong> pour les modèles OpenAI de notre échantillon, <strong>{f(c.stats.Google.med)} Wh</strong> pour Google et <strong>{f(c.stats.Mistral.med)} Wh</strong> pour Mistral.</p>
+      <p><strong>Ces valeurs ne constituent pas un classement écologique :</strong> les modèles et les conversations comparés ne sont pas équivalents.</p>
+      <p><strong>La limite :</strong> ces estimations par réponse ne comprennent pas toutes les activités des entreprises. Elles ne peuvent pas servir à vérifier leurs émissions annuelles ou leurs objectifs climatiques.</p>
     </div>
     <div class="overflow-x-auto">
       <table class="table table-zebra tableau tabulaire">

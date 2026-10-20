@@ -135,12 +135,9 @@ const ficheCarte: [string, string][] = [
       <p class="reveal eyebrow">01 · Contexte</p>
       <h2 class="reveal titre-section text-3xl md:text-4xl mt-3 max-w-3xl">Nous ne connaissons pas l'ampleur réelle de la pollution de l'IA générative</h2>
       <div class="prose-sae reveal-stagger mt-6">
-        <p class="reveal">Nous savons aujourd'hui que l'intelligence artificielle générative a un impact sur l'environnement. Entraîner et faire fonctionner ces modèles nécessite de l'électricité, mobilise des ressources en eau et génère des émissions de gaz à effet de serre.</p>
-        <p class="reveal">Mais il reste difficile de mesurer précisément l'ampleur de ces impacts.</p>
-        <p class="reveal">Derrière ChatGPT d'OpenAI, Gemini de Google et Le Chat de Mistral, de nombreux utilisateurs sollicitent chaque jour des infrastructures informatiques dont la consommation et les émissions sont difficiles à évaluer de manière indépendante.</p>
-        <p class="reveal">Les chercheurs peuvent produire des estimations, mais les entreprises détiennent une grande partie des informations nécessaires pour connaître l'impact réel de leurs technologies.</p>
-        <p class="reveal"><strong>Alors, que choisissent-elles de rendre public ?</strong> Communiquent-elles suffisamment de chiffres pour permettre une vérification indépendante de leurs engagements climatiques ? Ou certaines informations essentielles restent-elles dans l'ombre ?</p>
-        <p class="reveal">À travers plusieurs visualisations, nous allons comparer leurs engagements, leurs chiffres publiés et les informations manquantes pour déterminer dans quelle mesure leurs objectifs climatiques peuvent être vérifiés.</p>
+        <p class="reveal">Quand nous utilisons ChatGPT, Gemini ou Le Chat, des ordinateurs travaillent dans des centres de données. Ils consomment de l'électricité, de l'eau et contribuent aux émissions de gaz à effet de serre.</p>
+        <p class="reveal">Mais <strong>comment savoir si ces entreprises réduisent réellement leur impact sur le climat ?</strong></p>
+        <p class="reveal">Nous avons comparé ce qu'OpenAI, Google et Mistral promettent, les chiffres qu'ils publient et ce que ces chiffres permettent de vérifier.</p>
       </div>
 
       <div class="reveal mt-8 overflow-x-auto">
@@ -154,7 +151,23 @@ const ficheCarte: [string, string][] = [
           </tbody>
         </table>
       </div>
-      <p class="reveal mt-3 max-w-3xl"><strong>Notre objectif est de comparer leur transparence, et non de déterminer laquelle pollue le moins.</strong> Nous distinguerons les impacts d'un modèle, ceux d'une requête et les émissions de l'entreprise dans son ensemble.</p>
+      <p class="reveal mt-3 max-w-3xl"><strong>Notre enquête ne cherche pas à désigner l'IA la moins polluante : elle cherche à savoir si les promesses climatiques sont vérifiables.</strong> Nous distinguerons les impacts d'un modèle, ceux d'une requête et les émissions de l'entreprise dans son ensemble.</p>
+
+      <div class="reveal mt-10 overflow-x-auto">
+        <table class="table table-zebra tableau">
+          <caption>Petit lexique pour lire notre enquête</caption>
+          <thead><tr><th scope="col">Mot</th><th scope="col">Explication simple</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Centre de données</th><td>Bâtiment qui contient des ordinateurs et des serveurs utilisés pour faire fonctionner des services numériques.</td></tr>
+            <tr><th scope="row">Wh (wattheure)</th><td>Unité qui mesure une quantité d'électricité. Une ampoule de 10 W allumée 6 minutes consomme 1 Wh.</td></tr>
+            <tr><th scope="row">CO₂e</th><td>Unité qui regroupe différents gaz à effet de serre selon leur effet sur le climat.</td></tr>
+            <tr><th scope="row">Token</th><td>Petit morceau de texte lu ou produit par un modèle d'IA.</td></tr>
+            <tr><th scope="row">Scope 1, 2 et 3</th><td>Trois catégories d'émissions : directes, liées à l'énergie achetée, et liées aux autres activités de la chaîne de valeur.</td></tr>
+            <tr><th scope="row">FMTI</th><td>Indice de Stanford qui évalue ce que les entreprises révèlent au sujet de leurs modèles d'IA. Il ne mesure pas leur performance écologique.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="reveal mt-3 text-sm"><em>Dans ce site, « notre corpus » désigne uniquement les sources que nous avons sélectionnées et étudiées.</em></p>
 
       <div class="reveal mt-10 grid gap-6 md:grid-cols-2">
         <div class="card bg-base-100 border border-bord card-body p-6">
@@ -183,23 +196,26 @@ const ficheCarte: [string, string][] = [
       <p class="reveal mt-2 text-fonce font-semibold">Qu'ont promis OpenAI, Google et Mistral, et que publient-ils pour qu'on puisse le vérifier ?</p>
 
       <div class="prose-sae reveal mt-6">
-        <p>Pour savoir si OpenAI, Google et Mistral respectent leurs engagements climatiques, il faut d'abord identifier les objectifs qu'ils annoncent et les informations environnementales qu'ils rendent publiques. Certaines entreprises publient des bilans annuels de leurs émissions, tandis que d'autres fournissent principalement des estimations concernant un modèle ou une requête.</p>
-        <p><strong>Publier des chiffres ne signifie pas forcément qu'un engagement climatique peut être vérifié.</strong> Nous comparons donc d'abord les informations disponibles : engagements climatiques, émissions de CO₂, consommation énergétique, consommation d'eau et méthodes de calcul.</p>
-        <p class="text-sm"><em>Une information non identifiée dans notre recherche ne signifie pas nécessairement qu'elle n'existe pas.</em></p>
+        <p>Avant de vérifier une promesse climatique, il faut savoir <strong>ce qui a été promis et quels chiffres sont disponibles</strong>.</p>
+        <p>Nous avons recherché six types d'informations, notamment les objectifs climatiques, les bilans d'émissions et les données sur l'électricité et l'eau. La matrice suivante montre ce que nous avons trouvé pour chaque entreprise.</p>
+        <p><strong>Attention :</strong> une case grise signifie « information non trouvée dans nos sources », et non « information jamais publiée ».</p>
       </div>
 
       <figure class="reveal mt-8"><GrapheV1 /></figure>
       <FicheViz titre="Matrice de transparence" lignes={ficheV1} route={routeA("Données figées, lecture seule : le SVG est produit au build avec Plot et JSDOM et injecté dans la page. Zéro JavaScript chez le lecteur, le détail au survol vient des balises <code>title</code> du SVG.")} />
       <div class="prose-sae reveal mt-6">
-        <h3>Analyse</h3>
-        <p>Sur les <strong>{publications.length} catégories d'informations recherchées</strong> :</p>
+        <h3>Ce qu'il faut retenir : qui publie le plus d'informations ?</h3>
+        <p>Sur les <strong>{publications.length} catégories d'informations environnementales</strong> que nous avons recherchées :</p>
         <ul>
-          <li><strong>Google : {nbPublies("Google")} sur {publications.length}.</strong> L'entreprise publie des objectifs climatiques datés et des bilans annuels de ses émissions. Elle communique aussi des estimations d'énergie, d'eau et de CO₂e pour un prompt textuel médian de Gemini.</li>
-          <li><strong>Mistral : {nbPublies("Mistral")} sur {publications.length}.</strong> Une analyse environnementale de Mistral Large 2, des estimations de CO₂e et d'eau pour une réponse type. Pas de bilan annuel complet ni d'objectif daté dans les sources retenues.</li>
-          <li><strong>OpenAI : {nbPublies("OpenAI")} sur {publications.length}.</strong> Des estimations d'électricité et d'eau par requête, communiquées par Sam Altman, sans méthodologie assez détaillée pour les reproduire.</li>
+          <li><strong>Google : {nbPublies("Google")} sur {publications.length}.</strong> L'entreprise publie notamment des objectifs climatiques et des bilans annuels d'émissions.</li>
+          <li><strong>Mistral : {nbPublies("Mistral")} sur {publications.length}.</strong> Elle présente des estimations environnementales pour un modèle, mais nous n'avons pas trouvé de bilan annuel complet dans nos sources.</li>
+          <li><strong>OpenAI : {nbPublies("OpenAI")} sur {publications.length}.</strong> Nous avons identifié des estimations d'électricité et d'eau par requête, sans série annuelle comparable.</li>
         </ul>
-        <p><strong>Google publie le plus de catégories, mais ce résultat doit être nuancé :</strong> un bilan annuel d'entreprise ne mesure pas la même chose qu'une estimation pour une requête, et publier ne signifie pas permettre une vérification indépendante. <strong>Notre premier constat : la quantité d'informations publiées ne suffit pas à mesurer la transparence climatique. Il faut aussi examiner leur précision, leur méthode de calcul et leur périmètre.</strong></p>
-        <p class="text-sm"><em>Limite : notre classement repose sur les sources étudiées et sur six catégories choisies pour notre enquête. Il ne représente pas l'ensemble des publications environnementales de ces entreprises.</em></p>
+        <p><strong>Google fournit donc davantage d'informations pour suivre son évolution dans le temps.</strong></p>
+        <h3>Ce que ce graphique ne permet pas de dire</h3>
+        <p>Ces chiffres ne mesurent <strong>ni la pollution des entreprises, ni leur respect des engagements climatiques</strong>. Un bilan annuel d'émissions et une estimation pour une requête ne décrivent pas la même chose. <strong>Pour vérifier une promesse, il faut aussi des chiffres comparables dans le temps et une méthode de calcul claire.</strong></p>
+        <p class="text-sm"><em>Limite : ces résultats concernent uniquement les sources et les six catégories étudiées dans notre enquête.</em></p>
+        <p>Nous allons maintenant approfondir la question de la transparence avec l'indice Stanford.</p>
       </div>
 
       <h3 class="reveal text-2xl mt-14">Qui est transparent sur quoi ? L'indice FMTI de Stanford</h3>
@@ -215,13 +231,16 @@ const ficheCarte: [string, string][] = [
       <figure class="reveal mt-12"><GrapheV2 /></figure>
       <FicheViz titre="Comparaison des domaines Stanford" lignes={ficheFMTI} route={routeA("Barres calculées au build à partir de <code>fmti.json</code> (3 entreprises × 3 domaines). Le tableau filtrable juste dessous est, lui, en route B : le lecteur choisit un domaine et le tableau se met à jour.")} />
       <div class="prose-sae reveal mt-6">
-        <h3>Analyse : dans quels domaines les entreprises sont-elles transparentes ?</h3>
+        <h3>Ce qu'il faut retenir : où manque la transparence ?</h3>
+        <p>Stanford distingue trois étapes :</p>
         <ul>
-          <li><strong>Upstream (34 critères)</strong> : ce qui se passe avant la mise à disposition du modèle (données d'entraînement, ressources, impacts environnementaux). Google satisfait {sat("Upstream", "Google").satisfaits} critères sur 34 (environ 24 %), OpenAI {sat("Upstream", "OpenAI").satisfaits} (environ 3 %), Mistral aucun.</li>
-          <li><strong>Model (30 critères)</strong> : le fonctionnement et les capacités du modèle. Google et OpenAI satisfont chacun {sat("Model", "Google").satisfaits} critères sur 30, Mistral {sat("Model", "Mistral").satisfaits}.</li>
-          <li><strong>Downstream (36 critères)</strong> : le déploiement et les usages. OpenAI obtient {sat("Downstream", "OpenAI").satisfaits} critères sur 36, Google {sat("Downstream", "Google").satisfaits} et Mistral {sat("Downstream", "Mistral").satisfaits}.</li>
+          <li><strong>Upstream (avant la mise à disposition)</strong> : données d'entraînement et ressources utilisées.</li>
+          <li><strong>Model (le modèle lui-même)</strong> : caractéristiques et évaluations.</li>
+          <li><strong>Downstream (après la mise à disposition)</strong> : usages et suivi du modèle.</li>
         </ul>
-        <p><strong>Les trois entreprises satisfont nettement moins de critères en amont du développement que dans les autres domaines.</strong> Or les informations nécessaires pour comprendre l'empreinte environnementale des modèles concernent précisément leur entraînement et les ressources mobilisées. Mais les scores Upstream ne concernent pas uniquement l'environnement, et l'absence d'un point signifie que le critère Stanford n'est pas satisfait, pas qu'aucune information n'a jamais été publiée.</p>
+        <p><strong>C'est en amont que les scores sont les plus faibles</strong> : Google satisfait <strong>{sat("Upstream", "Google").satisfaits} critères sur 34</strong>, OpenAI <strong>{sat("Upstream", "OpenAI").satisfaits} sur 34</strong> et Mistral <strong>{sat("Upstream", "Mistral").satisfaits} sur 34</strong>. C'est important, car certaines informations sur l'énergie et les ressources mobilisées concernent justement cette étape.</p>
+        <p><strong>La limite :</strong> tous les critères Upstream ne sont pas environnementaux. Un faible score ne prouve pas, à lui seul, une forte pollution.</p>
+        <p class="text-sm"><em>Source : Stanford CRFM, FMTI 2025.</em></p>
       </div>
       <div class="reveal mt-6"><TableFMTI /></div>
       <div class="prose-sae reveal mt-8">
@@ -232,14 +251,10 @@ const ficheCarte: [string, string][] = [
 
       <div class="prose-sae reveal mt-10">
         <h3>Réponse à la question 1</h3>
-        <p><strong>Les trois entreprises publient des informations environnementales, mais à des niveaux de détail différents.</strong></p>
-        <ul>
-          <li><strong>Google</strong> annonce des objectifs climatiques pour 2030 et publie un rapport environnemental annuel : {nbPublies("Google")} catégories sur {publications.length}, ce qui permet de suivre certains indicateurs dans le temps.</li>
-          <li><strong>OpenAI</strong> publie des estimations par requête (électricité et eau) : {nbPublies("OpenAI")} catégories sur {publications.length}. Pas de série annuelle liée à un objectif chiffré et daté.</li>
-          <li><strong>Mistral</strong> a publié une étude environnementale de Mistral Large 2 (CO₂e et eau) : {nbPublies("Mistral")} catégories sur {publications.length}. Ce n'est pas un bilan annuel de l'entreprise.</li>
-        </ul>
-        <p><strong>Indice Stanford (FMTI 2025) :</strong> Google {score("Google")}/100, OpenAI {score("OpenAI")}/100, Mistral {score("Mistral")}/100. Ces scores mesurent la transparence générale, pas uniquement environnementale. Pour vérifier un engagement climatique, il faut connaître les méthodes de calcul, les périmètres et l'évolution des chiffres dans le temps. <strong>La question 2 examine donc si les émissions diminuent lorsque la consommation d'énergie augmente.</strong></p>
-        <p class="text-sm"><em>Limite : une information non identifiée dans notre corpus n'est pas nécessairement inexistante.</em></p>
+        <p><strong>Google est l'entreprise qui fournit le suivi environnemental le plus complet dans notre sélection de sources.</strong> Elle publie des objectifs et des bilans annuels.</p>
+        <p>OpenAI et Mistral rendent aussi publiques des informations utiles, mais surtout sous forme d'estimations ponctuelles ou d'études sur un modèle.</p>
+        <p><strong>Ce qu'il faut retenir :</strong> le nombre de chiffres publiés ne suffit pas. Pour contrôler une promesse, il faut connaître les émissions de l'entreprise, la méthode de calcul et leur évolution dans le temps.</p>
+        <p class="text-sm"><em>Une information absente de notre corpus n'est pas forcément inexistante.</em></p>
       </div>
     </div>
   </section>
@@ -252,26 +267,28 @@ const ficheCarte: [string, string][] = [
       <p class="reveal mt-2 text-fonce font-semibold">Quand leur consommation explose, leurs émissions baissent-elles vraiment ?</p>
 
       <div class="prose-sae reveal mt-6">
-        <p>Les centres de données consomment de l'électricité pour faire tourner et refroidir les serveurs. <strong>Plus d'électricité signifie-t-il forcément plus d'émissions de CO₂ ?</strong> Pas forcément : cela dépend aussi de la façon dont l'électricité est produite et de la méthode de calcul. Une entreprise peut annoncer une baisse de certaines émissions alors que sa consommation augmente.</p>
-        <p><strong>Pourquoi Google ?</strong> C'est l'entreprise pour laquelle nous avons trouvé le plus de données annuelles. Pour OpenAI et Mistral, les publications recensées ne permettent pas de reconstituer une série comparable. Nous analysons donc les évolutions publiées par Google, puis nous expliquons pourquoi la même comparaison est impossible pour les deux autres.</p>
-        <p class="text-sm"><em>Limite : les chiffres de Google concernent l'ensemble de ses activités, pas uniquement Gemini ou l'IA générative.</em></p>
+        <h3>Quand l'électricité augmente, les émissions augmentent-elles aussi ?</h3>
+        <p>Faire fonctionner des serveurs consomme de l'électricité. Mais <strong>consommer plus d'électricité ne signifie pas forcément que toutes les catégories d'émissions augmentent dans les mêmes proportions</strong>.</p>
+        <p>Pour le comprendre, nous suivons trois indicateurs : l'électricité consommée, les émissions liées aux activités directes et à l'énergie achetée, puis celles liées notamment aux fournisseurs et aux équipements.</p>
+        <p><strong>Nous étudions surtout Google</strong>, car c'est la seule des trois entreprises pour laquelle nous avons trouvé une série annuelle suffisamment longue dans notre corpus.</p>
+        <p class="text-sm"><em>Attention : les chiffres Google portent sur l'ensemble de l'entreprise, pas uniquement sur Gemini.</em></p>
       </div>
 
       <div class="reveal mt-6 overflow-x-auto">
         <table class="table table-zebra tableau">
-          <caption>Comprendre les émissions de gaz à effet de serre : les trois « scopes »</caption>
-          <thead><tr><th scope="col">Catégorie</th><th scope="col">Définition</th><th scope="col">Exemple pour une entreprise d'IA</th></tr></thead>
+          <caption>Comprendre les trois types d'émissions : les « scopes »</caption>
+          <thead><tr><th scope="col">Catégorie</th><th scope="col">Ce que cela compte</th><th scope="col">Exemple</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Scope 1 — Émissions directes</th><td>Émissions provenant de sources possédées ou contrôlées par l'entreprise.</td><td>Combustion de carburants dans les équipements ou véhicules de l'entreprise.</td></tr>
-            <tr><th scope="row">Scope 2 — Énergie achetée</th><td>Émissions associées à la production de l'électricité, de la chaleur ou du refroidissement achetés par l'entreprise.</td><td>Électricité achetée pour faire fonctionner ses infrastructures.</td></tr>
-            <tr><th scope="row">Scope 3 — Autres émissions indirectes</th><td>Émissions liées à la chaîne de valeur, en dehors des scopes 1 et 2.</td><td>Fabrication des serveurs, construction des centres de données, achats de services.</td></tr>
+            <tr><th scope="row">Scope 1</th><td>Les émissions directes de l'entreprise.</td><td>Carburant utilisé par ses équipements.</td></tr>
+            <tr><th scope="row">Scope 2</th><td>Les émissions liées à l'électricité ou à l'énergie achetée.</td><td>Électricité nécessaire aux serveurs.</td></tr>
+            <tr><th scope="row">Scope 3</th><td>Les autres émissions de sa chaîne de valeur.</td><td>Fabrication des serveurs, achats et construction.</td></tr>
           </tbody>
         </table>
       </div>
-      <dl class="reveal card bg-base-100 border border-bord card-body p-6 mt-4 grid gap-3 md:grid-cols-2 text-sm">
-        <div><dt class="font-bold text-fonce">Pourquoi cette distinction compte</dt><dd>Une entreprise peut réduire ses émissions opérationnelles (scopes 1 et 2) tout en voyant ses émissions indirectes (scope 3) augmenter : <strong>une baisse opérationnelle ne signifie pas une baisse de l'empreinte totale.</strong></dd></div>
-        <div><dt class="font-bold text-fonce">« Market-based » ?</dt><dd>Pour le scope 2, la méthode <em>location-based</em> utilise les facteurs d'émission moyens des zones géographiques ; la méthode <em>market-based</em> tient compte des contrats d'approvisionnement et des certificats d'énergie. Elles peuvent donner des résultats différents : il faut garder la même méthode d'une année à l'autre.</dd></div>
-      </dl>
+      <div class="prose-sae reveal mt-4">
+        <p>Les <strong>émissions opérationnelles</strong> regroupent ici les scopes 1 et 2. <strong>À retenir :</strong> si les scopes 1 et 2 baissent, cela ne signifie pas que le scope 3 ou l'ensemble des émissions baissent aussi.</p>
+        <p class="text-sm"><em>Précision : Google peut compter les émissions liées à l'électricité selon différentes méthodes. Nous devons comparer des chiffres calculés avec des périmètres et des méthodes compatibles.</em></p>
+      </div>
 
       <!-- Scrollytelling léger : le graphique reste collé en haut (≥ lg) pendant que les paragraphes défilent -->
       <div class="mt-10 grid gap-8 lg:grid-cols-[1.4fr_1fr] items-start">
@@ -297,9 +314,11 @@ const ficheCarte: [string, string][] = [
       <FicheViz titre="Comparaison des variations Google" lignes={ficheV3} route={routeA("Trois valeurs figées lues dans le rapport 2026 : export au build, aucune interaction nécessaire.")} />
 
       <div class="prose-sae reveal mt-6">
-        <h3>Analyse : une consommation électrique en hausse, des émissions qui évoluent différemment</h3>
-        <p>En 2025, par rapport à 2024 : <strong>{signe(v("g_elec_2025"))} % d'électricité consommée</strong>, <strong>{signe(v("g_ops_2025"))} % d'émissions opérationnelles</strong> (scopes 1 et 2) et <strong>{signe(v("g_scope3_2025"))} % d'émissions de la chaîne d'approvisionnement</strong> (fabrication des équipements, construction des infrastructures).</p>
-        <p><strong>Plus d'électricité ne veut pas dire que tous les indicateurs d'émissions montent.</strong> Mais les émissions opérationnelles ne représentent qu'une partie de l'empreinte de Google : leur évolution ne dit pas que l'empreinte totale baisse, car la chaîne d'approvisionnement augmente. <em>Limites :</em> chaque pourcentage est calculé par rapport à la valeur 2024 de son propre indicateur, on ne peut pas en déduire l'évolution des émissions totales ; les chiffres concernent toute l'activité de Google. <strong>Pour savoir si Google progresse vers ses objectifs, il faut étudier ses émissions totales sur plusieurs années.</strong></p>
+        <h3>Ce qu'il faut retenir : Google en 2025</h3>
+        <p>Par rapport à 2024, Google annonce <strong>{signe(v("g_elec_2025"))} % d'électricité consommée</strong>, <strong>{signe(v("g_ops_2025"))} % d'émissions opérationnelles</strong> et <strong>{signe(v("g_scope3_2025"))} % d'émissions dans sa chaîne d'approvisionnement</strong>.</p>
+        <p><strong>Cela signifie qu'une baisse d'une catégorie d'émissions ne prouve pas que l'ensemble de l'empreinte climatique diminue.</strong></p>
+        <p><strong>La limite :</strong> ces trois pourcentages ne suffisent pas à calculer l'évolution totale des émissions. Ils concernent toutes les activités de Google, pas uniquement l'IA.</p>
+        <p class="text-sm"><em>Source : Google, rapport environnemental 2026, variations 2025 par rapport à 2024.</em></p>
       </div>
 
       <div class="reveal mt-8 overflow-x-auto">
@@ -317,9 +336,11 @@ const ficheCarte: [string, string][] = [
       <figure class="reveal mt-12"><GrapheCourbe /></figure>
       <FicheViz titre="Évolution des émissions totales Google" lignes={ficheCourbe} route={routeA("Série figée de 6 points (2019-2024) : courbe construite au build, lecture seule.")} />
       <div class="prose-sae reveal mt-6">
-        <h3>Analyse : les émissions totales de Google augmentent sur le long terme</h3>
-        <p>Les émissions totales déclarées passent de {mt(g(2019).total)} à {mt(g(2024).total)} millions de tonnes de CO₂e, soit <strong>{evol} % en cinq ans</strong>. Elles baissent de 2019 à 2020, puis augmentent chaque année jusqu'en 2024. Les émissions opérationnelles peuvent baisser certaines années pendant que les émissions indirectes augmentent : c'est pourquoi il faut regarder les émissions totales.</p>
-        <p><em>Limites :</em> les chiffres concernent toute l'activité de Google, pas seulement l'IA générative. Les émissions totales déclarées ne correspondent pas exactement au périmètre de l'objectif 2030 : cette courbe ne dit donc pas, seule, si Google tient sa trajectoire. Les données s'arrêtent en 2024 ; 2025 reste à ajouter après vérification de la comparabilité. <strong>Pour vérifier un engagement, une baisse ponctuelle ne suffit pas : il faut une série sur plusieurs années, avec un périmètre cohérent avec l'objectif.</strong></p>
+        <h3>Ce qu'il faut retenir : les émissions totales de Google</h3>
+        <p>Entre 2019 et 2024, les émissions totales déclarées de Google passent de <strong>{mt(g(2019).total)} à {mt(g(2024).total)} millions de tonnes de CO₂e</strong>, soit <strong>+{evol} %</strong>.</p>
+        <p><strong>La courbe montre une hausse sur le long terme</strong>, même si certaines catégories d'émissions diminuent certaines années.</p>
+        <p><strong>La limite :</strong> ces chiffres concernent tout Google et ne correspondent pas exactement à la méthode utilisée pour son objectif climatique de 2030. Cette courbe ne suffit donc pas à dire si l'objectif sera atteint.</p>
+        <p class="text-sm"><em>Source : Google, rapport environnemental 2025, données 2019–2024.</em></p>
       </div>
 
       <div class="reveal mt-10 overflow-x-auto">
@@ -336,15 +357,19 @@ const ficheCarte: [string, string][] = [
 
       <div class="prose-sae reveal mt-10">
         <h3>Réponse à la question 2</h3>
-        <p><strong>Cela dépend des émissions que l'on regarde.</strong></p>
-        <p><strong>Google.</strong> En 2025, la demande d'électricité fait {signe(v("g_elec_2025"))} % et les émissions opérationnelles {signe(v("g_ops_2025"))} %, mais les émissions de la chaîne d'approvisionnement font {signe(v("g_scope3_2025"))} %. Une entreprise peut donc réduire une catégorie d'émissions tout en consommant plus d'énergie et en émettant plus ailleurs. La baisse des émissions opérationnelles ne prouve pas que l'empreinte totale baisse : il faut comparer les émissions totales sur plusieurs années, avec des périmètres cohérents.</p>
-        <p><strong>OpenAI et Mistral.</strong> Leurs publications recensées ne permettent pas de suivre l'évolution annuelle de leurs émissions. OpenAI a communiqué une estimation d'électricité par requête, Mistral une analyse environnementale de Mistral Large 2. Ces chiffres éclairent certains impacts, mais pas l'évolution des émissions totales.</p>
-        <p><strong>À retenir.</strong> Sans données annuelles détaillées et comparables, on ne peut pas dire si ces entreprises progressent vers leurs objectifs. <strong>Les chiffres publiés suffisent-ils donc à vérifier leurs engagements ? C'est la question 3.</strong></p>
-        <p class="text-sm"><em>Limite : on ne peut pas déduire les émissions totales de Google de 2025 à partir de ces trois pourcentages. Sources : Google, rapports environnementaux 2025 et 2026 ; Sam Altman, « The Gentle Singularity » (juin 2025) ; Mistral AI, étude sur Mistral Large 2.</em></p>
+        <p><strong>Pas nécessairement.</strong> En 2025, Google consomme {signe(v("g_elec_2025"))} % d'électricité, tandis que ses émissions opérationnelles évoluent de {signe(v("g_ops_2025"))} % et celles de sa chaîne d'approvisionnement de {signe(v("g_scope3_2025"))} %.</p>
+        <p>Ces chiffres montrent que les indicateurs ne suivent pas tous la même direction. Les émissions totales déclarées de Google ont aussi augmenté entre 2019 et 2024.</p>
+        <p>Pour OpenAI et Mistral, nous n'avons pas trouvé, dans notre corpus, de série annuelle comparable pour répondre à cette question.</p>
+        <p><strong>La limite :</strong> une variation isolée ne suffit pas pour juger le respect d'un engagement climatique.</p>
+        <p class="text-sm"><em>Sources : Google, rapports environnementaux 2025 et 2026 ; Sam Altman, « The Gentle Singularity » (juin 2025) ; Mistral AI, étude sur Mistral Large 2.</em></p>
       </div>
 
-      <h3 class="reveal text-2xl mt-14">Pour aller plus loin : ce que l'extérieur peut estimer</h3>
-      <p class="reveal mt-2 max-w-3xl">Faute de chiffres publiés par les entreprises, on peut regarder ce que des estimations indépendantes disent de la consommation d'une conversation. Compar:IA estime la consommation électrique de chaque conversation avec des modèles d'OpenAI, de Google et de Mistral.</p>
+      <h3 class="reveal text-2xl mt-14">Pour aller plus loin : ce qu'on peut estimer sans les bilans des entreprises</h3>
+      <div class="prose-sae reveal mt-2">
+        <p><strong>Compar:IA fournit des estimations d'électricité pour des conversations avec différents modèles d'IA.</strong> Nous pouvons ainsi observer l'énergie estimée d'une réponse, même lorsque nous n'avons pas de bilan annuel de l'entreprise.</p>
+        <p>Dans le tableau, la <strong>médiane</strong> représente la valeur du milieu : elle est moins influencée que la moyenne par quelques conversations très gourmandes.</p>
+        <p><strong>Attention : les conversations et les modèles ne sont pas identiques d'une entreprise à l'autre. Ce tableau ne classe donc pas les entreprises de la moins polluante à la plus polluante.</strong></p>
+      </div>
       <div class="reveal mt-6"><TableCompar /></div>
     </div>
   </section>
@@ -357,15 +382,10 @@ const ficheCarte: [string, string][] = [
       <p class="reveal mt-2 text-fonce font-semibold">Les chiffres publiés suffisent-ils à mesurer les progrès vers les objectifs climat annoncés ?</p>
 
       <div class="prose-sae reveal mt-6">
-        <p>Google communique des bilans annuels et des objectifs, tandis que les données recensées pour OpenAI et Mistral sont des estimations ponctuelles ou centrées sur un modèle. Mais <strong>avoir des chiffres ne suffit pas pour vérifier un engagement climatique.</strong> Pour mesurer un progrès, il faut :</p>
-        <ol>
-          <li><strong>un objectif précis et daté</strong> : réduction annoncée, année de référence, échéance ;</li>
-          <li><strong>des données régulières</strong> : les émissions sur plusieurs années, pour voir la trajectoire ;</li>
-          <li><strong>un périmètre comparable</strong> : les mêmes activités et catégories d'émissions que l'objectif ;</li>
-          <li><strong>une méthode transparente</strong> : ce qui est inclus et exclu dans le calcul ;</li>
-          <li><strong>des sources vérifiables</strong> : hypothèses, documents d'origine, vérification externe si elle existe.</li>
-        </ol>
-        <p>Sans ces conditions, une entreprise peut annoncer une baisse sans que l'on puisse la contrôler. <strong>Il faut distinguer ce qui est publié de ce qui est utilisable pour contrôler un engagement.</strong> Nous comparons les objectifs identifiés avec les séries disponibles, une chronologie montre les années où les données existent, et une visualisation interactive permet de comparer soi-même deux années de données Google.</p>
+        <p><strong>Publier un chiffre ne suffit pas pour prouver qu'une promesse est tenue.</strong></p>
+        <p>Pour vérifier un objectif climatique, il nous faut : <strong>une promesse précise</strong>, <strong>une année de référence</strong>, <strong>des résultats publiés chaque année</strong> et <strong>une méthode de calcul comparable</strong>.</p>
+        <p>Nous allons regarder quelles entreprises fournissent ces informations, puis comparer les années disponibles pour Google.</p>
+        <p class="text-sm"><em>Attention : une donnée absente de notre sélection de sources peut exister ailleurs.</em></p>
       </div>
 
       <div class="reveal mt-4 overflow-x-auto">
@@ -380,8 +400,11 @@ const ficheCarte: [string, string][] = [
         </table>
       </div>
 
-      <h3 class="reveal text-2xl mt-12">Chronologie : quelles années peut-on réellement documenter ?</h3>
-      <p class="reveal mt-2 max-w-3xl">Cette chronologie distingue les années pour lesquelles nous avons identifié des valeurs annuelles d'émissions, les informations ponctuelles et les années sans données dans notre corpus. Les objectifs de 2030 sont représentés séparément. <strong>Une donnée annuelle publiée ne garantit pas qu'elle corresponde au périmètre utilisé pour mesurer l'objectif annoncé.</strong></p>
+      <h3 class="reveal text-2xl mt-12">Comment lire la chronologie ?</h3>
+      <div class="prose-sae reveal mt-2">
+        <p>Chaque case correspond à <strong>une entreprise et une année</strong>. La frise distingue les années pour lesquelles nous avons identifié <strong>des chiffres d'émissions annuels</strong>, <strong>des informations ponctuelles</strong> ou <strong>aucune donnée comparable dans notre corpus</strong>. Les objectifs pour 2030 sont indiqués séparément.</p>
+        <p><strong>L'enjeu :</strong> une entreprise qui publie une estimation une seule année ne permet pas de suivre une trajectoire sur plusieurs années.</p>
+      </div>
       <figure class="reveal mt-6"><GrapheV5 /></figure>
       <FicheViz titre="Chronologie des données climatiques" lignes={ficheChrono} route={routeA("Grille calculée au build depuis le registre et la série Google ; les mêmes données alimentent la chronologie d'une seule entreprise dans chaque page de la route C.")} />
 
@@ -392,28 +415,31 @@ const ficheCarte: [string, string][] = [
       </dl>
 
       <div class="prose-sae reveal mt-8">
-        <h3>Analyse : des données insuffisantes pour vérifier tous les engagements</h3>
-        <p><strong>Google : un suivi annuel plus développé.</strong> Des valeurs annuelles d'émissions totales déclarées entre 2019 et 2024 permettent d'observer une évolution, mais elles ne correspondent pas exactement au périmètre de l'objectif 2030. <strong>OpenAI : des informations ponctuelles</strong> (électricité et eau par requête), sans série annuelle. <strong>Mistral : une étude détaillée sur un modèle</strong>, mais pas de suivi annuel complet.</p>
-        <p><strong>Notre constat : Google permet un suivi historique plus développé, mais vérifier un engagement climatique nécessite davantage que la présence de valeurs annuelles.</strong> <em>Une case sans donnée ne signifie pas que l'entreprise n'a jamais publié d'information ; une publication ponctuelle peut aussi porter sur une période différente de son année de publication.</em></p>
+        <h3>Ce qu'il faut retenir : peut-on suivre les émissions d'année en année ?</h3>
+        <p><strong>Google :</strong> nous avons des émissions totales déclarées pour <strong>2019 à 2024</strong>. Elles montrent une évolution, mais leur calcul ne correspond pas exactement au périmètre de l'objectif climatique de 2030.</p>
+        <p><strong>OpenAI et Mistral :</strong> dans notre corpus, nous trouvons surtout des informations ponctuelles, pas une série annuelle complète des émissions de l'entreprise.</p>
+        <p><strong>La limite :</strong> une case sans donnée signifie seulement que nous n'en avons pas trouvé dans notre sélection de sources. Et une série annuelle, même complète, ne permet de vérifier une promesse que si elle mesure la même chose que cette promesse.</p>
       </div>
 
       <h3 class="reveal text-2xl mt-14">Choisissez vous-même deux années</h3>
       <div class="reveal mt-4"><GrapheV4 /></div>
       <FicheViz titre="V4 · Comparaison interactive des années" lignes={ficheV4} route={'<strong>Route B (client).</strong> Le lecteur choisit ses années : le graphique doit être recalculé dans son navigateur. Les <code>&lt;select&gt;</code> sont générés au build, un script importe Plot, efface le conteneur (<code>innerHTML = ""</code>), redessine à chaque événement <code>change</code> et fait un appel initial.'} />
       <div class="prose-sae reveal mt-6">
-        <h3>Analyse : les émissions de Google évoluent-elles toutes de la même manière ?</h3>
-        <p>Entre 2023 et 2024 par exemple : <strong>électricité {signe(pp("Électricité"))} %</strong>, <strong>émissions totales {signe(pp("Émissions totales"))} %</strong>, <strong>émissions opérationnelles {signe(pp("Émissions opérationnelles"))} %</strong>, <strong>scope 3 {signe(pp("Scope 3"))} %</strong>. Une baisse de certaines émissions peut accompagner une augmentation des émissions totales. L'interaction permet de voir si une évolution correspond à une tendance de plusieurs années ou à une variation ponctuelle.</p>
-        <p><em>Limites :</em> les indicateurs n'ont pas tous le même périmètre et les pourcentages sont calculés par rapport à l'année de départ ; les données concernent l'ensemble des activités de Google, et les émissions totales déclarées ne correspondent pas exactement au périmètre de l'objectif 2030. <strong>Il est essentiel de ne pas se limiter à un seul indicateur pour évaluer les progrès climatiques.</strong></p>
+        <h3>Ce qu'il faut retenir : comparez deux années de Google</h3>
+        <p><strong>Choisissez une année de départ et une année d'arrivée</strong> : le graphique calcule les évolutions de l'électricité et de plusieurs catégories d'émissions.</p>
+        <p>Par exemple, <strong>de 2023 à 2024</strong>, l'électricité augmente de <strong>{pp("Électricité")} %</strong>, les émissions totales déclarées de <strong>{pp("Émissions totales")} %</strong>, alors que les émissions opérationnelles diminuent de <strong>{Math.abs(pp("Émissions opérationnelles"))} %</strong>. Les émissions du scope 3 augmentent de <strong>{pp("Scope 3")} %</strong>.</p>
+        <p><strong>Ce que cela montre :</strong> une baisse d'une catégorie ne signifie pas que tout le bilan climatique s'améliore.</p>
+        <p><strong>La limite :</strong> ces indicateurs concernent tout Google. Leurs périmètres diffèrent, et les émissions totales déclarées ne suivent pas exactement la méthode de l'objectif 2030.</p>
+        <p class="text-sm"><em>Source : Google, rapport environnemental 2025, série 2019–2024.</em></p>
       </div>
 
       <div class="prose-sae reveal mt-10">
         <h3>Réponse à la question 3</h3>
-        <p><strong>Notre réponse : seulement en partie. Les données disponibles permettent certains suivis, mais leur précision et leur comparabilité restent inégales.</strong></p>
-        <p><strong>Google : des progrès partiellement vérifiables.</strong> Objectifs climatiques datés, bilans annuels et courbe historique (émissions totales déclarées en hausse d'environ {evol} % entre 2019 et 2024). Mais les émissions totales déclarées ne correspondent pas exactement au périmètre de l'objectif 2030 : un suivi est possible, mais notre comparaison reste partielle tant que nous n'avons pas vérifié la cohérence des périmètres et des méthodes.</p>
-        <p><strong>OpenAI : des informations insuffisantes pour mesurer une trajectoire.</strong> Des estimations d'électricité et d'eau par requête donnent des ordres de grandeur, mais pas l'évolution annuelle des émissions totales. Nous ne pouvons pas vérifier une trajectoire climatique globale avec les données étudiées.</p>
-        <p><strong>Mistral : une analyse environnementale, mais pas d'évolution annuelle.</strong> L'étude de Mistral Large 2 éclaire les impacts d'un modèle, mais elle n'est pas une série annuelle des émissions de l'entreprise.</p>
-        <p>Cette question met en évidence la différence entre <strong>publier des chiffres et permettre leur vérification indépendante</strong>. Pour contrôler un engagement, il faut un objectif chiffré et daté, une année de référence, des données annuelles comparables, un périmètre cohérent et une méthode documentée. <em>L'absence d'informations suffisantes ne prouve pas qu'une entreprise ne respecte pas ses engagements : elle signifie que nous ne disposons pas de toutes les preuves nécessaires pour les contrôler.</em></p>
-        <p class="text-sm"><em>Limites : notre conclusion repose sur les publications retenues. Les résultats concernant Google devront être actualisés avec les données de 2025 et les périmètres de suivi correspondants avant toute évaluation définitive de sa trajectoire vers 2030. « Rien trouvé » veut dire « non trouvé par notre recherche du 19 octobre 2026 ». Voir la <a href="/methode/">méthode</a> et les <a href="/entreprise/">fiches entreprises</a>.</em></p>
+        <p><strong>Seulement en partie.</strong> Google publie des objectifs et des chiffres annuels, mais les indicateurs utilisés dans notre courbe ne correspondent pas exactement au calcul de son objectif 2030.</p>
+        <p>Pour <strong>OpenAI et Mistral</strong>, les sources que nous avons étudiées ne permettent pas de reconstituer une série annuelle complète des émissions à l'échelle de l'entreprise.</p>
+        <p><strong>Notre conclusion :</strong> les données disponibles ne suffisent pas à vérifier de manière équivalente les engagements climatiques des trois entreprises.</p>
+        <p><strong>Important : ne pas pouvoir vérifier une promesse ne signifie pas qu'elle est fausse ou non respectée.</strong></p>
+        <p class="text-sm"><em>« Rien trouvé » veut dire « non trouvé par notre recherche du 19 octobre 2026 ». Voir la <a href="/methode/">méthode</a> et les <a href="/entreprise/">fiches entreprises</a>.</em></p>
       </div>
 
       <h3 class="reveal text-2xl mt-14">Où se trouvent les centres de données en France ?</h3>
@@ -424,31 +450,22 @@ const ficheCarte: [string, string][] = [
       <figure class="reveal mt-6"><CarteCentres /></figure>
       <FicheViz titre="Carte des centres de données en France" lignes={ficheCarte} route={routeA("Contour et points figés (extraction OpenStreetMap du 20 octobre 2026) : carte construite au build avec <code>Plot.geo</code> et <code>Plot.dot</code>, aucune interaction nécessaire.")} />
       <div class="prose-sae reveal mt-6">
-        <p><strong>Les données publiques permettent de localiser une partie des infrastructures numériques, mais pas de mesurer directement leur impact environnemental.</strong> Connaître l'emplacement d'une infrastructure ne signifie pas connaître son fonctionnement, sa consommation énergétique ou ses émissions. Le détail du nettoyage des 384 éléments d'origine est dans la page <a href="/methode/#osm">Méthode</a>.</p>
+        <h3>Ce qu'il faut retenir : localiser ne veut pas dire mesurer</h3>
+        <p>Notre fichier OpenStreetMap contenait <strong>384 éléments géographiques</strong>. Après les filtres et contrôles, <strong>373 éléments</strong> sont représentés sur la carte. Les points permettent de voir où des infrastructures ont été signalées, notamment autour de grandes agglomérations.</p>
+        <p><strong>La limite :</strong> OpenStreetMap peut être incomplet, plusieurs éléments peuvent représenter un même site, et notre filtre géographique est approximatif. Surtout, <strong>nous ne savons pas combien chaque centre consomme, ni s'il est utilisé par Google, OpenAI ou Mistral</strong>.</p>
+        <p><strong>Conclusion :</strong> connaître le lieu d'un centre de données ne suffit pas à mesurer son impact environnemental. Le détail du nettoyage est dans la page <a href="/methode/#osm">Méthode</a>.</p>
       </div>
 
       <div id="synthese" class="mt-16 card bg-base-100 border border-bord card-body p-6 md:p-10">
-        <h2 class="reveal titre-section text-3xl">Synthèse générale : peut-on vérifier les engagements climatiques des entreprises d'IA ?</h2>
+        <h2 class="reveal titre-section text-3xl">Synthèse générale : peut-on vérifier les promesses climatiques des entreprises d'IA ?</h2>
         <div class="prose-sae mt-6">
-          <p class="reveal"><strong>Problématique : OpenAI, Google et Mistral publient-ils assez de chiffres pour qu'on puisse vérifier s'ils tiennent leurs objectifs climat ?</strong></p>
-          <h3 class="reveal">1. Les entreprises ne publient pas toutes les mêmes informations</h3>
-          <p class="reveal">Google fournit davantage de catégories d'informations environnementales dans notre corpus : objectifs climatiques et bilans annuels, alors qu'OpenAI communique des estimations par requête et que Mistral a publié une étude consacrée à un modèle. Le FMTI de Stanford confirme des différences de transparence générale (Google {score("Google")}/100, OpenAI {score("OpenAI")}/100, Mistral {score("Mistral")}/100), sans mesurer la performance climatique. <strong>Premier constat : publier des informations ne signifie pas nécessairement permettre leur vérification indépendante.</strong></p>
-          <h3 class="reveal">2. Une baisse de certaines émissions ne signifie pas une baisse de l'empreinte totale</h3>
-          <p class="reveal">En 2025, la demande d'électricité de Google a augmenté de <strong>{v("g_elec_2025")} %</strong>, ses émissions opérationnelles ont diminué de <strong>{Math.abs(v("g_ops_2025"))} %</strong> et celles de sa chaîne d'approvisionnement ont augmenté de <strong>{v("g_scope3_2025")} %</strong>. Ses émissions totales déclarées ont augmenté d'environ <strong>{evol} % entre 2019 et 2024</strong>. <strong>Deuxième constat : pour évaluer un progrès climatique, il faut regarder plusieurs indicateurs, pas uniquement ceux qui diminuent.</strong></p>
-          <h3 class="reveal">3. La vérification dépend de la qualité et de la comparabilité des données</h3>
-          <p class="reveal">Google publie des données annuelles, mais les émissions totales déclarées ne correspondent pas exactement au périmètre de l'objectif 2030. Pour OpenAI et Mistral, notre corpus ne contient pas de séries annuelles complètes et comparables associées à des objectifs globaux chiffrés et datés. La carte OpenStreetMap montre qu'on peut localiser des infrastructures sans connaître leur consommation. <strong>Troisième constat : la présence de données ne suffit pas, leur périmètre, leur méthode de calcul et leur continuité dans le temps sont essentiels.</strong></p>
-          <h3 class="reveal">Notre réponse finale</h3>
-          <p class="reveal"><strong>Non, les informations étudiées ne permettent pas de vérifier complètement et de manière homogène les engagements climatiques des trois entreprises.</strong> Google fournit davantage d'informations de suivi ; OpenAI et Mistral publient des informations utiles mais insuffisantes pour reconstituer des trajectoires annuelles à l'échelle de l'entreprise. Cela ne signifie pas qu'elles ne respectent pas leurs engagements : les données de notre corpus ne permettent pas de le démontrer.</p>
-          <h3 class="reveal">Ce qu'il faudrait pour aller plus loin</h3>
-          <ul class="reveal">
-            <li>Des objectifs chiffrés avec une année de référence et une échéance.</li>
-            <li>Des données annuelles accessibles et comparables.</li>
-            <li>Des périmètres de calcul clairement expliqués.</li>
-            <li>Des méthodes documentées et des vérifications indépendantes.</li>
-            <li>Une distinction entre l'impact des modèles d'IA et celui de l'ensemble des activités de l'entreprise.</li>
-          </ul>
-          <p class="reveal"><strong>La transparence ne consiste pas seulement à publier des chiffres : elle consiste à fournir les informations nécessaires pour comprendre, comparer et vérifier ces chiffres.</strong></p>
-          <p class="reveal text-sm"><em>Limite générale : notre étude porte sur les publications sélectionnées dans notre corpus. Elle ne constitue pas un audit exhaustif des trois entreprises.</em></p>
+          <p class="reveal"><strong>Notre réponse : pas complètement, avec les données que nous avons étudiées.</strong></p>
+          <p class="reveal"><strong>1. Les entreprises ne publient pas les mêmes informations.</strong> Google fournit des objectifs et des bilans annuels. OpenAI et Mistral publient notamment des estimations par requête ou des études sur un modèle. Le score Stanford (Google {score("Google")}/100, OpenAI {score("OpenAI")}/100, Mistral {score("Mistral")}/100) renseigne leur transparence générale, mais pas directement leur performance climatique.</p>
+          <p class="reveal"><strong>2. Une baisse d'émissions ne raconte pas toute l'histoire.</strong> En 2025, Google affiche <strong>{signe(v("g_elec_2025"))} % d'électricité consommée</strong>, <strong>{signe(v("g_ops_2025"))} % d'émissions opérationnelles</strong> et <strong>{signe(v("g_scope3_2025"))} % pour sa chaîne d'approvisionnement</strong>. Entre 2019 et 2024, ses émissions totales déclarées ont augmenté d'environ <strong>{evol} %</strong>.</p>
+          <p class="reveal"><strong>3. Vérifier un engagement demande plus que quelques chiffres.</strong> Il faut un objectif précis, des résultats comparables d'année en année et une méthode expliquée. Même pour Google, les émissions totales de notre courbe ne correspondent pas exactement au périmètre de son objectif 2030.</p>
+          <p class="reveal">Les données Compar:IA et la carte OpenStreetMap apportent un éclairage complémentaire, mais ne permettent pas de calculer les émissions annuelles des trois entreprises.</p>
+          <p class="reveal"><strong>Notre conclusion : une promesse climatique n'est réellement vérifiable que si chacun peut retrouver les chiffres, comprendre leur calcul et suivre leur évolution.</strong></p>
+          <p class="reveal text-sm"><em>Limite générale : notre étude repose sur une sélection de sources publiques. L'absence de données dans notre corpus ne prouve pas qu'elles n'existent pas.</em></p>
         </div>
       </div>
     </div>
