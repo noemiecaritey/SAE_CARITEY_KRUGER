@@ -1,0 +1,2996 @@
+{
+ "statistiques": {
+  "initial": 384,
+  "sansTag": 7,
+  "sansCoordonnees": 0,
+  "horsMetropole": 4,
+  "doublons": 0,
+  "conserves": 373
+ },
+ "lieux": [
+  {
+   "id": "relation/1074421",
+   "nom": "Euclyde DC1",
+   "operateur": "Euclyde",
+   "longitude": 7.0755,
+   "latitude": 43.6046,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/1190245",
+   "nom": "Digital Realty Paris PAR6",
+   "operateur": "Digital Realty",
+   "longitude": 2.4048,
+   "latitude": 48.817,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/1547056",
+   "nom": "Centre de données non nommé",
+   "operateur": "Airbus",
+   "longitude": 1.9694,
+   "latitude": 48.7977,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/1604367",
+   "nom": "Datacenter IBM",
+   "operateur": "IBM",
+   "longitude": 2.6726,
+   "latitude": 48.8309,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/3358244",
+   "nom": "Centre Régional de Ressources Informatiques (CRRI)",
+   "operateur": "Université Clermont Auvergne",
+   "longitude": 3.1093,
+   "latitude": 45.7628,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/3718269",
+   "nom": "CINES",
+   "operateur": "Non renseigné",
+   "longitude": 3.8422,
+   "latitude": 43.6362,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/3820004",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": -0.3117,
+   "latitude": 43.3202,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/5888279",
+   "nom": "SFR",
+   "operateur": "SFR",
+   "longitude": 2.2087,
+   "latitude": 48.7829,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/9701471",
+   "nom": "Free Pro - Datacenter Limonest (LYO02 - DCForData)",
+   "operateur": "Free Pro (Ex. Jaguar Network - DCForData)",
+   "longitude": 4.7722,
+   "latitude": 45.8067,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/11087732",
+   "nom": "Datacenter BNP Paribas Marne Est 1",
+   "operateur": "BNP Paribas",
+   "longitude": 2.8021,
+   "latitude": 48.8358,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "relation/13829451",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 3.8677,
+   "latitude": 43.5836,
+   "typeGeometrie": "MultiPolygon"
+  },
+  {
+   "id": "way/23695954",
+   "nom": "CERN Computer Centre",
+   "operateur": "CERN",
+   "longitude": 6.046,
+   "latitude": 46.2325,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/37697561",
+   "nom": "Datacenter SNCF RESARAIL",
+   "operateur": "SNCF",
+   "longitude": 3.0884,
+   "latitude": 50.6229,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/38354559",
+   "nom": "OVHcloud Roubaix - RBX1",
+   "operateur": "OVHcloud",
+   "longitude": 3.2001,
+   "latitude": 50.6927,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/42016630",
+   "nom": "Data4 Campus Paris Saclay",
+   "operateur": "Data4",
+   "longitude": 2.2291,
+   "latitude": 48.6497,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/42742505",
+   "nom": "Equinix PA3",
+   "operateur": "Equinix",
+   "longitude": 2.3503,
+   "latitude": 48.9271,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/43013791",
+   "nom": "Quiri",
+   "operateur": "Cogent",
+   "longitude": 7.7442,
+   "latitude": 48.6005,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/45423103",
+   "nom": "Interoute Strasbourg",
+   "operateur": "Interoute",
+   "longitude": 7.7951,
+   "latitude": 48.5933,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/48199846",
+   "nom": "Datadock",
+   "operateur": "Non renseigné",
+   "longitude": 7.7825,
+   "latitude": 48.5687,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/49261097",
+   "nom": "B4",
+   "operateur": "Air France",
+   "longitude": 7.0325,
+   "latitude": 43.627,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/49292264",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 2.1932,
+   "latitude": 48.9022,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/49292266",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 2.1929,
+   "latitude": 48.9026,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/50210667",
+   "nom": "Green DataCenter Eolas",
+   "operateur": "Orange Business",
+   "longitude": 5.7151,
+   "latitude": 45.1685,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/58495009",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 7.7692,
+   "latitude": 48.6336,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/61091773",
+   "nom": "Centre de données non nommé",
+   "operateur": "Fingerprint Technologies",
+   "longitude": 5.0864,
+   "latitude": 45.0486,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/62340941",
+   "nom": "Orange Lyon Lumière - Centrale",
+   "operateur": "Non renseigné",
+   "longitude": 4.8637,
+   "latitude": 45.7551,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/62777045",
+   "nom": "Datacenter Société Generale",
+   "operateur": "Société Generale",
+   "longitude": 2.4987,
+   "latitude": 48.6463,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/62840519",
+   "nom": "O2Switch DC2",
+   "operateur": "O2Switch",
+   "longitude": 3.1347,
+   "latitude": 45.7566,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/63259490",
+   "nom": "Datacenter Groupe Casino",
+   "operateur": "Groupe Casino",
+   "longitude": 4.4004,
+   "latitude": 45.4406,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/63868212",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 7.1472,
+   "latitude": 43.6551,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/63979423",
+   "nom": "Interxion PAR3",
+   "operateur": "Digital Realty",
+   "longitude": 2.3624,
+   "latitude": 48.9147,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/63983178",
+   "nom": "Interxion PAR5",
+   "operateur": "Digital Realty",
+   "longitude": 2.3624,
+   "latitude": 48.9142,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/63996094",
+   "nom": "Datacenter Vega",
+   "operateur": "Natixis",
+   "longitude": 2.804,
+   "latitude": 48.8447,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/64108260",
+   "nom": "ETIX Toulouse #1",
+   "operateur": "ETIX",
+   "longitude": 1.4872,
+   "latitude": 43.6253,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/64201452",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 1.0973,
+   "latitude": 49.4382,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/65043676",
+   "nom": "Cogent Rouen",
+   "operateur": "Cogent",
+   "longitude": 1.076,
+   "latitude": 49.4291,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/65551099",
+   "nom": "Sartera",
+   "operateur": "Sartel",
+   "longitude": 0.2285,
+   "latitude": 47.9968,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/66670655",
+   "nom": "Datacenter IBO",
+   "operateur": "IBO",
+   "longitude": 3.1308,
+   "latitude": 45.7841,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/66911687",
+   "nom": "Datacenter IBM",
+   "operateur": "IBM",
+   "longitude": 3.1424,
+   "latitude": 45.8077,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/67893730",
+   "nom": "Hôtel des Telecoms",
+   "operateur": "Non renseigné",
+   "longitude": 1.5097,
+   "latitude": 43.5427,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/68940404",
+   "nom": "Digital Realty MRS1",
+   "operateur": "Digital Realty",
+   "longitude": 5.3739,
+   "latitude": 43.311,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/68947782",
+   "nom": "Marseille St-Mauront",
+   "operateur": "Orange",
+   "longitude": 5.374,
+   "latitude": 43.3151,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/69380828",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 0.7033,
+   "latitude": 47.4363,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/69382833",
+   "nom": "Groupe ADISTA",
+   "operateur": "ADISTA",
+   "longitude": 0.6954,
+   "latitude": 47.436,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/69428487",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 1.0351,
+   "latitude": 49.3818,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/69633445",
+   "nom": "Free Pro - Datacenter Marseille (MAR02)",
+   "operateur": "Free Pro (Ex. Jaguar Network - DCForData)",
+   "longitude": 5.3379,
+   "latitude": 43.3612,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/70206291",
+   "nom": "Datacenter Bouygues Télécom",
+   "operateur": "Bouygues Télécom",
+   "longitude": 2.2419,
+   "latitude": 48.777,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/70207931",
+   "nom": "Datacenter Bouygues Télécom",
+   "operateur": "Bouygues Télécom",
+   "longitude": 2.2419,
+   "latitude": 48.7767,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/70456520",
+   "nom": "Datacenter Bouygues Télécom",
+   "operateur": "Bouygues Télécom",
+   "longitude": 2.2276,
+   "latitude": 48.7692,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/70894641",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 5.7408,
+   "latitude": 45.1553,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/72995274",
+   "nom": "Orange - Aubervilliers",
+   "operateur": "Orange",
+   "longitude": 2.3946,
+   "latitude": 48.9093,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/72996440",
+   "nom": "Digital Realty Paris PAR5",
+   "operateur": "Digital Realty",
+   "longitude": 2.371,
+   "latitude": 48.9043,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/72996473",
+   "nom": "Datacenter Completel",
+   "operateur": "Completel",
+   "longitude": 2.3952,
+   "latitude": 48.9101,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/73003053",
+   "nom": "Datacenter Atos",
+   "operateur": "Atos",
+   "longitude": 2.3972,
+   "latitude": 48.9095,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/73005029",
+   "nom": "Datacenter Atos",
+   "operateur": "Atos",
+   "longitude": 2.3969,
+   "latitude": 48.9092,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/73005728",
+   "nom": "Interxion PAR2 - Bâtiment 501",
+   "operateur": "Digital Realty",
+   "longitude": 2.3695,
+   "latitude": 48.9072,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/73007043",
+   "nom": "Equinix PA5",
+   "operateur": "Equinix",
+   "longitude": 2.3698,
+   "latitude": 48.9053,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/73008524",
+   "nom": "Equinix PA6",
+   "operateur": "Equinix",
+   "longitude": 2.3682,
+   "latitude": 48.9102,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/73120395",
+   "nom": "Equinix PA4",
+   "operateur": "Equinix",
+   "longitude": 2.422,
+   "latitude": 48.9003,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/73131890",
+   "nom": "SFR",
+   "operateur": "SFR",
+   "longitude": 1.1775,
+   "latitude": 49.2532,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/73137489",
+   "nom": "Datacenter BNP",
+   "operateur": "BNP Paribas",
+   "longitude": 1.2215,
+   "latitude": 49.2652,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/74475616",
+   "nom": "Global Switch",
+   "operateur": "Global Switch",
+   "longitude": 2.2953,
+   "latitude": 48.9002,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/74704589",
+   "nom": "Oscar",
+   "operateur": "Air France",
+   "longitude": 1.3705,
+   "latitude": 43.5934,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/75757106",
+   "nom": "Zayo Montpellier",
+   "operateur": "Zayo",
+   "longitude": 3.872,
+   "latitude": 43.5847,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/75758209",
+   "nom": "Centre de données non nommé",
+   "operateur": "SFR",
+   "longitude": 3.8707,
+   "latitude": 43.5832,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/75759038",
+   "nom": "Cogent Montpellier",
+   "operateur": "Cogent",
+   "longitude": 3.8627,
+   "latitude": 43.6009,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/76181813",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 3.9091,
+   "latitude": 43.6193,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/76296417",
+   "nom": "Cogent Toulouse",
+   "operateur": "Cogent",
+   "longitude": 1.4226,
+   "latitude": 43.6203,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/76322800",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 1.4749,
+   "latitude": 43.6344,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/76329433",
+   "nom": "ETIX Toulouse #2",
+   "operateur": "ETIX",
+   "longitude": 1.4214,
+   "latitude": 43.6199,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/76727775",
+   "nom": "OPCORE DC1",
+   "operateur": "OPCORE",
+   "longitude": 2.2237,
+   "latitude": 48.9254,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/79145624",
+   "nom": "Colt Paris 3",
+   "operateur": "Colt",
+   "longitude": 2.1972,
+   "latitude": 48.6747,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/79891578",
+   "nom": "Centre de données non nommé",
+   "operateur": "SNCF",
+   "longitude": 4.8165,
+   "latitude": 45.7243,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/80144821",
+   "nom": "OVHcloud Roubaix - RBX6",
+   "operateur": "OVHcloud",
+   "longitude": 3.1997,
+   "latitude": 50.6917,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/80148463",
+   "nom": "OVHcloud Roubaix - RBX5",
+   "operateur": "OVHcloud",
+   "longitude": 3.1993,
+   "latitude": 50.6925,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/80150551",
+   "nom": "OVHcloud Roubaix - RBX2",
+   "operateur": "OVHcloud",
+   "longitude": 3.2016,
+   "latitude": 50.6915,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/80150630",
+   "nom": "OVHcloud Roubaix - RBX7",
+   "operateur": "OVHcloud",
+   "longitude": 3.1979,
+   "latitude": 50.6917,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/80158243",
+   "nom": "Paris St Amand",
+   "operateur": "Orange",
+   "longitude": 2.3073,
+   "latitude": 48.8351,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/80330028",
+   "nom": "Comarch Data Center",
+   "operateur": "Comarch ICT",
+   "longitude": 3.1036,
+   "latitude": 50.6147,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/80469752",
+   "nom": "SFR Netcenter Vénissieux",
+   "operateur": "SFR",
+   "longitude": 4.8629,
+   "latitude": 45.7224,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/80703263",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": -1.6322,
+   "latitude": 48.0965,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/81282298",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 2.4159,
+   "latitude": 48.916,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/81283176",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 2.4155,
+   "latitude": 48.9162,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/81617496",
+   "nom": "Orange Eastview",
+   "operateur": "Non renseigné",
+   "longitude": 2.4162,
+   "latitude": 48.8634,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/81708992",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 3.022,
+   "latitude": 50.6135,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/81727062",
+   "nom": "Oxya Datacenter",
+   "operateur": "Non renseigné",
+   "longitude": 3.0223,
+   "latitude": 50.6168,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/81750727",
+   "nom": "Equinix PA7",
+   "operateur": "Equinix",
+   "longitude": 2.2595,
+   "latitude": 48.905,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/81784724",
+   "nom": "SFR Netcenter Rennes",
+   "operateur": "SFR",
+   "longitude": -1.6135,
+   "latitude": 48.1099,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/82894448",
+   "nom": "Datacenter IBM - Grabels",
+   "operateur": "IBM",
+   "longitude": 3.8299,
+   "latitude": 43.6427,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/82943291",
+   "nom": "BT Blue",
+   "operateur": "Non renseigné",
+   "longitude": -1.4039,
+   "latitude": 48.1007,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/83087845",
+   "nom": "Albiréo",
+   "operateur": "Albiant IT",
+   "longitude": 2.2679,
+   "latitude": 43.5648,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/83651931",
+   "nom": "Centre de données non nommé",
+   "operateur": "Allianz",
+   "longitude": 1.9525,
+   "latitude": 48.7954,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/83795984",
+   "nom": "Datacenter Colt",
+   "operateur": "Colt",
+   "longitude": 2.3029,
+   "latitude": 48.8159,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/83943560",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 4.9451,
+   "latitude": 45.6842,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/83944350",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 4.9451,
+   "latitude": 45.6845,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/84607738",
+   "nom": "Euclyde DC5",
+   "operateur": "Euclyde",
+   "longitude": 4.8715,
+   "latitude": 45.7725,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/84699719",
+   "nom": "Centre de données non nommé",
+   "operateur": "SFR",
+   "longitude": -1.5607,
+   "latitude": 47.1967,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/84917665",
+   "nom": "ETIX Nantes #3",
+   "operateur": "ETIX",
+   "longitude": -1.6676,
+   "latitude": 47.2381,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/84942310",
+   "nom": "Cogent Lille",
+   "operateur": "Cogent",
+   "longitude": 3.0904,
+   "latitude": 50.6377,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/87682410",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 0.3363,
+   "latitude": 46.6118,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/88239907",
+   "nom": "Ikoula Data Center",
+   "operateur": "Ikoula Net SAS",
+   "longitude": 4.0345,
+   "latitude": 49.2337,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/88505134",
+   "nom": "TAS Group",
+   "operateur": "TAS Group",
+   "longitude": 7.0517,
+   "latitude": 43.6269,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/88763366",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Telecom",
+   "longitude": 5.3575,
+   "latitude": 43.4877,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/88765054",
+   "nom": "TDF ProxiCenter Aix Marseille",
+   "operateur": "TDF",
+   "longitude": 5.3244,
+   "latitude": 43.4606,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/89056684",
+   "nom": "Datacenter Mutualisé Lorrain",
+   "operateur": "CNRS",
+   "longitude": 6.1506,
+   "latitude": 48.656,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/91286607",
+   "nom": "Datacenter IBM",
+   "operateur": "IBM",
+   "longitude": 3.1378,
+   "latitude": 45.8361,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/91288538",
+   "nom": "Datacenter IBM",
+   "operateur": "IBM",
+   "longitude": 3.1378,
+   "latitude": 45.8364,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/91290220",
+   "nom": "DC Free",
+   "operateur": "Illiad",
+   "longitude": 3.137,
+   "latitude": 45.8332,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/95431893",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 3.9951,
+   "latitude": 49.2703,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/97768560",
+   "nom": "Interoute Marseille",
+   "operateur": "Interoute",
+   "longitude": 5.3678,
+   "latitude": 43.3428,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/97770086",
+   "nom": "Verizon Marseille",
+   "operateur": "Verizon",
+   "longitude": 5.3667,
+   "latitude": 43.3393,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/101166171",
+   "nom": "Datacenter des Douanes",
+   "operateur": "Direction des douanes",
+   "longitude": 2.0668,
+   "latitude": 49.0542,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/102446449",
+   "nom": "OPCORE DC6-2",
+   "operateur": "OPCORE",
+   "longitude": 2.1201,
+   "latitude": 49.0302,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/102449117",
+   "nom": "OPCORE DC5",
+   "operateur": "OPCORE",
+   "longitude": 2.1379,
+   "latitude": 49.0538,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/102453250",
+   "nom": "OPCORE DC6-5",
+   "operateur": "OPCORE",
+   "longitude": 2.1261,
+   "latitude": 49.0265,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/102453433",
+   "nom": "OPCORE DC6-6",
+   "operateur": "OPCORE",
+   "longitude": 2.1252,
+   "latitude": 49.0287,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/102465235",
+   "nom": "OPCORE DC6-3",
+   "operateur": "OPCORE",
+   "longitude": 2.1239,
+   "latitude": 49.0289,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/102467679",
+   "nom": "OPCORE DC6-6",
+   "operateur": "OPCORE",
+   "longitude": 2.1266,
+   "latitude": 49.028,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/103670545",
+   "nom": "Datacenter France Travail",
+   "operateur": "France Travail",
+   "longitude": 3.9093,
+   "latitude": 43.6263,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/104544854",
+   "nom": "Salle Serveurs CCCM",
+   "operateur": "Non renseigné",
+   "longitude": 6.3966,
+   "latitude": 45.2553,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/105708693",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.4926,
+   "latitude": 48.8566,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/113167016",
+   "nom": "Datacenter IBM",
+   "operateur": "IBM",
+   "longitude": 2.6929,
+   "latitude": 48.8326,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/113172925",
+   "nom": "BNP Paribas Centre de Traitement Informatique (CTI) Marne Nord",
+   "operateur": "BNP Paribas",
+   "longitude": 2.7295,
+   "latitude": 48.8303,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/113174337",
+   "nom": "Euroclear",
+   "operateur": "Euroclear",
+   "longitude": 2.7297,
+   "latitude": 48.832,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/113457880",
+   "nom": "Datacenter Sirius",
+   "operateur": "Natixis",
+   "longitude": 2.5534,
+   "latitude": 48.6214,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/113714402",
+   "nom": "Datacenter Bouygues Télécom",
+   "operateur": "Bouygues Telecom",
+   "longitude": 2.0358,
+   "latitude": 48.7944,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/115416148",
+   "nom": "BNP Paribas Marne Sud",
+   "operateur": "BNP Paribas",
+   "longitude": 2.6425,
+   "latitude": 48.8172,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/115424116",
+   "nom": "Datacenter Oxya",
+   "operateur": "Oxya",
+   "longitude": 2.5873,
+   "latitude": 48.8293,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/116113997",
+   "nom": "Sungard AS IT",
+   "operateur": "Sungard AS",
+   "longitude": 2.641,
+   "latitude": 48.8372,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/116116518",
+   "nom": "Euclyde DC6",
+   "operateur": "Euclyde",
+   "longitude": 2.6306,
+   "latitude": 48.8392,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/116118031",
+   "nom": "Sungard AS IT",
+   "operateur": "Sungard AS",
+   "longitude": 2.6419,
+   "latitude": 48.837,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/116118217",
+   "nom": "Centre de données non nommé",
+   "operateur": "nLighten France",
+   "longitude": 2.6286,
+   "latitude": 48.8398,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/116137046",
+   "nom": "Datacenter Banque de France",
+   "operateur": "Banque de France",
+   "longitude": 2.6246,
+   "latitude": 48.8414,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/116195927",
+   "nom": "Datacenter Banque de France",
+   "operateur": "Banque de France",
+   "longitude": 2.7879,
+   "latitude": 48.8391,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/117845346",
+   "nom": "Datacenter",
+   "operateur": "SOCIETE TECHNOLOGIE EXPLOITATION INFORMATIQUE",
+   "longitude": 2.0571,
+   "latitude": 48.7655,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/120350699",
+   "nom": "Centre de données non nommé",
+   "operateur": "Euroclear",
+   "longitude": 2.5368,
+   "latitude": 48.8389,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/124592519",
+   "nom": "Datacenter ArteOne",
+   "operateur": "Artefact",
+   "longitude": 1.5092,
+   "latitude": 45.1576,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/125557451",
+   "nom": "Datacenter IBM",
+   "operateur": "IBM",
+   "longitude": 3.0308,
+   "latitude": 50.5652,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/125563590",
+   "nom": "Worldline Dassault",
+   "operateur": "Worldline",
+   "longitude": 3.0403,
+   "latitude": 50.5669,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/126029978",
+   "nom": "Cogent Dijon",
+   "operateur": "Cogent",
+   "longitude": 5.0305,
+   "latitude": 47.3088,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/126666046",
+   "nom": "SM4",
+   "operateur": "Euro Information",
+   "longitude": 3.0171,
+   "latitude": 50.6776,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/126667399",
+   "nom": "SM3",
+   "operateur": "Euro Information",
+   "longitude": 3.0168,
+   "latitude": 50.6784,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/128632388",
+   "nom": "Extension centre de calcul IN2P3",
+   "operateur": "IN2P3",
+   "longitude": 4.8661,
+   "latitude": 45.7827,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/129565687",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": -1.5497,
+   "latitude": 47.276,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/130810461",
+   "nom": "Datacenter Groupama",
+   "operateur": "Groupama",
+   "longitude": 2.3569,
+   "latitude": 47.0599,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/132582436",
+   "nom": "Datacenter Bouygues Télécom",
+   "operateur": "Bouygues Telecom",
+   "longitude": 2.0436,
+   "latitude": 48.9732,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/134684836",
+   "nom": "Centre de données non nommé",
+   "operateur": "SFR",
+   "longitude": -1.6349,
+   "latitude": 47.2243,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/134884282",
+   "nom": "CNAF Sophia-Antipolis",
+   "operateur": "CNAF",
+   "longitude": 7.0389,
+   "latitude": 43.6233,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/135461168",
+   "nom": "Albiréo",
+   "operateur": "Albiant IT",
+   "longitude": 2.2747,
+   "latitude": 43.5541,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/137139149",
+   "nom": "Greenfield",
+   "operateur": "Crédit Agricole",
+   "longitude": 1.4382,
+   "latitude": 48.4509,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/137239340",
+   "nom": "Webaxys",
+   "operateur": "Non renseigné",
+   "longitude": 0.3506,
+   "latitude": 49.5184,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/138943505",
+   "nom": "Datacenter Orange",
+   "operateur": "Orange",
+   "longitude": 2.2186,
+   "latitude": 48.7866,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/139560714",
+   "nom": "OPCORE DC2",
+   "operateur": "OPCORE",
+   "longitude": 2.4118,
+   "latitude": 48.7948,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/139560858",
+   "nom": "OPCORE DC3",
+   "operateur": "OPCORE",
+   "longitude": 2.3793,
+   "latitude": 48.7748,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/139706219",
+   "nom": "Interoute Bordeaux",
+   "operateur": "Interoute",
+   "longitude": -0.5374,
+   "latitude": 44.781,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/140910921",
+   "nom": "Lumen",
+   "operateur": "Lumen Technologies",
+   "longitude": 2.5193,
+   "latitude": 48.9824,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/146090469",
+   "nom": "DATA4 Paris Marcoussis PAR2",
+   "operateur": "Data4",
+   "longitude": 2.2083,
+   "latitude": 48.6643,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/146091115",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.225,
+   "latitude": 48.6503,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/146091133",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.2261,
+   "latitude": 48.6504,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/146091136",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.2259,
+   "latitude": 48.6492,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/146091140",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.225,
+   "latitude": 48.6496,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/149298432",
+   "nom": "Centre de données non nommé",
+   "operateur": "SFR",
+   "longitude": 5.0319,
+   "latitude": 47.2951,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/149301089",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 5.031,
+   "latitude": 47.2941,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/149302427",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 5.0312,
+   "latitude": 47.294,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/150378390",
+   "nom": "Zayo Velizy",
+   "operateur": "Zayo",
+   "longitude": 2.217,
+   "latitude": 48.7807,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/150382252",
+   "nom": "DC2SCALE Vélizy Latécoère",
+   "operateur": "dc2scale",
+   "longitude": 2.2092,
+   "latitude": 48.7843,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/153973376",
+   "nom": "La Pointe 1",
+   "operateur": "Worldline",
+   "longitude": 3.0284,
+   "latitude": 50.5668,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/154149196",
+   "nom": "SFR Netcenter Bordeaux",
+   "operateur": "SFR",
+   "longitude": -0.5565,
+   "latitude": 44.8889,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/159862898",
+   "nom": "Digital Realty MRS2",
+   "operateur": "Digital Realty",
+   "longitude": 5.3471,
+   "latitude": 43.3386,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/159863825",
+   "nom": "Digital Realty MRS3",
+   "operateur": "Digital Realty",
+   "longitude": 5.3465,
+   "latitude": 43.3387,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/160165248",
+   "nom": "Centre de données non nommé",
+   "operateur": "SFR",
+   "longitude": 5.7661,
+   "latitude": 45.1867,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/160165252",
+   "nom": "Centre de données non nommé",
+   "operateur": "SFR",
+   "longitude": 5.7662,
+   "latitude": 45.187,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/160165278",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 5.7672,
+   "latitude": 45.1868,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/176779630",
+   "nom": "OVHcloud Roubaix - RBX3",
+   "operateur": "OVHcloud",
+   "longitude": 3.1992,
+   "latitude": 50.6929,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/191691715",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": -0.5298,
+   "latitude": 44.7243,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/226246636",
+   "nom": "Centre de données non nommé",
+   "operateur": "EDF",
+   "longitude": 1.3982,
+   "latitude": 49.0115,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/226246780",
+   "nom": "Centre de données non nommé",
+   "operateur": "EDF",
+   "longitude": 1.3974,
+   "latitude": 49.0118,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/226247994",
+   "nom": "Centre de données non nommé",
+   "operateur": "EDF",
+   "longitude": 1.3978,
+   "latitude": 49.0116,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/226250681",
+   "nom": "Datacenter EDF",
+   "operateur": "EDF",
+   "longitude": 1.3982,
+   "latitude": 49.012,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/234729371",
+   "nom": "OVHcloud Roubaix - RBX4",
+   "operateur": "OVHcloud",
+   "longitude": 3.2008,
+   "latitude": 50.6912,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/236976420",
+   "nom": "Proginov",
+   "operateur": "Non renseigné",
+   "longitude": -1.5555,
+   "latitude": 47.0892,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/249222914",
+   "nom": "TDF",
+   "operateur": "Non renseigné",
+   "longitude": 3.0401,
+   "latitude": 50.6485,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/249274111",
+   "nom": "Datacenter Groupama",
+   "operateur": "Groupama",
+   "longitude": -1.8369,
+   "latitude": 48.0699,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/261420854",
+   "nom": "Interxion PAR7",
+   "operateur": "Interxion",
+   "longitude": 2.4021,
+   "latitude": 48.9254,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/313238933",
+   "nom": "Etix Vendée #2",
+   "operateur": "Non renseigné",
+   "longitude": -1.7478,
+   "latitude": 46.5155,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/320306630",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.226,
+   "latitude": 48.6511,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/320306631",
+   "nom": "Data4 Marcoussis",
+   "operateur": "Data4",
+   "longitude": 2.228,
+   "latitude": 48.6503,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/359652564",
+   "nom": "Ecocenter",
+   "operateur": "Nexeren",
+   "longitude": 3.1151,
+   "latitude": 45.8312,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/421253670",
+   "nom": "CNRS",
+   "operateur": "Non renseigné",
+   "longitude": 2.2281,
+   "latitude": 48.6498,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/421253671",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.225,
+   "latitude": 48.6512,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/463443856",
+   "nom": "Equinix PA2",
+   "operateur": "Equinix",
+   "longitude": 2.3517,
+   "latitude": 48.9276,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/468717472",
+   "nom": "Greenfield",
+   "operateur": "Crédit Agricole",
+   "longitude": 1.3268,
+   "latitude": 48.4706,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/474571273",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 4.0627,
+   "latitude": 49.2369,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/481746975",
+   "nom": "Nexeren",
+   "operateur": "Nexeren",
+   "longitude": 4.879,
+   "latitude": 45.9038,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/482853508",
+   "nom": "Centre de Calcul de l’Université de Bourgogne",
+   "operateur": "Non renseigné",
+   "longitude": 5.0709,
+   "latitude": 47.3149,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/509892105",
+   "nom": "Castle IT",
+   "operateur": "Non renseigné",
+   "longitude": 0.7693,
+   "latitude": 47.3492,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/525667518",
+   "nom": "ETIX Nantes #2",
+   "operateur": "ETIX",
+   "longitude": -1.4693,
+   "latitude": 47.2778,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/537371615",
+   "nom": "Centre de données non nommé",
+   "operateur": "RATP",
+   "longitude": 2.3013,
+   "latitude": 48.8006,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/540389197",
+   "nom": "ETIX Nantes #1",
+   "operateur": "ETIX",
+   "longitude": -1.631,
+   "latitude": 47.2315,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/551480895",
+   "nom": "OVHcloud Gravelines",
+   "operateur": "OVHcloud",
+   "longitude": 2.1552,
+   "latitude": 51.0167,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/600607931",
+   "nom": "CIV Anzin",
+   "operateur": "Non renseigné",
+   "longitude": 3.5221,
+   "latitude": 50.3783,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/650560924",
+   "nom": "Bouygues Telecom",
+   "operateur": "Non renseigné",
+   "longitude": 5.0339,
+   "latitude": 47.2961,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/664619554",
+   "nom": "Free Pro - Datacenter Rock (LYO03)",
+   "operateur": "Free Pro (Ex. Jaguar Network - DCforDATA)",
+   "longitude": 4.8899,
+   "latitude": 45.7386,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/664793692",
+   "nom": "Fil d'Ariane",
+   "operateur": "CELESTE",
+   "longitude": 2.1825,
+   "latitude": 43.9193,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/667259766",
+   "nom": "CIV Sainghin-en-Mélantois",
+   "operateur": "Non renseigné",
+   "longitude": 3.1365,
+   "latitude": 50.5841,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/700171365",
+   "nom": "Datacenter Marilyn",
+   "operateur": "Non renseigné",
+   "longitude": 2.588,
+   "latitude": 48.835,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/700504282",
+   "nom": "Interxion PAR4",
+   "operateur": "Interxion",
+   "longitude": 2.1751,
+   "latitude": 48.894,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/700652111",
+   "nom": "Le Prologue",
+   "operateur": "SFR",
+   "longitude": 2.2592,
+   "latitude": 48.9043,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/724757970",
+   "nom": "Centre de données non nommé",
+   "operateur": "GTT",
+   "longitude": 2.3681,
+   "latitude": 48.907,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/757483478",
+   "nom": "Lille Etix #1",
+   "operateur": "Non renseigné",
+   "longitude": 3.1579,
+   "latitude": 50.6991,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/778874555",
+   "nom": "Centre de données non nommé",
+   "operateur": "nLighten",
+   "longitude": 5.9741,
+   "latitude": 47.2262,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/813676827",
+   "nom": "Aliénor.net",
+   "operateur": "Alienor.net",
+   "longitude": -0.5979,
+   "latitude": 44.874,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/843118512",
+   "nom": "Cogent Tours",
+   "operateur": "Cogent",
+   "longitude": 0.6865,
+   "latitude": 47.4323,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/843508896",
+   "nom": "Euclyde DC3",
+   "operateur": "Euclyde",
+   "longitude": 7.0385,
+   "latitude": 43.6244,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/846772885",
+   "nom": "Equinix PA13X",
+   "operateur": "Equinix",
+   "longitude": 2.2166,
+   "latitude": 48.7891,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/846779443",
+   "nom": "Digital Realty PAR12",
+   "operateur": "Digital Realty",
+   "longitude": 2.7251,
+   "latitude": 48.8244,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/846872233",
+   "nom": "Thésée DataCenter",
+   "operateur": "Thésée",
+   "longitude": 1.8403,
+   "latitude": 48.9661,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/847106822",
+   "nom": "Site technique SFR",
+   "operateur": "SFR",
+   "longitude": 2.0013,
+   "latitude": 48.7654,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/847113959",
+   "nom": "Site technique SFR",
+   "operateur": "SFR",
+   "longitude": 2.0028,
+   "latitude": 48.768,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/847120472",
+   "nom": "Site technique SFR",
+   "operateur": "SFR",
+   "longitude": 2.0757,
+   "latitude": 48.972,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/847239871",
+   "nom": "Site Technique SFR",
+   "operateur": "Non renseigné",
+   "longitude": 2.6456,
+   "latitude": 48.976,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/847461128",
+   "nom": "Equinix PA8X",
+   "operateur": "Equinix",
+   "longitude": 2.422,
+   "latitude": 48.9007,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/849203405",
+   "nom": "Bâtiment Data Center",
+   "operateur": "MBDA France",
+   "longitude": 2.244,
+   "latitude": 48.7779,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/875153822",
+   "nom": "Centre de données",
+   "operateur": "Non renseigné",
+   "longitude": 3.0164,
+   "latitude": 50.68,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/875244715",
+   "nom": "OVHcloud Strasbourg - SBG-3",
+   "operateur": "OVHcloud",
+   "longitude": 7.7975,
+   "latitude": 48.5861,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/899899348",
+   "nom": "Centre de données non nommé",
+   "operateur": "ANSSI",
+   "longitude": 2.4766,
+   "latitude": 48.8702,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/902091581",
+   "nom": "Centre de données non nommé",
+   "operateur": "Bouygues Télécom",
+   "longitude": 3.1013,
+   "latitude": 50.3961,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/902536378",
+   "nom": "Paris Digital Park",
+   "operateur": "Non renseigné",
+   "longitude": 2.3988,
+   "latitude": 48.9275,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/937369189",
+   "nom": "Datacenter Data17",
+   "operateur": "Data17",
+   "longitude": -0.5224,
+   "latitude": 45.9275,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/944210675",
+   "nom": "Nexeren",
+   "operateur": "Nexeren",
+   "longitude": 4.8791,
+   "latitude": 45.9035,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/952744491",
+   "nom": "Centre de données non nommé",
+   "operateur": "EDF",
+   "longitude": 1.1852,
+   "latitude": 49.2634,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/969469076",
+   "nom": "Advanced Mediomatrix",
+   "operateur": "Advanced Mediomatrix",
+   "longitude": 6.2375,
+   "latitude": 49.0857,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/980368572",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 4.8615,
+   "latitude": 45.7232,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1030533210",
+   "nom": "PAR8",
+   "operateur": "Interxion",
+   "longitude": 2.398,
+   "latitude": 48.9275,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1030901315",
+   "nom": "Centre de données MAIF",
+   "operateur": "MAIF;DARVA",
+   "longitude": -0.3765,
+   "latitude": 46.3454,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1038308860",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 5.6062,
+   "latitude": 45.3142,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1060567996",
+   "nom": "Equinix",
+   "operateur": "Equinix",
+   "longitude": -0.6117,
+   "latitude": 44.8962,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1061336199",
+   "nom": "DC7 - Euclyde Datacenters",
+   "operateur": "Euclyde Datacenters",
+   "longitude": 7.7371,
+   "latitude": 48.5202,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1067118191",
+   "nom": "Webaxys",
+   "operateur": "Non renseigné",
+   "longitude": -0.3789,
+   "latitude": 49.1263,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1084581417",
+   "nom": "PAR9",
+   "operateur": "Interxion",
+   "longitude": 2.3987,
+   "latitude": 48.9271,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1099624277",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2272,
+   "latitude": 48.6486,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1099624278",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2284,
+   "latitude": 48.6491,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1099624279",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2273,
+   "latitude": 48.6492,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1099624280",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2295,
+   "latitude": 48.65,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1099624281",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.2255,
+   "latitude": 48.652,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1099624283",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2284,
+   "latitude": 48.6485,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1117375128",
+   "nom": "Digital Realty MRS4",
+   "operateur": "Digital Realty",
+   "longitude": 5.3467,
+   "latitude": 43.3397,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1118414289",
+   "nom": "SostraData",
+   "operateur": "SostraData",
+   "longitude": 1.3938,
+   "latitude": 46.2046,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1121454054",
+   "nom": "Equinix PA10",
+   "operateur": "Equinix",
+   "longitude": 2.349,
+   "latitude": 48.9276,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1121454055",
+   "nom": "Equinix PA9X",
+   "operateur": "Equinix",
+   "longitude": 2.349,
+   "latitude": 48.9269,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1122298171",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.2236,
+   "latitude": 48.6501,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1141021688",
+   "nom": "Colt Paris 3",
+   "operateur": "Colt",
+   "longitude": 2.1983,
+   "latitude": 48.6752,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1180419924",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.3987,
+   "latitude": 48.928,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1180419925",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.3995,
+   "latitude": 48.9275,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1257814939",
+   "nom": "OVHcloud Strasbourg - SBG-5",
+   "operateur": "OVHcloud",
+   "longitude": 7.7975,
+   "latitude": 48.5866,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1273311891",
+   "nom": "Centre de données non nommé",
+   "operateur": "data4",
+   "longitude": 2.2235,
+   "latitude": 48.6493,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1290285145",
+   "nom": "XL 360 - Data Center",
+   "operateur": "XL 360",
+   "longitude": 5.9329,
+   "latitude": 43.1278,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1299040068",
+   "nom": "Datacenter BNP Paribas Marne Est 2",
+   "operateur": "BNP Paribas",
+   "longitude": 2.8033,
+   "latitude": 48.8367,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1314442377",
+   "nom": "Prosoluce SG1",
+   "operateur": "Prosoluce",
+   "longitude": 0.7546,
+   "latitude": 43.1167,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1342264087",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2269,
+   "latitude": 48.6501,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1361721862",
+   "nom": "Nation Data Center Rennes",
+   "operateur": "Nation Data Center",
+   "longitude": -1.5361,
+   "latitude": 48.1125,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1364863452",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2098,
+   "latitude": 48.6793,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1365429977",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2223,
+   "latitude": 48.6494,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1365429978",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2224,
+   "latitude": 48.6502,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1395517750",
+   "nom": "Building 1",
+   "operateur": "Non renseigné",
+   "longitude": 8.1804,
+   "latitude": 48.9551,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1395517751",
+   "nom": "Building 2",
+   "operateur": "Non renseigné",
+   "longitude": 8.1807,
+   "latitude": 48.9553,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1409758368",
+   "nom": "CDG1",
+   "operateur": "CloudHQ",
+   "longitude": 2.4091,
+   "latitude": 48.5968,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1426216015",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 1.4435,
+   "latitude": 48.3658,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1562060312",
+   "nom": "Prévessin Data Centre",
+   "operateur": "CERN",
+   "longitude": 6.0564,
+   "latitude": 46.2554,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1565893700",
+   "nom": "Centre de Calculs et de Données LyonTech-la Doua",
+   "operateur": "Université Claude Bernard - Lyon 1",
+   "longitude": 4.8652,
+   "latitude": 45.7814,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1568876199",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 6.02,
+   "latitude": 46.2515,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1568876200",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 6.0201,
+   "latitude": 46.2515,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1568876201",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 6.0201,
+   "latitude": 46.2514,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1568876202",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 6.0202,
+   "latitude": 46.2514,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/1568876203",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 6.02,
+   "latitude": 46.2514,
+   "typeGeometrie": "Polygon"
+  },
+  {
+   "id": "way/68937644",
+   "nom": "Marseille Nedelec",
+   "operateur": "Orange",
+   "longitude": 5.3772,
+   "latitude": 43.3029,
+   "typeGeometrie": "LineString"
+  },
+  {
+   "id": "way/406798589",
+   "nom": "Centre de données non nommé",
+   "operateur": "1&1 Internet SE",
+   "longitude": 8.1282,
+   "latitude": 48.9721,
+   "typeGeometrie": "LineString"
+  },
+  {
+   "id": "way/683531738",
+   "nom": "Station d'atterrage",
+   "operateur": "orange",
+   "longitude": -1.9902,
+   "latitude": 46.7387,
+   "typeGeometrie": "LineString"
+  },
+  {
+   "id": "way/700526670",
+   "nom": "Telehouse 3",
+   "operateur": "Telehouse",
+   "longitude": 2.0776,
+   "latitude": 48.7261,
+   "typeGeometrie": "LineString"
+  },
+  {
+   "id": "way/920174789",
+   "nom": "Equinix",
+   "operateur": "Equinix",
+   "longitude": -0.6122,
+   "latitude": 44.8961,
+   "typeGeometrie": "LineString"
+  },
+  {
+   "id": "way/1482249092",
+   "nom": "Hub Europe",
+   "operateur": "Contabo",
+   "longitude": 8.1807,
+   "latitude": 48.9553,
+   "typeGeometrie": "LineString"
+  },
+  {
+   "id": "node/2161096396",
+   "nom": "Association ReptiGo",
+   "operateur": "Non renseigné",
+   "longitude": 6.0111,
+   "latitude": 49.2234,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/2556825308",
+   "nom": "SFR Netcenter Courbevoie",
+   "operateur": "SFR",
+   "longitude": 2.2578,
+   "latitude": 48.9038,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/3979838931",
+   "nom": "LyonIX 1 IN2P3",
+   "operateur": "Non renseigné",
+   "longitude": 4.8657,
+   "latitude": 45.7826,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/4975162489",
+   "nom": "Centre de données non nommé",
+   "operateur": "Cogent",
+   "longitude": -1.6373,
+   "latitude": 48.1099,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6015635281",
+   "nom": "Telehouse Paris Voltaire",
+   "operateur": "Non renseigné",
+   "longitude": 2.3833,
+   "latitude": 48.8561,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6015712298",
+   "nom": "Scitis-Zen DataCenter Hitachi",
+   "operateur": "Non renseigné",
+   "longitude": 1.9201,
+   "latitude": 47.8237,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6016440346",
+   "nom": "TelecityGroup Paris Courbevoie",
+   "operateur": "Non renseigné",
+   "longitude": 2.2579,
+   "latitude": 48.9046,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6102460998",
+   "nom": "SFR Netcenter Strasbourg",
+   "operateur": "SFR",
+   "longitude": 7.7822,
+   "latitude": 48.5686,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6102483146",
+   "nom": "Telehouse 1",
+   "operateur": "Non renseigné",
+   "longitude": 2.3441,
+   "latitude": 48.8697,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6102606448",
+   "nom": "Interxion PAR6",
+   "operateur": "Digital Realty",
+   "longitude": 2.403,
+   "latitude": 48.8152,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6102739953",
+   "nom": "THD Global 1",
+   "operateur": "Non renseigné",
+   "longitude": 6.6306,
+   "latitude": 45.9367,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6103694303",
+   "nom": "TDF ProxiCenter Bordeaux Bouliac",
+   "operateur": "Non renseigné",
+   "longitude": -0.5055,
+   "latitude": 44.8197,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6110614473",
+   "nom": "TDF ProxiCenter Lille Lambersart",
+   "operateur": "Non renseigné",
+   "longitude": 3.0399,
+   "latitude": 50.6486,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6110817631",
+   "nom": "TDF ProxiCenter de Rennes-Cesson",
+   "operateur": "Non renseigné",
+   "longitude": -1.6276,
+   "latitude": 48.1247,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6121864803",
+   "nom": "Colt Paris 2",
+   "operateur": "Non renseigné",
+   "longitude": 2.3222,
+   "latitude": 48.8973,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6121873072",
+   "nom": "Colt Paris 1",
+   "operateur": "Non renseigné",
+   "longitude": 2.3981,
+   "latitude": 48.8352,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6121906640",
+   "nom": "Colt Lyon",
+   "operateur": "Non renseigné",
+   "longitude": 4.8676,
+   "latitude": 45.7588,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6121968632",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 4.8168,
+   "latitude": 45.7243,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6174610289",
+   "nom": "Bouygues Telecom Montigny-le-Bretonneux",
+   "operateur": "Bouygues Telecom",
+   "longitude": 2.0363,
+   "latitude": 48.7944,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6174794770",
+   "nom": "Equinix PA7",
+   "operateur": "Equinix",
+   "longitude": 2.3695,
+   "latitude": 48.9022,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6175277339",
+   "nom": "Cogent Nantes",
+   "operateur": "Non renseigné",
+   "longitude": -1.5504,
+   "latitude": 47.2026,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6175333480",
+   "nom": "Cogent Paris 1",
+   "operateur": "Non renseigné",
+   "longitude": 2.2416,
+   "latitude": 48.9071,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6175354710",
+   "nom": "Cogent Poitiers",
+   "operateur": "Non renseigné",
+   "longitude": 0.34,
+   "latitude": 46.5884,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6205137527",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.2572,
+   "latitude": 49.136,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6212420800",
+   "nom": "LASOTEL PIXEL69",
+   "operateur": "Non renseigné",
+   "longitude": 4.8997,
+   "latitude": 45.7574,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6212483563",
+   "nom": "ELB Group - DATACENTER LYON 3",
+   "operateur": "Non renseigné",
+   "longitude": 4.8718,
+   "latitude": 45.772,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6212512538",
+   "nom": "SynAApS - SaaS, PaaS, Housing",
+   "operateur": "Non renseigné",
+   "longitude": 4.8882,
+   "latitude": 45.7845,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6213121089",
+   "nom": "Etix Vendée #2",
+   "operateur": "Non renseigné",
+   "longitude": -1.7479,
+   "latitude": 46.5155,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6222911368",
+   "nom": "OVHcloud Paris",
+   "operateur": "Non renseigné",
+   "longitude": 2.3765,
+   "latitude": 48.8883,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6229455977",
+   "nom": "Scaleway Datacenter DC4",
+   "operateur": "Scaleway",
+   "longitude": 2.296,
+   "latitude": 48.8296,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289312996",
+   "nom": "Telia ROSY Villepinte",
+   "operateur": "Non renseigné",
+   "longitude": 2.5101,
+   "latitude": 48.9729,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289367991",
+   "nom": "Ad Valem technologies TDF",
+   "operateur": "Non renseigné",
+   "longitude": 2.3411,
+   "latitude": 48.9281,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289527565",
+   "nom": "Alphalink Telco Center",
+   "operateur": "Non renseigné",
+   "longitude": 2.2595,
+   "latitude": 48.9056,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289564874",
+   "nom": "Level (3) Le Capitole Nanterre",
+   "operateur": "Lumen Technologies",
+   "longitude": 2.2142,
+   "latitude": 48.8878,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289587203",
+   "nom": "Prosodie Boulogne",
+   "operateur": "Non renseigné",
+   "longitude": 2.2351,
+   "latitude": 48.8361,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289605233",
+   "nom": "KHEOPS Organisation Vélizy-Villacoublay",
+   "operateur": "Non renseigné",
+   "longitude": 2.2148,
+   "latitude": 48.7785,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289632564",
+   "nom": "Cogent Paris 2",
+   "operateur": "Cogentco",
+   "longitude": 2.2069,
+   "latitude": 48.7842,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289682223",
+   "nom": "KHEOPS Organisation Plessis-Robinson",
+   "operateur": "Non renseigné",
+   "longitude": 2.238,
+   "latitude": 48.7742,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289753941",
+   "nom": "Acropolis Telecom Paris-Nation",
+   "operateur": "Non renseigné",
+   "longitude": 2.4041,
+   "latitude": 48.8429,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289858502",
+   "nom": "Sungard AS IT",
+   "operateur": "Non renseigné",
+   "longitude": 2.6412,
+   "latitude": 48.8369,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6289873866",
+   "nom": "Alionis DC1",
+   "operateur": "Non renseigné",
+   "longitude": 2.2138,
+   "latitude": 48.6887,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/6898386156",
+   "nom": "Cogent",
+   "operateur": "Cogent Communications",
+   "longitude": -0.5555,
+   "latitude": 44.863,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7522025783",
+   "nom": "Cogent",
+   "operateur": "Cogent Communications, Inc.",
+   "longitude": 5.7369,
+   "latitude": 45.1896,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7900883632",
+   "nom": "Datacenter Aqua Ray",
+   "operateur": "Aqua Ray",
+   "longitude": 2.3934,
+   "latitude": 48.8199,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902341447",
+   "nom": "Salle Technique TV5MONDE",
+   "operateur": "TV5MONDE",
+   "longitude": 2.3018,
+   "latitude": 48.8836,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902351616",
+   "nom": "Datacenter Orange Archives",
+   "operateur": "Orange",
+   "longitude": 2.3584,
+   "latitude": 48.8628,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902360503",
+   "nom": "Salle technique TDF",
+   "operateur": "TDF",
+   "longitude": 2.4226,
+   "latitude": 48.8853,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902383102",
+   "nom": "Salle technique TF1",
+   "operateur": "TF1",
+   "longitude": 2.2598,
+   "latitude": 48.8338,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902383458",
+   "nom": "Salle technique TDF",
+   "operateur": "TDF",
+   "longitude": 2.2942,
+   "latitude": 48.8574,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902392228",
+   "nom": "Salle Technique France Télévisions",
+   "operateur": "France Télévisions",
+   "longitude": 2.2724,
+   "latitude": 48.8383,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902398865",
+   "nom": "Salle technique Eurosport",
+   "operateur": "Eurosport",
+   "longitude": 2.2647,
+   "latitude": 48.8291,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902413338",
+   "nom": "Salle technique Groupe M6",
+   "operateur": "Groupe M6",
+   "longitude": 2.2732,
+   "latitude": 48.8812,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902421304",
+   "nom": "Salle technique Groupe M6",
+   "operateur": "Groupe M6",
+   "longitude": 2.2722,
+   "latitude": 48.8806,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902526435",
+   "nom": "Data Center Bluecom",
+   "operateur": "Bluecom",
+   "longitude": -4.4155,
+   "latitude": 48.4413,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902527604",
+   "nom": "Datacenter Thales Nungesser",
+   "operateur": "THALES",
+   "longitude": 1.9753,
+   "latitude": 48.7909,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902546622",
+   "nom": "Salle technique Groupe CANAL",
+   "operateur": "Groupe CANAL",
+   "longitude": 2.2635,
+   "latitude": 48.8276,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/7902551102",
+   "nom": "Salle technique Euronews",
+   "operateur": "Euronews",
+   "longitude": 4.8156,
+   "latitude": 45.7344,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8048285522",
+   "nom": "Techcréa Solutions",
+   "operateur": "Techcréa Solutions - First Heberg",
+   "longitude": 3.5432,
+   "latitude": 50.3455,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8074063731",
+   "nom": "dc2scale Vélizy",
+   "operateur": "dc2scale",
+   "longitude": 2.2081,
+   "latitude": 48.7838,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8297362166",
+   "nom": "Datacenter RTE",
+   "operateur": "RTE",
+   "longitude": 2.3399,
+   "latitude": 48.9196,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8297551605",
+   "nom": "Datacenter EDF",
+   "operateur": "EDF",
+   "longitude": 2.3409,
+   "latitude": 48.9204,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8670043375",
+   "nom": "Datacenter RTE",
+   "operateur": "RTE",
+   "longitude": 2.05,
+   "latitude": 48.792,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8670065237",
+   "nom": "Datacenter RTE",
+   "operateur": "RTE",
+   "longitude": 4.8322,
+   "latitude": 45.7405,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8744063082",
+   "nom": "France Travail datacenter Orléans",
+   "operateur": "France Travail DSI",
+   "longitude": 1.8521,
+   "latitude": 47.893,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8930909347",
+   "nom": "Lyon Sévigné",
+   "operateur": "Orange",
+   "longitude": 4.8439,
+   "latitude": 45.7584,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/8930909348",
+   "nom": "Lille Boitelle",
+   "operateur": "Orange",
+   "longitude": 3.0779,
+   "latitude": 50.6273,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9002117313",
+   "nom": "Salle Technique France Télévisions",
+   "operateur": "France Télévisions",
+   "longitude": 2.2727,
+   "latitude": 48.8378,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9002195217",
+   "nom": "Salle Technique France Télévisions",
+   "operateur": "France Télévisions",
+   "longitude": 2.2817,
+   "latitude": 48.8401,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9002203858",
+   "nom": "Salle Technique Groupe Canal",
+   "operateur": "Groupe Canal",
+   "longitude": 2.2374,
+   "latitude": 48.8332,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9002215626",
+   "nom": "Datacenter Bouygues Télécom",
+   "operateur": "Bouygues Télécom",
+   "longitude": 2.471,
+   "latitude": 48.7256,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9045173270",
+   "nom": "Datacenter MGEN",
+   "operateur": "MGEN",
+   "longitude": 6.1303,
+   "latitude": 48.6532,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9045239635",
+   "nom": "Centre de données non nommé",
+   "operateur": "FDJ",
+   "longitude": 5.2713,
+   "latitude": 43.4311,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9068699148",
+   "nom": "Centre de données non nommé",
+   "operateur": "IFP",
+   "longitude": 2.175,
+   "latitude": 48.8774,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9068704649",
+   "nom": "Centre de données non nommé",
+   "operateur": "Non renseigné",
+   "longitude": 2.1664,
+   "latitude": 48.8788,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9068705141",
+   "nom": "Centre de données non nommé",
+   "operateur": "Orange",
+   "longitude": 2.1875,
+   "latitude": 48.883,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9373660259",
+   "nom": "zColo Poissonnière",
+   "operateur": "zColo France",
+   "longitude": 2.3477,
+   "latitude": 48.8696,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9403059298",
+   "nom": "Centre de données non nommé",
+   "operateur": "OpenStreetMap France",
+   "longitude": 2.0778,
+   "latitude": 48.7259,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/9969529152",
+   "nom": "DTC",
+   "operateur": "Non renseigné",
+   "longitude": 0.8376,
+   "latitude": 44.199,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/10089225111",
+   "nom": "Datagrex",
+   "operateur": "Non renseigné",
+   "longitude": 0.1871,
+   "latitude": 48.0539,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/10241762412",
+   "nom": "DTiX",
+   "operateur": "Non renseigné",
+   "longitude": 5.0777,
+   "latitude": 47.3401,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/11209760563",
+   "nom": "Centre de données non nommé",
+   "operateur": "Ate",
+   "longitude": 3.1456,
+   "latitude": 50.6399,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/11691867437",
+   "nom": "Crypteo",
+   "operateur": "Crypteo",
+   "longitude": 2.0558,
+   "latitude": 43.9119,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/11942572541",
+   "nom": "Microsoft",
+   "operateur": "Microsoft",
+   "longitude": 7.5249,
+   "latitude": 47.7523,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/12097993555",
+   "nom": "Datacenter Martha",
+   "operateur": "Non renseigné",
+   "longitude": 5.3466,
+   "latitude": 43.3385,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/12150464472",
+   "nom": "Telehouse THM1",
+   "operateur": "Telehouse",
+   "longitude": 5.338,
+   "latitude": 43.3611,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/12154384214",
+   "nom": "Datacenter Sud",
+   "operateur": "Aix-Marseille Université",
+   "longitude": 5.4119,
+   "latitude": 43.3359,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/12546664021",
+   "nom": "Phocea DC",
+   "operateur": "Phocea DC",
+   "longitude": 5.3748,
+   "latitude": 43.3124,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/12578588217",
+   "nom": "Eclairion",
+   "operateur": "Non renseigné",
+   "longitude": 2.1976,
+   "latitude": 48.5976,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/13006633477",
+   "nom": "Euro-Information EIP (Data Center)",
+   "operateur": "Euro Information",
+   "longitude": 5.1056,
+   "latitude": 47.3329,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/13357674614",
+   "nom": "Okantis",
+   "operateur": "Non renseigné",
+   "longitude": 0.3255,
+   "latitude": 46.6071,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/13743687202",
+   "nom": "LIFO",
+   "operateur": "LIFO",
+   "longitude": 1.9397,
+   "latitude": 47.8455,
+   "typeGeometrie": "Point"
+  },
+  {
+   "id": "node/14170786869",
+   "nom": "Neo Center Est",
+   "operateur": "Non renseigné",
+   "longitude": 6.1763,
+   "latitude": 49.1483,
+   "typeGeometrie": "Point"
+  }
+ ]
+}
