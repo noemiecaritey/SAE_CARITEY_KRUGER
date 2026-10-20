@@ -1,0 +1,50 @@
+---
+// ROUTE B — filtre de la table FMTI chez le lecteur (select généré côté serveur, rendu au changement).
+import fmti from "../assets/fmti.json";
+const domaines = [...new Set(fmti.map((d) => d.domaine))];
+const fr = (x: number) => x.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+---
+
+<div class="grid gap-3">
+  <label class="grid gap-1 text-sm font-semibold w-fit">Filtrer par domaine
+    <select id="filtre-fmti" class="select select-bordered font-normal">
+      <option value="">Tous les domaines</option>
+      {domaines.map((d) => <option value={d}>{d}</option>)}
+    </select>
+  </label>
+  <div class="overflow-x-auto">
+    <table class="tableau tabulaire">
+      <caption>Critères FMTI 2025 satisfaits, par domaine et par entreprise</caption>
+      <thead>
+        <tr><th scope="col">Domaine</th><th scope="col">Entreprise</th><th scope="col">Critères satisfaits</th><th scope="col">Part</th></tr>
+      </thead>
+      <tbody id="corps-fmti">
+        {fmti.map((d) => (
+          <tr><th scope="row">{d.domaine}</th><td>{d.entreprise}</td><td>{d.satisfaits} sur {d.total}</td><td>{fr(d.pourcentage)} %</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p id="etat-fmti" class="sr-only" aria-live="polite"></p>
+</div>
+
+<script>
+  import fmti from "../assets/fmti.json";
+  const select = document.getElementById("filtre-fmti") as HTMLSelectElement;
+  const corps = document.getElementById("corps-fmti") as HTMLElement;
+  const etat = document.getElementById("etat-fmti") as HTMLElement;
+  const fr = (x: number) => x.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+  function afficher() {
+    const lignes = fmti.filter((d) => !select.value || d.domaine === select.value);
+    corps.innerHTML = "";
+    for (const d of lignes) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<th scope="row">${d.domaine}</th><td>${d.entreprise}</td><td>${d.satisfaits} sur ${d.total}</td><td>${fr(d.pourcentage)} %</td>`;
+      corps.append(tr);
+    }
+    etat.textContent = `${lignes.length} lignes affichées`;
+  }
+  select.addEventListener("change", afficher);
+  afficher();
+</script>
