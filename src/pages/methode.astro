@@ -1,0 +1,238 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TestReutilisation from "../components/TestReutilisation.astro";
+import TableControleCompar from "../components/TableControleCompar.astro";
+import TableNettoyageOSM from "../components/TableNettoyageOSM.astro";
+import registre from "../assets/registre.json";
+import { COULEURS_STATUT, IDS_2025 } from "../lib/donnees";
+
+const reg = registre as any[];
+
+// fichiers de données préparés par scripts/preparer-donnees.mjs (optionnels tant que le script n'a pas été lancé)
+const premier = (m: Record<string, unknown>) => Object.values(m)[0] as any;
+const ctrl = premier(import.meta.glob("../assets/stanford_controle.json", { eager: true, import: "default" }));
+const dispo = (nom: string) => Object.keys(import.meta.glob("../assets/*.json", { eager: true })).some((k) => k.endsWith("/" + nom));
+
+const sources = [
+  { nom: "Compar:IA — data.gouv.fr", detail: "Jeu de données « conversations » : échantillon aléatoire de 20 000 paires de conversations (version du 3 juin 2026), consommation électrique estimée par EcoLogits", url: "https://www.data.gouv.fr/datasets/compar-ia", usage: "Pour aller plus loin (Q2), Méthode", fiab: "estimation" },
+  { nom: "OpenStreetMap — extraction GeoJSON", detail: "Éléments tagués telecom=data_center ou building=data_center (384 éléments à l'origine)", url: "https://www.openstreetmap.org/", usage: "Carte des centres de données", fiab: "à confirmer" },
+  { nom: "Natural Earth — contour de la France métropolitaine", detail: "Contour simplifié (1:110m) de la métropole et de la Corse", url: "https://www.naturalearthdata.com/", usage: "Carte des centres de données", fiab: "validé" },
+  { nom: "Stanford CRFM, Foundation Model Transparency Index, décembre 2025", detail: "CSV GitHub stanford-crfm/fmti : Dec2025_scores.csv et Dec2025_indicators.csv", url: "https://crfm.stanford.edu/fmti/", usage: "Distribution Stanford, domaines FMTI", fiab: "validé" },
+  { nom: "Google, rapport environnemental 2026 (PDF)", detail: "Variations 2025 (électricité, émissions opérationnelles, scope 3)", url: "https://sustainability.google/files/google-2026-environmental-report.pdf", usage: "Variations Google, Q2, Q3", fiab: "à confirmer" },
+  { nom: "Google, rapport environnemental 2025", detail: "Série 2019 à 2024 : émissions totales, opérationnelles, scope 3, électricité (tableau des données environnementales, p. 105 du PDF)", url: "https://www.sustainability.google/reports/google-2025-environmental-report/", usage: "Courbe, interaction, chronologie", fiab: "validé" },
+  { nom: "Google, blog : consommation d'une requête Gemini", detail: "0,24 Wh, 0,03 gCO₂e et 0,26 mL par prompt textuel médian de Gemini Apps", url: "https://blog.google/intl/fr-fr/nouveautes-produits/dans-le-cloud/quelle-consommation-energetique-pour-lia-de-google-nous-avons-fait-le-calcul/", usage: "Matrice de transparence", fiab: "validé" },
+  { nom: "Mistral AI, « Our contribution to a global environmental standard for AI »", detail: "Analyse du cycle de vie de Mistral Large 2 (Carbone 4, Resilio, Hubblo)", url: "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/", usage: "Matrice de transparence, Q2", fiab: "validé" },
+  { nom: "Sam Altman (PDG d'OpenAI), « The Gentle Singularity », juin 2025", detail: "0,34 Wh par requête ChatGPT, sans méthode détaillée. OpenAI n'a pas publié de rapport environnemental que nous ayons trouvé.", url: "https://blog.samaltman.com/the-gentle-singularity", usage: "Matrice de transparence, Q2", fiab: "à confirmer" },
+  { nom: "ESG Today (presse)", detail: "Objectif 2030 de Google, part du scope 3 (≈ 80 %)", url: "https://www.esgtoday.com/google-cuts-operational-emissions-but-says-moonshot-climate-goals-getting-harder/", usage: "Chronologie, Q3 (presse)", fiab: "à confirmer" },
+  { nom: "Deccan Chronicle (presse)", detail: "OpenAI n'a pas publié ses émissions ni d'engagement de neutralité carbone", url: "https://www.deccanchronicle.com/artificial-intelligence/openai-anthropic-face-climate-questions-ahead-of-potential-ipos-1978646", usage: "Q3 (presse)", fiab: "à confirmer" },
+];
+const prevues = [
+  { nom: "Base Carbone ADEME v17.0", detail: "Facteurs d'émission (g CO₂ par kWh)", url: "https://www.data.gouv.fr/datasets/base-carbone-complete-de-lademe-en-francais-v17-0", limite: "Envisagée pour convertir des kWh en CO₂, finalement non exploitée dans nos visualisations. Une entrée subsiste dans le registre pour documenter ce choix." },
+  { nom: "Bilans GES ADEME", detail: "Émissions déclarées par des organisations françaises", url: "https://www.data.gouv.fr/datasets/bilans-demissions-de-ges-publies-sur-le-site-de-lademe-1", limite: "Organisations françaises seulement : non exploitée." },
+  { nom: "ODRE — consommation électrique", detail: "Données de consommation d'électricité", url: "https://odre.opendatasoft.com/", limite: "Aucune jointure avec la carte des centres de données : nous ne pouvons attribuer aucune consommation à ces infrastructures." },
+];
+const cinq = [
+  ["Compar:IA", "Modèles, entreprises, tokens et consommations estimées.", "Oui. Les conversations ont des longueurs différentes. La médiane limite l'influence des valeurs extrêmes.", "Les consommations varient selon les conversations. Nous utilisons la moyenne et la médiane pour examiner les écarts.", "Les Wh indiquent la consommation estimée. Les Wh pour 1 000 tokens permettent une comparaison normalisée, avec des limites.", "Données estimées avec EcoLogits, et non mesurées directement. Elles n'incluent pas tous les impacts de l'IA."],
+  ["Google", "Émissions de CO₂e, consommation électrique, évolutions en % et objectifs climatiques.", "Oui. Un chiffre moyen ne représente pas nécessairement toutes les activités.", "Les séries annuelles montrent l'évolution des émissions et de l'électricité, pas la distribution des requêtes.", "Valeurs absolues pour les émissions et l'électricité ; pourcentages pour les évolutions.", "Rapports environnementaux Google. Les méthodes et les périmètres de calcul doivent être distingués."],
+  ["Mistral", "Émissions carbone, consommation d'eau et ressources mobilisées.", "Oui. Une réponse type de 400 tokens ne représente pas tous les usages.", "Les données publiées pour un cas type ne montrent pas la distribution de toutes les réponses.", "Impacts du modèle étudié et estimations pour une réponse type.", "Étude environnementale de Mistral Large 2, sans série annuelle complète des émissions de l'entreprise."],
+  ["Stanford FMTI", "Critères binaires et scores de transparence par entreprise.", "Oui. Un score global peut masquer des informations environnementales absentes.", "La distribution des scores permet de situer Google, OpenAI et Mistral parmi les entreprises évaluées.", "Scores sur 100 critères, mesurant la transparence et non la performance climatique.", "Données du Stanford FMTI. Tous les critères ne concernent pas l'environnement."],
+];
+const traitements = [
+  ["Registre des publications", "Classement des informations par entreprise et par statut.", "Vérification des identifiants utilisés pour les indicateurs Google.", "3 correspondances trouvées, aucun doublon sur ces 3 indicateurs."],
+  ["Stanford FMTI", "Jointure entre les scores et les définitions à partir de la colonne « Indicator ».", "Recherche des critères sans correspondance, des doublons et des valeurs invalides.", "Jointure contrôlée (tableau ci-dessous)."],
+  ["Compar:IA", "Transformation des paires en conversations individuelles, classement des modèles par entreprise et conversion des kWh en Wh.", "Repérage des consommations manquantes ou nulles et des modèles classés « Autres ».", "Les consommations positives sont utilisées pour calculer les statistiques."],
+  ["OpenStreetMap", "Sélection des infrastructures recherchées et transformation des géométries en points.", "Contrôle des tags, des identifiants et des coordonnées.", "384 éléments au départ, 373 conservés après les filtres utilisés."],
+];
+// contrôle de la jointure Google → registre (3 indicateurs 2025)
+const controleGoogle = (IDS_2025 as readonly string[]).map((id) => {
+  const l = reg.filter((d) => d.id === id);
+  return { id, n: l.length, etat: l.length === 0 ? "Non trouvé" : l.length > 1 ? "Doublon" : "Correspondance trouvée", valeur: l[0]?.valeur ?? "—", source: l[0]?.source ? "Oui" : "Non", page: l[0]?.page ? "Oui" : "Non" };
+});
+// contrôle global du registre
+const trois = ["Google", "OpenAI", "Mistral"];
+const horsPerimetre = reg.filter((d) => !trois.includes(d.entreprise));
+const sansId = reg.filter((d) => String(d.id ?? "").trim() === "");
+const comptes = new Map<string, number>();
+for (const d of reg) comptes.set(d.id, (comptes.get(d.id) ?? 0) + 1);
+const doublons = [...comptes].filter(([, n]) => n > 1);
+---
+
+<Layout titre="Méthode" description="Sources, dates, traitements, limites et données téléchargeables du dossier.">
+  <div class="mx-auto max-w-6xl px-4 py-14">
+    <p class="reveal eyebrow">Méthode</p>
+    <h1 class="reveal text-4xl mt-2">D'où viennent les chiffres, et ce qu'on en a fait</h1>
+    <p class="reveal mt-4 max-w-3xl">Pour répondre à notre problématique, nous utilisons des sources publiques, des rapports environnementaux d'entreprises et des travaux de recherche. Tout ce qui a été retiré ou transformé est écrit ici, avec la raison. Chaque jointure est contrôlée : on liste ce qui ne trouve pas de correspondance.</p>
+
+    <nav aria-label="Sur cette page" class="reveal mt-6 flex flex-wrap gap-3 text-sm">
+      <a href="#sources">Sources</a><a href="#cinq">Les 5 questions</a><a href="#jointures">Nettoyage et jointures</a><a href="#osm">OpenStreetMap</a><a href="#limites">Limites</a><a href="#donnees">Données</a><a href="#annexe">Annexe TP5</a>
+    </nav>
+
+    <h2 id="sources" class="reveal text-2xl mt-12">Sources</h2>
+    <p class="reveal mt-2 text-sm">Légende de fiabilité : <strong>validé</strong> (retrouvé dans le document d'origine) · <strong>à confirmer</strong> (lecture automatique, presse ou chiffre saisi à la main) · <strong>estimation</strong> (modèle de calcul, pas une mesure). Dates de consultation : 19 octobre 2026 (OpenStreetMap : extraction du 20 octobre 2026). Licences : à compléter par le groupe avant rendu.</p>
+    <div class="reveal mt-4 overflow-x-auto">
+      <table class="table table-zebra tableau">
+        <caption>Sources exploitées par le site</caption>
+        <thead><tr><th scope="col">Source</th><th scope="col">Ce qu'on y a pris</th><th scope="col">Utilisé dans</th><th scope="col">Consultée le</th><th scope="col">Licence</th><th scope="col">Fiabilité</th></tr></thead>
+        <tbody>
+          {sources.map((s) => (
+            <tr><th scope="row"><a href={s.url}>{s.nom}</a></th><td>{s.detail}</td><td>{s.usage}</td><td>19/10/2026</td><td>À compléter</td><td>{s.fiab}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal mt-6 overflow-x-auto">
+      <table class="table table-zebra tableau">
+        <caption>Sources envisagées, non exploitées</caption>
+        <thead><tr><th scope="col">Source</th><th scope="col">Contenu</th><th scope="col">Pourquoi non exploitée</th></tr></thead>
+        <tbody>
+          {prevues.map((s) => (
+            <tr><th scope="row"><a href={s.url}>{s.nom}</a></th><td>{s.detail}</td><td>{s.limite}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div class="prose-sae reveal mt-4">
+      <p><strong>Limites des sources.</strong> Les chiffres utilisés ne sont pas tous issus de mesures directes. Les consommations de Compar:IA sont estimées à partir de modèles de calcul. Les données publiées par les entreprises peuvent reposer sur des méthodologies et des périmètres différents. Nous précisons donc pour chaque graphique la source, l'année, les unités et les limites des données exploitées.</p>
+    </div>
+
+    <h2 id="cinq" class="reveal text-2xl mt-12">Les 5 questions avant de dessiner</h2>
+    <p class="reveal mt-2 max-w-3xl">Avant de créer nos visualisations, nous avons étudié la nature des données, leurs limites et les comparaisons possibles.</p>
+    <div class="reveal mt-4 overflow-x-auto">
+      <table class="table table-zebra tableau">
+        <caption>Nature, moyenne, distribution, absolu ou relatif, provenance</caption>
+        <thead><tr><th scope="col">Source</th><th scope="col">Nature des variables</th><th scope="col">La moyenne ment-elle ?</th><th scope="col">Distribution</th><th scope="col">Absolu ou relatif ?</th><th scope="col">Provenance et données manquantes</th></tr></thead>
+        <tbody>{cinq.map((l) => <tr><th scope="row">{l[0]}</th>{l.slice(1).map((c) => <td>{c}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
+    <div class="prose-sae reveal mt-4">
+      <p><strong>Ce que nous retenons.</strong> Ces sources ne mesurent pas la même chose : certaines estiment la consommation d'une conversation, d'autres décrivent les émissions d'une entreprise ou évaluent sa transparence. <strong>Nous comparons uniquement des indicateurs compatibles et signalons les données manquantes.</strong> L'absence de chiffres comparables peut empêcher de vérifier les engagements climatiques.</p>
+    </div>
+
+    <h2 id="jointures" class="reveal text-2xl mt-12">Nettoyage et jointures</h2>
+    <p class="reveal mt-2 max-w-3xl">Une seule opération constitue une véritable jointure entre deux fichiers : celle des données Stanford. Les autres sont des traitements (classement, conversion, filtrage) contrôlés eux aussi.</p>
+    <div class="reveal mt-4 overflow-x-auto">
+      <table class="table table-zebra tableau">
+        <caption>Contrôle des traitements et des jointures</caption>
+        <thead><tr><th scope="col">Données</th><th scope="col">Traitement effectué</th><th scope="col">Contrôle</th><th scope="col">Résultat</th></tr></thead>
+        <tbody>{traitements.map((l) => <tr><th scope="row">{l[0]}</th>{l.slice(1).map((c) => <td>{c}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
+
+    <h3 class="reveal text-xl mt-8">Contrôle · Données Google → registre des sources</h3>
+    <div class="reveal mt-3 overflow-x-auto">
+      <table class="table table-zebra tableau tabulaire">
+        <caption>Les 3 indicateurs Google de 2025 existent-ils dans le registre ?</caption>
+        <thead><tr><th scope="col">Identifiant</th><th scope="col">Correspondances</th><th scope="col">État</th><th scope="col">Valeur</th><th scope="col">Source renseignée</th><th scope="col">Page renseignée</th></tr></thead>
+        <tbody>{controleGoogle.map((c) => <tr><th scope="row">{c.id}</th><td>{c.n}</td><td>{c.etat}</td><td>{c.valeur}</td><td>{c.source}</td><td>{c.page}</td></tr>)}</tbody>
+      </table>
+    </div>
+    <p class="reveal mt-2 text-sm">Ce contrôle vérifie la correspondance des identifiants et la présence des sources, pas l'exactitude des valeurs : ce n'est pas une vérification indépendante des chiffres publiés par Google.</p>
+
+    <h3 class="reveal text-xl mt-8">Contrôle · Jointure Stanford (scores → définitions des critères)</h3>
+    {ctrl ? (
+      <div class="reveal mt-3 overflow-x-auto">
+        <table class="table table-zebra tableau tabulaire">
+          <caption>Clé commune : « Indicator », après suppression des espaces inutiles (trim)</caption>
+          <thead><tr><th scope="col">Contrôle</th><th scope="col">Nombre</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Critères dans le fichier des scores</th><td>{ctrl.criteresScores}</td></tr>
+            <tr><th scope="row">Critères dans le fichier des définitions</th><td>{ctrl.definitions}</td></tr>
+            <tr><th scope="row">Critères des scores sans définition</th><td>{ctrl.sansDefinition}</td></tr>
+            <tr><th scope="row">Définitions sans critère dans les scores</th><td>{ctrl.sansScore}</td></tr>
+            <tr><th scope="row">Doublons dans les scores</th><td>{ctrl.doublonsScores}</td></tr>
+            <tr><th scope="row">Doublons dans les définitions</th><td>{ctrl.doublonsDefinitions}</td></tr>
+            <tr><th scope="row">Valeurs invalides pour les 3 entreprises</th><td>{ctrl.valeursInvalides}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    ) : (
+      <p class="reveal mt-3 alert alert-warning text-sm" role="status">Contrôle disponible quand le fichier des définitions <code>Dec2025_indicators.csv</code> est fourni au script <code>npm run donnees</code>. Sans lui, le domaine de chaque critère est déduit de l'ordre des lignes (34 Upstream, 30 Model, 36 Downstream), ordre qui redonne exactement les totaux attendus.</p>
+    )}
+    <p class="reveal mt-2 text-sm">Une jointure réussie ne garantit pas que les données d'origine sont exactes. Nous utilisons les critères et les scores définis par Stanford : cet indice mesure la transparence des développeurs, pas directement leurs performances environnementales. Les critères du fichier des scores sont conservés même sans définition correspondante.</p>
+
+    <h3 class="reveal text-xl mt-8">Contrôle · Registre des publications</h3>
+    <div class="reveal mt-3 overflow-x-auto">
+      <table class="table table-zebra tableau tabulaire">
+        <caption>Bilan du registre</caption>
+        <thead><tr><th scope="col">Contrôle</th><th scope="col">Nombre</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Total des lignes du registre</th><td>{reg.length}</td></tr>
+          <tr><th scope="row">Lignes associées aux 3 entreprises</th><td>{reg.length - horsPerimetre.length}</td></tr>
+          <tr><th scope="row">Lignes hors du périmètre étudié</th><td>{horsPerimetre.length}</td></tr>
+          <tr><th scope="row">Lignes sans identifiant</th><td>{sansId.length}</td></tr>
+          <tr><th scope="row">Identifiants présents plusieurs fois</th><td>{doublons.length}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="reveal mt-2 text-sm">Les éléments hors périmètre ({horsPerimetre.map((d) => d.libelle || d.id).join(" ; ") || "aucun"}) ne sont pas des erreurs : ce sont des facteurs généraux ou d'autres sources. Une entrée concerne la Base Carbone de l'ADEME, envisagée pour convertir des kWh en CO₂ mais non exploitée : nous la conservons pour documenter les données écartées.</p>
+
+    <h3 class="reveal text-xl mt-8">Contrôle · Classement des modèles Compar:IA</h3>
+    <div class="prose-sae reveal mt-3">
+      <p>Chaque paire est séparée en deux conversations. Les modèles sont associés à Google, OpenAI, Mistral ou « Autres » selon le début de leur nom (« gpt », « o3 » → OpenAI ; « gemini », « gemma » → Google ; « mistral », « mixtral », « codestral » → Mistral). Les kWh sont convertis en Wh et seules les consommations positives sont retenues. <em>C'est une heuristique : un modèle mal classé fausserait les statistiques de son entreprise.</em></p>
+    </div>
+    <div class="reveal mt-3"><TableControleCompar /></div>
+
+    <h2 id="osm" class="reveal text-2xl mt-12">Nettoyage des données OpenStreetMap</h2>
+    <div class="prose-sae reveal mt-3">
+      <p>Le fichier GeoJSON initial contient <strong>384 éléments</strong>.</p>
+      <ol>
+        <li><strong>Sélection des centres de données</strong> : nous gardons les éléments avec le tag <code>telecom=data_center</code> ou <code>building=data_center</code> (sept éléments sans ces tags exclus).</li>
+        <li><strong>Transformation des géométries</strong> : points, lignes et polygones sont ramenés à un point, le centre de la boîte englobante pour les lignes et polygones. Cette position reste approximative.</li>
+        <li><strong>Filtrage géographique</strong> : zone rectangulaire couvrant la France métropolitaine et la Corse (quatre éléments exclus). C'est un premier filtrage, pas une garantie d'être dans les frontières.</li>
+        <li><strong>Doublons</strong> : aucun identifiant OSM répété, mais plusieurs éléments peuvent désigner un même centre.</li>
+      </ol>
+      <p><strong>Résultat : 373 éléments conservés sur 384 (environ 97,1 %).</strong> La carte n'est pas un recensement exhaustif et aucune jointure avec des données de consommation (ODRE) n'a été faite.</p>
+    </div>
+    <div class="reveal mt-3"><TableNettoyageOSM /></div>
+
+    <h2 id="limites" class="reveal text-2xl mt-12">Limites et biais</h2>
+    <ul class="prose-sae reveal mt-3">
+      <li>Des estimations ne sont pas des mesures (Compar:IA, EcoLogits).</li>
+      <li>Les périmètres et les périodes diffèrent d'une entreprise à l'autre.</li>
+      <li>Les chiffres de presse et les lectures automatiques de PDF sont à recontrôler à la page indiquée.</li>
+      <li>« Non identifié » ne veut pas dire « n'existe pas ».</li>
+      <li>Le FMTI mesure la transparence, pas l'impact environnemental.</li>
+      <li>Une baisse d'intensité n'est pas une baisse du total.</li>
+      <li>La série Google 2019-2024 (rapport 2025) et les variations 2025 (rapport 2026) viennent de deux rapports : on ne les mélange pas.</li>
+      <li>OpenStreetMap est collaboratif et non exhaustif ; un point n'est pas forcément un centre distinct.</li>
+    </ul>
+
+    <h2 id="donnees" class="reveal text-2xl mt-12">Registre des publications</h2>
+    <div class="reveal mt-4 overflow-x-auto">
+      <table class="table table-zebra tableau">
+        <caption>Les {reg.length} chiffres du registre, avec leur statut</caption>
+        <thead><tr><th scope="col">Entreprise</th><th scope="col">Chiffre</th><th scope="col">Valeur</th><th scope="col">Année</th><th scope="col">Page</th><th scope="col">Statut</th></tr></thead>
+        <tbody>
+          {reg.map((d) => (
+            <tr>
+              <th scope="row">{d.entreprise || "—"}</th>
+              <td><a href={d.url}>{d.libelle}</a></td>
+              <td class="tabulaire">{d.valeur ?? "—"} {d.unite}</td>
+              <td>{d.annee ?? "—"}</td>
+              <td>{d.page || "—"}</td>
+              <td><span class="badge pastille" style={`background:${COULEURS_STATUT[d.statut].fond};color:${COULEURS_STATUT[d.statut].texte}`}>{COULEURS_STATUT[d.statut].label}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="reveal text-xl mt-8">Télécharger et reproduire</h3>
+    <p class="reveal mt-2 text-sm">Fichiers pré-filtrés (colonnes utiles seulement, dénominateurs conservés, 2 décimales). Les fichiers bruts du défi ne sont pas dans le dépôt : le script <code>scripts/preparer-donnees.mjs</code> les transforme.</p>
+    <ul class="prose-sae reveal mt-2">
+      <li><a href="/donnees/registre.json" download>registre.json</a> (registre des publications)</li>
+      <li><a href="/donnees/google_serie.json" download>google_serie.json</a> (série Google 2019-2024)</li>
+      <li><a href="/donnees/fmti.json" download>fmti.json</a> (FMTI 2025, 3 entreprises × 3 domaines)</li>
+      {dispo("stanford_scores.json") && <li><a href="/donnees/stanford_scores.json" download>stanford_scores.json</a> (scores des 13 entreprises)</li>}
+      {dispo("compar_stats.json") && <li><a href="/donnees/compar_stats.json" download>compar_stats.json</a> (statistiques Compar:IA)</li>}
+      {dispo("centres_donnees.json") && <li><a href="/donnees/centres_donnees.json" download>centres_donnees.json</a> (centres de données OSM nettoyés)</li>}
+      <li><a href="https://observablehq.com/d/18018990b0accaa7">Notebook Observable</a> (code, jointures, brouillons des graphiques)</li>
+    </ul>
+
+    <h2 id="annexe" class="reveal text-2xl mt-12">Annexe technique · Test de réutilisation (TP5)</h2>
+    <div class="prose-sae reveal mt-3">
+      <p>Nous avons testé la fonction qui construit le graphique des variations (<code>optionsPeriode()</code>, dans <code>src/lib/periode.ts</code>) en lui transmettant seulement deux indicateurs issus de notre jeu de données. Le graphique obtenu affiche uniquement ces deux indicateurs : la fonction utilise les données reçues en paramètre, sans dépendre d'un état global. C'est la même fonction que celle du graphique interactif.</p>
+    </div>
+    <div class="reveal mt-4"><TestReutilisation /></div>
+  </div>
+</Layout>
