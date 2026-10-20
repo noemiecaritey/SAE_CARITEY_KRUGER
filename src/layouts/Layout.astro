@@ -1,26 +1,101 @@
 ---
 import "../styles/global.css";
+const { titre = "Sans filtre", description = "Dossier de vérification : OpenAI, Google et Mistral publient-ils assez de chiffres pour qu'on puisse vérifier leurs objectifs climat ?", accueil = false } = Astro.props;
+const pages = [
+  { href: "/", label: "Accueil" },
+  { href: "/methode/", label: "Méthode" },
+  { href: "/journal-ia/", label: "Journal IA" },
+  { href: "/entreprise/", label: "Entreprises" },
+];
+const ancres = [
+  { href: "#contexte", label: "Contexte" },
+  { href: "#exploration", label: "Exploration" },
+  { href: "#revelation", label: "Révélation" },
+  { href: "#conclusion", label: "Conclusion" },
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Nunito:wght@700;800&display=swap" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{titre === "Sans filtre" ? "Sans filtre · Groupe 19" : `${titre} · Sans filtre`}</title>
   </head>
-  <body>
-    <slot />
+  <body class="min-h-screen">
+    <a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Aller au contenu</a>
+    <div id="progression" aria-hidden="true"></div>
+
+    <header class="sticky top-0 z-40 bg-base-200/95 backdrop-blur border-b border-bord">
+      <div class="navbar mx-auto max-w-6xl px-4 gap-3 justify-between flex-wrap">
+        <a href="/" class="no-underline font-titre font-extrabold text-fonce inline-flex items-center gap-2 text-lg">
+          <img src="/favicon.svg" alt="" width="32" height="32" class="h-8 w-8 rounded-lg" />
+          Sans filtre <span class="font-normal text-texte/70">· Groupe 19</span>
+        </a>
+
+        {accueil && (
+          <nav aria-label="Sections de la page" class="hidden md:flex gap-1">
+            {ancres.map((a) => (
+              <a href={a.href} class="menu-item btn btn-ghost btn-sm rounded-full no-underline font-normal text-fonce transition-colors duration-200 [.active]:text-white">
+                {a.label}
+              </a>
+            ))}
+          </nav>
+        )}
+
+        {accueil && (
+          <label class="md:hidden text-sm flex items-center gap-2">
+            <span class="sr-only">Aller à la section</span>
+            <select id="menu-ancres" class="select select-bordered select-sm">
+              {ancres.map((a) => <option value={a.href}>{a.label}</option>)}
+            </select>
+          </label>
+        )}
+
+        <!-- Menu entre pages : <select> + location.pathname (comme dans le TP) -->
+        <label class="text-sm flex items-center gap-2">
+          <span class="sr-only md:not-sr-only">Aller à la page</span>
+          <select id="menu-pages" class="select select-bordered select-sm">
+            {pages.map((p) => <option value={p.href}>{p.label}</option>)}
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main id="contenu"><slot /></main>
+
+    <footer class="footer footer-horizontal mt-16">
+      <div class="mx-auto max-w-6xl w-full px-4 py-8 text-sm flex flex-wrap gap-6 justify-between">
+        <p class="max-w-md">SAE 303 · BUT MMI · IUT Nord Franche-Comté · Défi A, l'impact environnemental de l'IA générative. Groupe 19.</p>
+        <nav aria-label="Pied de page">
+          <ul class="flex gap-5">
+            {pages.slice(1).map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      import "../scripts/reveal";
+      const menu = document.getElementById("menu-pages") as HTMLSelectElement;
+      // value attendue avec « / » final (Netlify) ; on sélectionne la page courante
+      const chemin = location.pathname.endsWith("/") ? location.pathname : location.pathname + "/";
+      menu.value = [...menu.options].some((o) => o.value === chemin) ? chemin : "/";
+      menu.addEventListener("change", () => {
+        location.pathname = menu.value;
+      });
+
+      // Menu d'ancres en <select> (petits écrans) : location.hash, comme dans le TP3
+      const menuAncres = document.getElementById("menu-ancres") as HTMLSelectElement | null;
+      menuAncres?.addEventListener("change", () => {
+        location.hash = menuAncres.value;
+      });
+    </script>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
