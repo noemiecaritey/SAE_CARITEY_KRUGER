@@ -1,0 +1,28 @@
+---
+// ROUTE C — liste générée comme dans le TP : [...new Set(registre.map(d => d.entreprise))]
+import Layout from "../../layouts/Layout.astro";
+import registre from "../../assets/registre.json";
+import { COULEUR_ENTREPRISE } from "../../lib/donnees";
+
+const entreprises = [...new Set(registre.map((d) => d.entreprise))].filter(Boolean);
+// Object.groupBy (TP5) : les chiffres du registre regroupés par entreprise
+const parEntreprise = Object.groupBy(registre, (d) => d.entreprise);
+---
+
+<Layout titre="Entreprises">
+  <div class="mx-auto max-w-4xl px-4 py-14">
+    <p class="reveal eyebrow">Une fiche par entreprise</p>
+    <h1 class="reveal text-4xl mt-2">Les trois entreprises, chiffre par chiffre</h1>
+    <ul class="reveal-stagger grid gap-4 md:grid-cols-3 mt-8">
+      {entreprises.map((e) => {
+        const l = parEntreprise[e] ?? [];
+        return (
+          <li class="reveal card bg-base-100 border border-bord card-body p-5" style={`border-top:6px solid ${COULEUR_ENTREPRISE[e]}`}>
+            <h2 class="text-2xl"><a href={`/entreprise/${e}/`}>{e}</a></h2>
+            <p class="text-sm mt-1">{l.length} chiffres dans le registre, dont {l.reduce((n, d) => n + (d.statut === "primaire" ? 1 : 0), 0)} publiés par l'entreprise.</p>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</Layout>
