@@ -13,6 +13,7 @@
     "@observablehq/plot": "^0.6.17",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.4",
+    "daisyui": "^5.7.50",
     "jsdom": "^30.0.1",
     "tailwindcss": "^4.3.3"
   },

@@ -1,0 +1,40 @@
+---
+// Courbe des émissions totales de Google 2019-2024 — ROUTE A (build) : série figée, lecture seule.
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "./PlotFigure.astro";
+import serie from "../assets/google_serie.json";
+
+const donnees = serie
+  .filter((d) => Number.isFinite(d.total))
+  .map((d) => ({ annee: d.annee, emissions: d.total / 1e6 }))
+  .sort((a, b) => a.annee - b.annee);
+const debut = donnees[0];
+const fin = donnees[donnees.length - 1];
+const variation = Math.round((fin.emissions / debut.emissions - 1) * 100);
+const fr = (x: number) => x.toLocaleString("fr-FR", { maximumFractionDigits: 2 });
+
+const alt = `Courbe des émissions totales déclarées de Google entre ${debut.annee} et ${fin.annee}. Les émissions passent de ${debut.emissions.toFixed(2)} à ${fin.emissions.toFixed(2)} millions de tonnes de CO₂e, soit une augmentation de ${variation} %. Après une baisse en 2020, elles augmentent chaque année jusqu'en 2024.`;
+
+const options = {
+  title: `Les émissions totales de Google ont augmenté de ${variation} % entre ${debut.annee} et ${fin.annee}`,
+  subtitle: "Émissions annuelles déclarées, scopes 1, 2 (market-based) et 3 total.",
+  width: 950,
+  height: 420,
+  marginLeft: 85,
+  marginRight: 60,
+  marginTop: 70,
+  marginBottom: 60,
+  x: { label: "Année", domain: [debut.annee, fin.annee], ticks: donnees.length, tickFormat: (d: number) => String(d) },
+  y: { label: "Millions de tonnes de CO₂e", domain: [0, Math.max(...donnees.map((d) => d.emissions)) * 1.2], grid: true },
+  marks: [
+    Plot.lineY(donnees, { x: "annee", y: "emissions", stroke: "#B66A35", strokeWidth: 3, className: "courbe-trait" }),
+    Plot.dot(donnees, { x: "annee", y: "emissions", r: 6, fill: "#B66A35", title: (d) => `${d.annee} : ${fr(d.emissions)} millions de tonnes de CO₂e` }),
+    Plot.text(donnees.filter((d) => d.annee === debut.annee || d.annee === fin.annee), {
+      x: "annee", y: "emissions", text: (d) => `${fr(d.emissions)} Mt`, dy: -18, fontWeight: "bold", fontSize: 13, fill: "#7A421E",
+    }),
+  ],
+  caption: "Source : Google, rapport environnemental 2025, données 2019-2024. Émissions totales déclarées, scopes 1, 2 (market-based) et 3. Données concernant l'ensemble des activités de Google et non uniquement l'IA générative.",
+};
+---
+
+<div class="figure-sae"><PlotFigure options={options} alt={alt} /></div>

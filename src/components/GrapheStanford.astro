@@ -1,0 +1,49 @@
+---
+// Distribution des scores FMTI des 13 entreprises — ROUTE A (build) : données figées (fichier préparé par scripts/preparer-donnees.mjs).
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "./PlotFigure.astro";
+import DonneesAttendues from "./DonneesAttendues.astro";
+
+const modules = import.meta.glob("../assets/stanford_scores.json", { eager: true, import: "default" });
+const brut = Object.values(modules)[0] as { entreprise: string; score: number }[] | undefined;
+const ETUDIEES = new Set(["Google", "OpenAI", "Mistral"]);
+
+let options: any = null;
+let alt = "";
+if (brut?.length) {
+  const scores = brut.toSorted((a, b) => a.score - b.score).map((d, i) => ({ ...d, position: ((i % 5) - 2) * 0.18 }));
+  const tri = scores.map((d) => d.score);
+  const milieu = Math.floor(tri.length / 2);
+  const mediane = tri.length % 2 ? tri[milieu] : (tri[milieu - 1] + tri[milieu]) / 2;
+  const sc = (e: string) => scores.find((d) => d.entreprise === e)?.score;
+  alt = `Distribution des scores de transparence de ${scores.length} entreprises évaluées par Stanford en 2025. La médiane est de ${mediane} sur 100. Google obtient ${sc("Google")} points, OpenAI ${sc("OpenAI")} et Mistral ${sc("Mistral")}. Chaque point représente une entreprise.`;
+  options = {
+    title: "Les entreprises d'IA sont loin d'être toutes aussi transparentes",
+    subtitle: `Distribution des scores de ${scores.length} entreprises évaluées par Stanford en 2025. Médiane : ${mediane}/100.`,
+    width: 950,
+    height: 300,
+    marginTop: 75,
+    marginBottom: 60,
+    marginLeft: 40,
+    marginRight: 40,
+    x: { domain: [0, 100], grid: true, label: "Critères de transparence satisfaits sur 100" },
+    y: { axis: null, domain: [-0.7, 0.7] },
+    marks: [
+      Plot.ruleX([mediane], { stroke: "#64748B", strokeWidth: 2, strokeDasharray: "5,5" }),
+      Plot.dot(scores, {
+        x: "score", y: "position", r: 8,
+        fill: (d: any) => (ETUDIEES.has(d.entreprise) ? "#C4571A" : "#A8AFB4"),
+        stroke: "white", strokeWidth: 1.5,
+        title: (d: any) => `${d.entreprise} : ${d.score}/100`,
+      }),
+      Plot.text(scores.filter((d) => ETUDIEES.has(d.entreprise)), {
+        x: "score", y: "position", text: (d: any) => `${d.entreprise} (${d.score})`, dy: -18, fontSize: 12, fontWeight: "bold", fill: "#8A3A0E",
+      }),
+    ],
+    caption:
+      "Source : Stanford CRFM, Foundation Model Transparency Index, décembre 2025. Chaque point représente une entreprise. Les trois entreprises étudiées sont en orange, les autres en gris. La ligne pointillée représente la médiane. Les positions verticales servent uniquement à séparer les points. Ces scores évaluent la transparence générale et non la performance climatique.",
+  };
+}
+---
+
+{options ? <div class="figure-sae"><PlotFigure options={options} alt={alt} /></div> : <DonneesAttendues fichiers={["src/assets/stanford_scores.json"]} />}
