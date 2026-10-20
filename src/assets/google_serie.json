@@ -1,0 +1,44 @@
+[
+  {
+    "annee": 2019,
+    "total": 9867800,
+    "operationnel": 917800,
+    "scope3": 8950000,
+    "electricite": null
+  },
+  {
+    "annee": 2020,
+    "total": 8737400,
+    "operationnel": 967400,
+    "scope3": 7770000,
+    "electricite": 15166800
+  },
+  {
+    "annee": 2021,
+    "total": 10520600,
+    "operationnel": 1887600,
+    "scope3": 8633000,
+    "electricite": 18287100
+  },
+  {
+    "annee": 2022,
+    "total": 11900300,
+    "operationnel": 2583300,
+    "scope3": 9317000,
+    "electricite": 21776200
+  },
+  {
+    "annee": 2023,
+    "total": 14296800,
+    "operationnel": 3502800,
+    "scope3": 10794000,
+    "electricite": 25307000
+  },
+  {
+    "annee": 2024,
+    "total": 15185200,
+    "operationnel": 3132200,
+    "scope3": 12053000,
+    "electricite": 32179900
+  }
+]

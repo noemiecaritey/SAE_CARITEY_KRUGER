@@ -1,0 +1,65 @@
+[
+ {
+  "domaine": "Upstream",
+  "entreprise": "Google",
+  "satisfaits": 8,
+  "total": 34,
+  "pourcentage": 23.53
+ },
+ {
+  "domaine": "Upstream",
+  "entreprise": "OpenAI",
+  "satisfaits": 1,
+  "total": 34,
+  "pourcentage": 2.94
+ },
+ {
+  "domaine": "Upstream",
+  "entreprise": "Mistral",
+  "satisfaits": 0,
+  "total": 34,
+  "pourcentage": 0
+ },
+ {
+  "domaine": "Model",
+  "entreprise": "Google",
+  "satisfaits": 13,
+  "total": 30,
+  "pourcentage": 43.33
+ },
+ {
+  "domaine": "Model",
+  "entreprise": "OpenAI",
+  "satisfaits": 13,
+  "total": 30,
+  "pourcentage": 43.33
+ },
+ {
+  "domaine": "Model",
+  "entreprise": "Mistral",
+  "satisfaits": 6,
+  "total": 30,
+  "pourcentage": 20
+ },
+ {
+  "domaine": "Downstream",
+  "entreprise": "Google",
+  "satisfaits": 20,
+  "total": 36,
+  "pourcentage": 55.56
+ },
+ {
+  "domaine": "Downstream",
+  "entreprise": "OpenAI",
+  "satisfaits": 21,
+  "total": 36,
+  "pourcentage": 58.33
+ },
+ {
+  "domaine": "Downstream",
+  "entreprise": "Mistral",
+  "satisfaits": 12,
+  "total": 36,
+  "pourcentage": 33.33
+ }
+]
