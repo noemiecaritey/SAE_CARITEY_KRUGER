@@ -1,1 +1,135 @@
 @import "tailwindcss";
+@import "./animations.css";
+
+/* DaisyUI 5 : composants (btn, card, badge, table, select, navbar, footer...) avec un thÃ¨me aux couleurs de la charte.
+   La palette de DONNÃ‰ES des graphiques reste indÃ©pendante (voir src/lib/donnees.ts). */
+@plugin "daisyui" {
+  themes: false;
+}
+@plugin "daisyui/theme" {
+  name: "sansfiltre";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f3f8ec;
+  --color-base-300: #c9dca0;
+  --color-base-content: #0f2a33;
+  --color-primary: #085e51;
+  --color-primary-content: #ffffff;
+  --color-secondary: #b1d9dd;
+  --color-secondary-content: #002a38;
+  --color-accent: #d2dc62;
+  --color-accent-content: #002a38;
+  --color-neutral: #002a38;
+  --color-neutral-content: #f3f8ec;
+  --color-info: #2b5fa8;
+  --color-info-content: #ffffff;
+  --color-success: #085e51;
+  --color-success-content: #ffffff;
+  --color-warning: #ffb2b2;
+  --color-warning-content: #0f2a33;
+  --color-error: #ed583f;
+  --color-error-content: #002a38;
+  --radius-selector: 999px;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* Palette de CHARTE (Mahina #002A38, Hibiscus #ED583F, Lanikai #c9dca0, Plumeria #FFB2B2) â€” jamais reprise telle quelle dans les graphiques.
+   Les noms --color-vert/fonce/doux sont historiques : ils dÃ©signent maintenant le bleu nuit, le rose clair, etc. */
+@theme {
+  --color-fond: #f3f8ec;
+  --color-carte: #e4f0d6;
+  --color-bord: #c9dca0;
+  --color-doux: #ffb2b2;
+  --color-vert: #085e51;
+  --color-fonce: #002a38;
+  --color-texte: #0f2a33;
+  --font-titre: "Nunito", ui-rounded, system-ui, sans-serif;
+  --font-texte: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { background: var(--color-fond); color: var(--color-texte); font-family: var(--font-texte); line-height: 1.65; }
+  h1, h2, h3, h4 { font-family: var(--font-titre); color: var(--color-fonce); line-height: 1.2; font-weight: 800; }
+  a { color: var(--color-vert); text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid #085e51; outline-offset: 2px; }
+}
+.tabulaire { font-variant-numeric: tabular-nums; }
+
+/* Contenu Ã©ditorial */
+.prose-sae p { margin: 0 0 1rem; max-width: 68ch; }
+.prose-sae ul, .prose-sae ol { margin: 0 0 1rem 1.25rem; max-width: 68ch; }
+.prose-sae ul { list-style: disc; } .prose-sae ol { list-style: decimal; }
+.prose-sae li { margin-bottom: .35rem; }
+.prose-sae h3 { font-size: 1.35rem; margin: 2rem 0 .75rem; }
+.prose-sae h4 { font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
+
+/* Figures (Plot) */
+.figure-sae { background: #fff; border: 1px solid var(--color-bord); border-radius: 1rem; padding: 1rem; overflow-x: auto; }
+.figure-sae svg { max-width: 100%; height: auto; font-family: var(--font-texte); }
+.figure-sae h2 { font-size: 1.15rem; } .figure-sae h3 { font-size: 1rem; font-weight: 600; color: #0f2a33; }
+.figure-sae figcaption { font-size: .8rem; color: #2a4a55; margin-top: .5rem; }
+
+/* Tableaux accessibles */
+.tableau { width: 100%; border-collapse: collapse; background: #fff; font-size: .9rem; }
+.tableau caption { text-align: left; font-weight: 700; padding: .5rem 0; color: var(--color-fonce); }
+.tableau th, .tableau td { border: 1px solid var(--color-bord); padding: .55rem .7rem; text-align: left; vertical-align: top; }
+.tableau thead th { background: var(--color-carte); }
+.pastille { display: inline-block; padding: .1rem .55rem; border-radius: 999px; font-size: .75rem; font-weight: 700; }
+
+/* Menu d'ancres : l'entrÃ©e active garde un texte lisible (blanc sur vert) */
+.menu-item.active { background: var(--color-vert); color: #fff; }
+
+/* RÃ©glages DaisyUI */
+.card.card-body { display: block; }           /* contenu en flux normal (texte en ligne dans les cartes) */
+.badge.pastille { height: auto; white-space: normal; padding: .1rem .6rem; font-weight: 700; }
+.navbar { min-height: 3.5rem; }
+
+/* ---------- Habillage (charte verte et claire) ---------- */
+.eyebrow { display: inline-block; padding: .25rem .8rem; border-radius: 999px; background: #eef2b8; border: 1px solid #d2dc62;
+  color: #002a38; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.titre-section::after { content: ""; display: block; width: 64px; height: 6px; border-radius: 4px; background: #d2dc62; margin-top: .9rem; box-shadow: 0 0 0 1px #085e5133; }
+
+/* Bandeau d'ouverture : dÃ©gradÃ© doux + deux halos */
+.hero { position: relative; isolation: isolate;
+  /* photo d'arbre en fond (dÃ©corative) ; voile vert clair Ã  gauche pour garder le texte lisible */
+  background:
+    linear-gradient(90deg, #f3f8ecf5 0%, #f3f8ecdd 42%, #f3f8ec55 100%),
+    url("/arbre.jpg") 70% 60% / cover no-repeat;
+  border-bottom: 1px solid #c9dca0; }
+
+/* Fonds des 4 actes : dÃ©gradÃ©s trÃ¨s doux qui s'enchaÃ®nent */
+#contexte { background: linear-gradient(180deg, #e4f0d6, #eef6e4); }
+#exploration { background: linear-gradient(180deg, #f3f8ec, #f9fcf5); }
+#revelation { background: linear-gradient(180deg, #e9f2c4, #f3f8dc); }
+#conclusion { background: linear-gradient(180deg, #f3f8ec, #f9fcf5); }
+main section.item { border-top: 1px solid #c9dca0; }
+
+/* En-tÃªte, cartes, figures, tableaux */
+header.sticky { box-shadow: 0 1px 0 #c9dca0, 0 6px 18px -12px #002a3855; }
+.card { box-shadow: 0 1px 2px #002a3814; transition: box-shadow 200ms, transform 200ms; }
+.card:hover { box-shadow: 0 10px 24px -14px #002a3866; }
+@media (prefers-reduced-motion: no-preference) { .card.reveal.in:hover { transform: translateY(-2px); } }
+.figure-sae { border-radius: 1.25rem; box-shadow: 0 10px 30px -22px #002a3899; }
+.figure-sae h2 { color: #002a38; }
+.overflow-x-auto { border-radius: 1rem; border: 1px solid #c9dca0; background: #fff; }
+.tableau { font-size: .88rem; }
+.tableau caption { padding: .8rem 1rem; background: #fff; }
+.tableau thead th { background: #e4f0d6; color: #085e51; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+.tableau th, .tableau td { border-left: 0; border-right: 0; }
+::selection { background: #d2dc62; color: #002a38; }
+.btn { font-family: var(--font-titre); font-weight: 800; }
+
+/* Touches de la palette : Hibiscus (corail) pour les repÃ¨res, Plumeria (rose) pour les halos */
+.hero h1::after { content: ""; display: block; width: 88px; height: 8px; border-radius: 8px; background: #ed583f; margin-top: 1.25rem; }
+.footer { background: #085e51; color: #f3f8ec; border-top: 0; }
+.footer a { color: #d2dc62; }
+.menu-item.active { background: #085e51; }
