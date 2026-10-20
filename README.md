@@ -1,9 +1,9 @@
 - URL site WEB :
 - URL Notebook Observable :
-- Nom :
-- Prénom :
-- Nom binome :
-- Prénom binome :
+- Nom :CARITEY
+- Prénom : Noémie
+- Nom binome : KRUGER
+- Prénom binome : Konstance
 
 # Remarques :
 

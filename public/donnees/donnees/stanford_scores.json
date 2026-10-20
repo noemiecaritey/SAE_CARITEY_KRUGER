@@ -1,0 +1,54 @@
+[
+ {
+  "entreprise": "AI21 Labs",
+  "score": 66
+ },
+ {
+  "entreprise": "Alibaba",
+  "score": 26
+ },
+ {
+  "entreprise": "Amazon",
+  "score": 39
+ },
+ {
+  "entreprise": "Anthropic",
+  "score": 46
+ },
+ {
+  "entreprise": "DeepSeek",
+  "score": 32
+ },
+ {
+  "entreprise": "Google",
+  "score": 41
+ },
+ {
+  "entreprise": "IBM",
+  "score": 95
+ },
+ {
+  "entreprise": "Meta",
+  "score": 31
+ },
+ {
+  "entreprise": "Midjourney",
+  "score": 14
+ },
+ {
+  "entreprise": "Mistral",
+  "score": 18
+ },
+ {
+  "entreprise": "OpenAI",
+  "score": 35
+ },
+ {
+  "entreprise": "Writer",
+  "score": 72
+ },
+ {
+  "entreprise": "xAI",
+  "score": 14
+ }
+]
