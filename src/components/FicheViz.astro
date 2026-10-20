@@ -1,0 +1,18 @@
+---
+// Fiche de visualisation : les 6 éléments demandés + la route d'export (A / B / C) justifiée.
+const { titre, lignes, route } = Astro.props;
+---
+
+<details class="fiche-viz collapse collapse-arrow border border-bord bg-base-100 mt-4">
+  <summary class="collapse-title font-semibold">Fiche de visualisation · {titre}</summary>
+  <div class="collapse-content overflow-x-auto">
+    <table class="table tableau">
+      <caption class="sr-only">Fiche de visualisation : {titre}</caption>
+      <thead><tr><th scope="col">Élément</th><th scope="col">Justification</th></tr></thead>
+      <tbody>
+        {lignes.map(([k, v]: [string, string]) => <tr><th scope="row">{k}</th><td set:html={v} /></tr>)}
+        {route && <tr><th scope="row">7. Route d'export</th><td set:html={route} /></tr>}
+      </tbody>
+    </table>
+  </div>
+</details>

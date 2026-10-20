@@ -1,0 +1,41 @@
+---
+// V2 (notebook) — carte des centres de données — ROUTE A (build) : points figés, aucun JavaScript chez le lecteur.
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "./PlotFigure.astro";
+import DonneesAttendues from "./DonneesAttendues.astro";
+
+const m1 = import.meta.glob("../assets/centres_donnees.json", { eager: true, import: "default" });
+const m2 = import.meta.glob("../assets/france_metropole.json", { eager: true, import: "default" });
+const centres = Object.values(m1)[0] as { lieux: any[]; statistiques: any } | undefined;
+const france = Object.values(m2)[0] as any | undefined;
+
+let options: any = null;
+let alt = "";
+if (centres) {
+  const n = centres.lieux.length;
+  alt = `Carte de France métropolitaine représentant ${n} éléments cartographiques associés à des centres de données dans OpenStreetMap. Les points indiquent leur localisation approximative. Plusieurs éléments peuvent appartenir à un même site et la base n'est pas exhaustive. La carte ne permet pas de connaître leur consommation électrique ni d'identifier lesquels servent à l'IA générative.`;
+  options = {
+    title: "Où se trouvent les centres de données identifiés en France ?",
+    subtitle: `${n} éléments cartographiques recensés dans OpenStreetMap, après nettoyage.`,
+    width: 950,
+    height: 650,
+    marginTop: 65,
+    marginBottom: 35,
+    marginLeft: 30,
+    marginRight: 30,
+    // sans contour : le cadre est calculé à partir des points eux-mêmes
+    projection: { type: "mercator", domain: france ?? { type: "MultiPoint", coordinates: centres.lieux.map((d: any) => [d.longitude, d.latitude]) }, inset: 15 },
+    marks: [
+      ...(france ? [Plot.geo(france, { fill: "#F1F5F4", stroke: "#94A3A8", strokeWidth: 1.2 })] : []),
+      Plot.dot(centres.lieux, {
+        x: "longitude", y: "latitude", r: 4, fill: "#7A4FD0", fillOpacity: 0.75, stroke: "#FFFFFF", strokeWidth: 0.6,
+        title: (d: any) => `${d.nom}\nExploitant : ${d.operateur}\nType OSM : ${d.typeGeometrie}\nIdentifiant : ${d.id}`,
+      }),
+    ],
+    caption:
+      "Sources : OpenStreetMap, extraction du 20 octobre 2026 ; contour de la France métropolitaine et de la Corse (Natural Earth, 1:110m simplifié). Chaque point représente un élément cartographique identifié, et non nécessairement un centre de données distinct. La carte ne mesure ni la consommation électrique ni les émissions de CO₂.",
+  };
+}
+---
+
+{options ? <div class="figure-sae"><PlotFigure options={options} alt={alt} /></div> : <DonneesAttendues fichiers={["src/assets/centres_donnees.json"]} />}

@@ -1,0 +1,38 @@
+---
+// Statistiques Compar:IA — ROUTE A (tables statiques, préparées au build depuis un JSON pré-agrégé).
+import DonneesAttendues from "./DonneesAttendues.astro";
+const modules = import.meta.glob("../assets/compar_stats.json", { eager: true, import: "default" });
+const c = Object.values(modules)[0] as any | undefined;
+const f = (x: number | null) => (x == null ? "—" : x.toLocaleString("fr-FR", { maximumFractionDigits: x < 1 ? 2 : 1 }));
+const g = (x: number | null) => (x == null ? "—" : x.toLocaleString("fr-FR", { maximumSignificantDigits: 2 }));
+const E = ["OpenAI", "Google", "Mistral"];
+const rapports = c ? E.map((e) => Math.round(c.stats[e].moy / c.stats[e].med)) : [];
+---
+
+{c ? (
+  <div class="grid gap-8">
+    <div class="prose-sae">
+      <h3>Ce que Compar:IA apprend, et ce qu'elle n'apprend pas</h3>
+      <p><strong>Ce qu'elle apprend.</strong> Sur {c.exploitables} conversations exploitables, la conversation médiane consomme {f(c.stats.OpenAI.med)} Wh avec un modèle d'OpenAI, {f(c.stats.Google.med)} Wh avec un modèle de Google et {f(c.stats.Mistral.med)} Wh avec un modèle de Mistral. La moyenne est de {Math.min(...rapports)} à {Math.max(...rapports)} fois la médiane : quelques conversations, surtout avec les modèles les plus lourds, consomment beaucoup plus que les autres. Une moyenne seule donnerait donc une image fausse.</p>
+      <p><strong>Ce qu'elle n'apprend pas.</strong> Ce sont des estimations (EcoLogits) pour l'usage seulement, sans la fabrication des serveurs ni l'entraînement, sur un public surtout français. Elles ne donnent ni le total annuel d'une entreprise, ni sa trajectoire. Elles ne permettent donc pas de vérifier un objectif climatique : elles donnent un ordre de grandeur, pas une preuve.</p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra tableau tabulaire">
+        <caption>Consommation estimée par conversation, selon l'entreprise du modèle (Wh)</caption>
+        <thead><tr><th scope="col">Entreprise</th><th scope="col">Conversations exploitables</th><th scope="col">Médiane (Wh)</th><th scope="col">Moyenne (Wh)</th><th scope="col">Minimum (Wh)</th><th scope="col">Maximum (Wh)</th></tr></thead>
+        <tbody>
+          {E.map((e) => <tr><th scope="row">{e}</th><td>{c.stats[e].n}</td><td>{f(c.stats[e].med)}</td><td>{f(c.stats[e].moy)}</td><td>{f(c.stats[e].min)}</td><td>{f(c.stats[e].max)}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+    <div class="overflow-x-auto max-h-96">
+      <table class="table table-zebra tableau tabulaire">
+        <caption>Par modèle : conversations et consommation médiane</caption>
+        <thead><tr><th scope="col">Modèle</th><th scope="col">Entreprise</th><th scope="col">Conversations</th><th scope="col">Médiane (Wh par conversation)</th><th scope="col">Wh pour 1 000 tokens</th></tr></thead>
+        <tbody>
+          {c.modeles.map((m: any) => <tr><th scope="row">{m.modele}</th><td>{m.entreprise}</td><td>{m.conversations}</td><td>{g(m.mediane_wh)}</td><td>{g(m.wh_1000_tokens)}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+  </div>
+) : <DonneesAttendues fichiers={["src/assets/compar_stats.json"]} />}

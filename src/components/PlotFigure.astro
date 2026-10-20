@@ -1,9 +1,20 @@
 ---
+// ROUTE A — export au BUILD : Plot est rendu côté serveur avec JSDOM, le HTML/SVG final est injecté.
+// Pourquoi : données figées, lecture seule, zéro JavaScript chez le lecteur, bon pour l'accessibilité et le SEO.
 import * as Plot from "@observablehq/plot";
 import { JSDOM } from "jsdom";
-const { options } = Astro.props;
 
-const plot = Plot.plot({ ...options, document: new JSDOM("").window.document });
+const { options, alt = "", anim = true } = Astro.props;
+
+// ariaLabel : option Plot (TP1), posée sur le <svg> lui-même
+const plot = Plot.plot({ ...options, ariaLabel: alt || options.ariaLabel, document: new JSDOM("").window.document });
+
+// Accessibilité : le SVG principal reçoit role="img" + un aria-label détaillé (liste des valeurs).
+const svg = plot.tagName === "svg" ? plot : plot.querySelector("svg");
+if (svg) {
+  svg.setAttribute("role", "img");
+  if (alt) svg.setAttribute("aria-label", alt);
+}
 ---
 
-<div set:html={plot.outerHTML} />
+<div set:html={plot.outerHTML} data-anim={anim ? "" : undefined} class="plot-figure" />

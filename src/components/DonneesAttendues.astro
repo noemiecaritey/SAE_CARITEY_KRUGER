@@ -1,0 +1,11 @@
+---
+// Affiché à la place d'un graphique tant que le fichier de données préparé n'existe pas encore.
+const { fichiers, script = "npm run donnees" } = Astro.props;
+---
+
+<div class="alert alert-warning text-sm" role="status">
+  <div>
+    <p><strong>Données pas encore préparées.</strong> Ce graphique lit {fichiers.map((f: string, i: number) => <span><code>{f}</code>{i < fichiers.length - 1 ? ", " : ""}</span>)}.</p>
+    <p>Déposez les fichiers bruts dans <code>donnees-brutes/</code> puis lancez <code>{script}</code> (voir le README).</p>
+  </div>
+</div>

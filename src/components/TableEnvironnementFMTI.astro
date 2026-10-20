@@ -1,0 +1,18 @@
+---
+// Critères FMTI portant sur l'énergie, le carbone, l'eau ou les émissions — ROUTE A (tableau statique, préparé au build).
+import DonneesAttendues from "./DonneesAttendues.astro";
+const modules = import.meta.glob("../assets/stanford_environnement.json", { eager: true, import: "default" });
+const criteres = Object.values(modules)[0] as { critere: string; Google: number; OpenAI: number; Mistral: number }[] | undefined;
+---
+
+{criteres ? (
+  <div class="overflow-x-auto">
+    <table class="table table-zebra tableau tabulaire">
+      <caption>Les {criteres.length} critères du FMTI 2025 qui portent sur l'énergie, le carbone, l'eau ou les émissions (1 = satisfait, 0 = non satisfait)</caption>
+      <thead><tr><th scope="col">Critère</th><th scope="col">Google</th><th scope="col">OpenAI</th><th scope="col">Mistral</th></tr></thead>
+      <tbody>
+        {criteres.map((d) => <tr><th scope="row">{d.critere}</th><td>{d.Google}</td><td>{d.OpenAI}</td><td>{d.Mistral}</td></tr>)}
+      </tbody>
+    </table>
+  </div>
+) : <DonneesAttendues fichiers={["src/assets/stanford_environnement.json"]} />}

@@ -1,0 +1,26 @@
+---
+// Contrôle du classement des modèles Compar:IA par entreprise (page Méthode).
+import DonneesAttendues from "./DonneesAttendues.astro";
+const modules = import.meta.glob("../assets/compar_stats.json", { eager: true, import: "default" });
+const c = Object.values(modules)[0] as any | undefined;
+---
+
+{c ? (
+  <div class="grid gap-4">
+    <p>{c.total} conversations. Sans consommation (kWh vide) : <strong>{c.controle.sansKwh}</strong> ; à 0 kWh : <strong>{c.controle.kwhNul}</strong>. Ces lignes sont exclues des statistiques.</p>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra tableau tabulaire">
+        <caption>Conversations par entreprise après classement des modèles</caption>
+        <thead><tr><th scope="col">Entreprise</th><th scope="col">Conversations</th></tr></thead>
+        <tbody>{c.controle.parEntreprise.map((d: any) => <tr><th scope="row">{d.entreprise}</th><td>{d.conversations}</td></tr>)}</tbody>
+      </table>
+    </div>
+    <details class="collapse collapse-arrow border border-bord bg-base-100">
+      <summary class="collapse-title font-semibold">Modèles classés « Autres » (à relire : aucun ne doit être d'OpenAI, de Google ou de Mistral)</summary>
+      <div class="collapse-content overflow-x-auto max-h-72">
+        <table class="table tableau tabulaire"><thead><tr><th scope="col">Modèle</th><th scope="col">Conversations</th></tr></thead>
+        <tbody>{c.controle.autres.map((d: any) => <tr><th scope="row">{d.modele}</th><td>{d.conversations}</td></tr>)}</tbody></table>
+      </div>
+    </details>
+  </div>
+) : <DonneesAttendues fichiers={["src/assets/compar_stats.json"]} />}
