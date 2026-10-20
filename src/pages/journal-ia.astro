@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+const aides = [
+  "Organiser les différentes parties du notebook.",
+  "Comprendre les données environnementales et leurs limites.",
+  "Préparer le nettoyage et les traitements des données.",
+  "Écrire et améliorer du code JavaScript pour Observable.",
+  "Rendre les graphiques plus lisibles.",
+  "Raccourcir les analyses et clarifier les conclusions.",
+  "Vérifier la présence des éléments demandés dans les TP.",
+];
+const erreurs = [
+  "Des erreurs de déclaration de variables, comme « Assignment to external variable ».",
+  "Des problèmes de mise en page et de chevauchement des textes dans les graphiques.",
+  "Des difficultés avec les menus de sélection des années.",
+  "Des incohérences dans les noms des cellules et des graphiques.",
+  "Des passages trop longs ou répétitifs dans les analyses.",
+];
+const controles = [
+  ["Stanford FMTI", "vérification de la correspondance entre les scores et les définitions des critères."],
+  ["Google", "contrôle des indicateurs, des années et des différences entre les périmètres d'émissions."],
+  ["Compar:IA", "classement des modèles par entreprise et repérage des consommations manquantes ou nulles."],
+  ["OpenStreetMap", "filtrage des infrastructures et vérification des données géographiques."],
+];
+---
+
+<Layout titre="Journal IA" description="Comment nous avons utilisé Claude et ChatGPT, et ce que nous avons vérifié.">
+  <div class="mx-auto max-w-4xl px-4 py-14 prose-sae">
+    <p class="reveal eyebrow">Journal IA du binôme</p>
+    <h1 class="reveal text-4xl mt-2 mb-4">Ce que les IA nous ont apporté, et ce qu'on a dû vérifier</h1>
+
+    <h2 class="reveal text-2xl mt-10">1 · Quels outils avons-nous utilisés ?</h2>
+    <p class="reveal">Nous avons utilisé deux assistants d'intelligence artificielle : <strong>Claude (Anthropic)</strong> et <strong>ChatGPT (OpenAI)</strong>.</p>
+    <p class="reveal">Claude nous a accompagnés dans la préparation du projet, l'organisation des données et le développement de certaines visualisations. ChatGPT nous a aidés à structurer notre notebook Observable, à améliorer les graphiques, à corriger les erreurs et à vérifier la cohérence de notre enquête.</p>
+
+    <h2 class="reveal text-2xl mt-10">2 · Comment les IA nous ont-elles aidés ?</h2>
+    <p class="reveal">Nous avons utilisé ces outils pour :</p>
+    <ul class="reveal">{aides.map((l) => <li>{l}</li>)}</ul>
+    <p class="reveal">Nous avons demandé à ChatGPT de nous accompagner <strong>étape par étape</strong>, en indiquant précisément où ajouter, modifier ou supprimer les cellules.</p>
+
+    <h2 class="reveal text-2xl mt-10">3 · Comprendre le code plutôt que simplement le copier</h2>
+    <p class="reveal">Nous avons demandé à ChatGPT d'ajouter régulièrement des <strong>commentaires explicatifs dans le code JavaScript</strong>, avec la syntaxe <code>//</code>. Ils nous indiquent le rôle de chaque partie du code : importation des données, nettoyage, calculs, création des graphiques et affichage. Ils nous aident aussi à nous repérer lorsqu'une modification est nécessaire.</p>
+    <p class="reveal"><strong>Notre objectif était de comprendre le fonctionnement du code afin de pouvoir le modifier et le corriger nous-mêmes.</strong></p>
+
+    <h2 class="reveal text-2xl mt-10">4 · Quelles erreurs avons-nous rencontrées ?</h2>
+    <p class="reveal">Certaines propositions des IA ne fonctionnaient pas directement dans Observable. Nous avons notamment rencontré :</p>
+    <ul class="reveal">{erreurs.map((l) => <li>{l}</li>)}</ul>
+    <p class="reveal">Nous avons corrigé ces problèmes en testant les cellules progressivement et en demandant des explications supplémentaires à ChatGPT.</p>
+
+    <h2 class="reveal text-2xl mt-10">5 · Comment avons-nous vérifié les données ?</h2>
+    <p class="reveal">Nous avons mis en place plusieurs contrôles :</p>
+    <ul class="reveal">{controles.map((l) => <li><strong>{l[0]} :</strong> {l[1]}</li>)}</ul>
+    <p class="reveal">Nous avons aussi distingué les chiffres publiés par les entreprises des estimations produites par des sources extérieures. <strong>Les réponses des IA ne sont pas considérées comme des preuves : les chiffres et les interprétations doivent être vérifiés à partir des sources d'origine.</strong> Le détail de ces contrôles est dans la page <a href="/methode/">Méthode</a>.</p>
+
+    <h2 class="reveal text-2xl mt-10">6 · Quelles sont les limites de l'utilisation de l'IA ?</h2>
+    <p class="reveal">Les assistants peuvent proposer du code incorrect, confondre des indicateurs ou formuler des conclusions trop affirmatives. Par exemple, une absence d'information dans notre corpus ne signifie pas forcément que cette information n'existe pas. De même, des estimations de consommation par conversation ne permettent pas de vérifier directement les émissions annuelles d'une entreprise.</p>
+    <p class="reveal">Nous avons donc conservé un regard critique sur les résultats et corrigé les propositions qui ne correspondaient pas à notre problématique.</p>
+
+    <h2 class="reveal text-2xl mt-10">7 · Notre bilan</h2>
+    <p class="reveal">L'utilisation de Claude et ChatGPT nous a permis de gagner du temps, de mieux comprendre certaines notions et d'améliorer la qualité de notre notebook. Nous avons cependant dû tester les codes, vérifier les sources et sélectionner les informations pertinentes.</p>
+    <p class="reveal"><strong>Les IA ont été des outils d'accompagnement et d'apprentissage. Les choix de visualisation, les vérifications et les conclusions restent sous notre responsabilité.</strong></p>
+  </div>
+</Layout>
