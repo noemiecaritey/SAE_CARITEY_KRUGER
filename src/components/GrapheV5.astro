@@ -1,0 +1,53 @@
+---
+// V5 — ROUTE A (build) : chronologie calculée depuis le registre et la série Google, rien ne bouge chez le lecteur.
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "./PlotFigure.astro";
+import registre from "../assets/registre.json";
+import serie from "../assets/google_serie.json";
+import { donneesChrono, casesV5, nbSuivi, STATUTS_V5 } from "../lib/donnees";
+
+const { entreprises = ["Google", "OpenAI", "Mistral"] } = Astro.props;
+const chrono = donneesChrono(registre as any, serie as any);
+const { annees, cases } = casesV5(chrono, entreprises);
+const resume = entreprises.map((e) => `${e} : ${nbSuivi(chrono, e)} sur 7`).join(" · ");
+const unique = entreprises.length === 1;
+
+const alt =
+  "Chronologie des informations environnementales identifiées entre 2019 et 2025, avec l'échéance 2030. " +
+  `Nombre d'années avec une valeur annuelle d'émissions : ${resume}. ` +
+  "Les cases distinguent les bilans annuels, les informations ponctuelles, les données non identifiées et les objectifs annoncés. " +
+  "Une valeur annuelle disponible ne garantit pas qu'elle corresponde au périmètre de l'objectif climatique.";
+
+const options = {
+  title: "Des données annuelles inégales pour suivre les engagements climatiques",
+  subtitle: `Années avec un bilan d'émissions identifié entre 2019 et 2025 — ${resume}.`,
+  width: 950,
+  height: unique ? 170 : 330,
+  marginLeft: 110,
+  marginRight: 40,
+  marginTop: 80,
+  marginBottom: 65,
+  x: { domain: annees, axis: "top", label: null },
+  y: { domain: entreprises, label: null, padding: 0.25 },
+  color: { domain: STATUTS_V5.map((s) => s.cle), range: STATUTS_V5.map((s) => s.couleur) },
+  marks: [
+    Plot.cell(cases, { x: "a", y: "e", fill: "couleur", inset: 3, className: "case-objectif", title: (d) => `${d.e} — ${d.a}\n${d.statut}\n\n${d.detail}` }),
+    // second repère que la couleur : une lettre dans la case
+    Plot.text(cases, {
+      x: "a", y: "e", text: "lettre", fontSize: 16, fontWeight: "bold",
+      fill: (d) => (d.statut === "Non identifié" || d.statut === "Objectif non identifié" ? "#475569" : "#FFFFFF"),
+    }),
+  ],
+  caption:
+    "Sources : registre des publications et rapports environnementaux étudiés. A = valeur annuelle d'émissions disponible ; P = information ponctuelle ; O = objectif annoncé ; ? = objectif non identifié. Une valeur annuelle n'est pas nécessairement comparable au périmètre de l'objectif. Non identifié ne signifie pas jamais publié.",
+};
+---
+
+<div class="figure-sae">
+  <ul class="flex flex-wrap gap-x-5 gap-y-1 text-sm mb-2" aria-label="Légende">
+    {STATUTS_V5.map((s) => (
+      <li class="inline-flex items-center gap-2"><span class="inline-block w-5 h-5 rounded text-center text-xs font-bold leading-5" style={`background:${s.couleur};color:${s.cle.includes("non") || s.cle === "Non identifié" ? "#475569" : "#fff"}`} aria-hidden="true">{s.lettre}</span>{s.cle}</li>
+    ))}
+  </ul>
+  <PlotFigure options={options} alt={alt} />
+</div>

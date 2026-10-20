@@ -1,0 +1,49 @@
+---
+// V1 — ROUTE A (build) : données figées, rien ne bouge chez le lecteur.
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "./PlotFigure.astro";
+import { ENTREPRISES, publications, donneesV1, COULEURS_V1, PRECISIONS_V1, nbPublies } from "../lib/donnees";
+
+const alt =
+  `Matrice de transparence comparant Google, OpenAI et Mistral sur ${publications.length} informations environnementales. ` +
+  `Google en publie ${nbPublies("Google")}, Mistral ${nbPublies("Mistral")} et OpenAI ${nbPublies("OpenAI")}. ` +
+  "Seul Google dispose, dans notre corpus, d'un objectif climat daté et d'un bilan annuel de CO₂e. " +
+  "Les cases colorées indiquent une publication identifiée et les cases grises une information non identifiée.";
+
+const options = {
+  title: "Objectif daté et bilan annuel : seul Google dans notre corpus",
+  subtitle: `Sur ${publications.length} informations recherchées : Google en publie ${nbPublies("Google")}, Mistral ${nbPublies("Mistral")}, OpenAI ${nbPublies("OpenAI")}.`,
+  width: 950,
+  height: 420,
+  marginLeft: 230,
+  marginBottom: 55,
+  marginTop: 65,
+  x: { domain: ENTREPRISES, label: null, axis: "top" },
+  y: { domain: publications.map((d) => d[0]), label: null },
+  color: { domain: ["Publié", "Non identifié"], range: [COULEURS_V1.Publié, COULEURS_V1["Non identifié"]], legend: true },
+  marks: [
+    Plot.cell(donneesV1, {
+      x: "entreprise",
+      y: "indicateur",
+      fill: "statut",
+      inset: 3,
+      title: (d) => {
+        const info = PRECISIONS_V1[`${d.entreprise}|${d.indicateur}`];
+        return `${d.entreprise}\n${d.indicateur}\n\nStatut : ${d.statut}\n\n${info ? info.detail : "Information non identifiée dans les sources étudiées."}\n\n${info ? "Source : " + info.source : "Aucune source correspondante retenue."}`;
+      },
+    }),
+    // second repère que la couleur : ✓ / —
+    Plot.text(donneesV1, {
+      x: "entreprise",
+      y: "indicateur",
+      text: (d) => (d.statut === "Publié" ? "✓" : "—"),
+      fill: (d) => (d.statut === "Publié" ? "#FFFFFF" : "#5B6770"),
+      fontSize: 19,
+    }),
+  ],
+  caption:
+    "Sources : rapports Google (2025-2026), déclaration de Sam Altman (2025), étude Mistral AI (2025). « Publié » signifie qu'une information a été identifiée, pas qu'elle est vérifiable indépendamment. « Non identifié » ne signifie pas que l'entreprise n'a jamais publié l'information.",
+};
+---
+
+<div class="figure-sae"><PlotFigure options={options} alt={alt} /></div>

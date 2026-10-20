@@ -1,0 +1,45 @@
+---
+// V3 — ROUTE A (build) : variations 2025 de Google, lues dans le rapport 2026 (registre).
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "./PlotFigure.astro";
+import registre from "../assets/registre.json";
+import { variationsGoogle, IDS_2025, COULEURS_V3, signe } from "../lib/donnees";
+
+const donnees = variationsGoogle(registre as any).filter((d) => (IDS_2025 as readonly string[]).includes(d.id));
+if (donnees.length !== 3) throw new Error("Certains indicateurs de 2025 sont manquants.");
+const v = (id: string) => donnees.find((d) => d.id === id)!.valeur;
+const tri = donnees.toSorted((a, b) => b.valeur - a.valeur);
+const ordre = tri.map((d) => d.etiquette);
+// place à gauche et à droite des barres pour les étiquettes
+const borneGauche = Math.min(-12, Math.min(...donnees.map((d) => d.valeur)) - 8);
+const borneDroite = Math.max(45, Math.max(...donnees.map((d) => d.valeur)) + 8);
+
+const titre = "Google : l'électricité augmente, mais ses émissions évoluent différemment";
+const sousTitre = `En 2025 par rapport à 2024 : électricité ${signe(v("g_elec_2025"))} %, émissions opérationnelles ${signe(v("g_ops_2025"))} %, chaîne d'approvisionnement ${signe(v("g_scope3_2025"))} %.`;
+const alt = `Graphique en barres horizontales comparant trois indicateurs environnementaux de Google entre 2024 et 2025. Électricité : ${signe(v("g_elec_2025"))} %. Émissions opérationnelles : ${signe(v("g_ops_2025"))} %. Chaîne d'approvisionnement : ${signe(v("g_scope3_2025"))} %.`;
+
+const options = {
+  title: titre,
+  subtitle: sousTitre,
+  caption: "Source : Google, rapport environnemental 2026. Variations en 2025 par rapport à 2024. Les indicateurs correspondent à des périmètres différents.",
+  width: 950,
+  height: 330,
+  marginTop: 65,
+  marginBottom: 55,
+  marginLeft: 280,
+  marginRight: 80,
+  x: { domain: [borneGauche, borneDroite], label: "Variation annuelle (%)", grid: true, tickFormat: (d: number) => (d > 0 ? "+" : "") + d },
+  y: { label: null, domain: ordre, tickSize: 0, padding: 0.45 },
+  color: { domain: Object.keys(COULEURS_V3), range: Object.values(COULEURS_V3), legend: true },
+  marks: [
+    Plot.ruleX([0], { stroke: "#444", strokeWidth: 1.5 }),
+    // deux marques pour que les barres se déploient depuis l'axe zéro (droite pour +, gauche pour −)
+    Plot.barX(donnees.filter((d) => d.valeur >= 0), { x: "valeur", y: "etiquette", fill: "famille", insetTop: 6, insetBottom: 6, className: "barre-pos", title: (d) => `${d.etiquette} : ${signe(d.valeur)} %` }),
+    Plot.barX(donnees.filter((d) => d.valeur < 0), { x: "valeur", y: "etiquette", fill: "famille", insetTop: 6, insetBottom: 6, className: "barre-neg", title: (d) => `${d.etiquette} : ${signe(d.valeur)} %` }),
+    Plot.text(donnees.filter((d) => d.valeur >= 0), { x: "valeur", y: "etiquette", text: (d) => `+${d.valeur} %`, dx: 10, textAnchor: "start", fontSize: 13 }),
+    Plot.text(donnees.filter((d) => d.valeur < 0), { x: "valeur", y: "etiquette", text: (d) => `−${Math.abs(d.valeur)} %`, dx: -10, textAnchor: "end", fontSize: 13 }),
+  ],
+};
+---
+
+<div class="figure-sae"><PlotFigure options={options} alt={alt} /></div>

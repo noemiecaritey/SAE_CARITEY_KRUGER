@@ -1,0 +1,125 @@
+---
+// V4 — ROUTE B (chez le lecteur) : le lecteur choisit ses deux années, le graphique doit bouger.
+// Les <select> sont générés côté serveur (comme dans le TP), le rendu Plot se fait dans le navigateur.
+import serie from "../assets/google_serie.json";
+
+const annees = serie.map((d) => d.annee);
+const departs = annees.slice(0, -1); // 2019 à 2023
+const arrivees = annees.filter((a) => a > 2023); // valeur initiale : 2024 (le script ajuste ensuite selon le départ)
+---
+
+<div class="grid gap-4">
+  <p class="font-titre font-bold text-fonce">
+    « Si je choisis moi-même les deux années à comparer, est-ce que les émissions de Google montent ou baissent ? »
+  </p>
+  <div class="flex flex-wrap gap-4">
+    <label class="grid gap-1 text-sm font-semibold">Année de départ
+      <select id="depart" class="select select-bordered font-normal">
+        {departs.map((a) => <option value={a} selected={a === 2023}>{a}</option>)}
+      </select>
+    </label>
+    <label class="grid gap-1 text-sm font-semibold">Année d'arrivée
+      <select id="arrivee" class="select select-bordered font-normal">
+        {arrivees.map((a) => <option value={a} selected={a === 2024}>{a}</option>)}
+      </select>
+    </label>
+  </div>
+  <div id="graphique-v4" class="figure-sae" data-anim></div>
+  <p id="lecture-v4" class="sr-only" aria-live="polite"></p>
+  <p class="alert alert-soft alert-info text-sm">
+    Cette série s'arrête à 2024 (rapport environnemental 2025 de Google, tableau des données environnementales, p. 105 du PDF).
+    Ne la mélangez pas avec les variations 2025 du graphique précédent : autre rapport, autre date.
+    Unités : émissions en tonnes de CO₂e, électricité en MWh (relu dans le PDF).
+  </p>
+</div>
+
+<script>
+  import * as Plot from "@observablehq/plot";
+  import serie from "../assets/google_serie.json";
+
+  import { INDICATEURS } from "../lib/donnees";
+  import { optionsPeriode } from "../lib/periode";
+
+  const selDepart = document.getElementById("depart") as HTMLSelectElement;
+  const selArrivee = document.getElementById("arrivee") as HTMLSelectElement;
+  const conteneur = document.getElementById("graphique-v4") as HTMLElement;
+  const lecture = document.getElementById("lecture-v4") as HTMLElement;
+
+  const fr0 = (x: number) => Math.abs(x).toLocaleString("fr-FR", { maximumFractionDigits: 0 });
+  const s = (x: number) => `${x > 0 ? "+" : x < 0 ? "−" : ""}${fr0(x)} %`;
+  let premier = true; // animation d'intro au premier affichage seulement
+
+  // l'année d'arrivée doit venir après l'année de départ (comme dans le notebook)
+  function majArrivees() {
+    const depart = Number(selDepart.value);
+    const actuelle = Number(selArrivee.value);
+    const possibles = serie.map((d) => d.annee).filter((a) => a > depart);
+    selArrivee.innerHTML = "";
+    for (const a of possibles) {
+      const o = document.createElement("option");
+      o.value = String(a);
+      o.textContent = String(a);
+      selArrivee.append(o);
+    }
+    selArrivee.value = String(possibles.includes(actuelle) ? actuelle : possibles.at(-1));
+  }
+
+  function dessiner() {
+    const depart = Number(selDepart.value);
+    const arrivee = Number(selArrivee.value);
+    conteneur.innerHTML = "";
+
+    const a = serie.find((d) => d.annee === depart);
+    const b = serie.find((d) => d.annee === arrivee);
+    const donnees =
+      !a || !b || arrivee <= depart
+        ? []
+        : INDICATEURS.filter((i) => a[i.cle] != null && b[i.cle] != null).map((i) => ({
+            mesure: i.court,
+            couleur: i.couleur,
+            pourcent: 100 * ((b[i.cle] as number) / (a[i.cle] as number) - 1),
+          }));
+
+    if (!donnees.length) {
+      conteneur.innerHTML = `<p><em>Choix incomplet : l'année d'arrivée doit venir après l'année de départ.</em></p>`;
+      lecture.textContent = "Choisissez une année d'arrivée après l'année de départ.";
+      return;
+    }
+
+    const p = (m: string) => donnees.find((d) => d.mesure === m)!.pourcent;
+    const op = p("Émissions opérationnelles");
+    const tot = p("Émissions totales");
+    const titre =
+      Math.sign(op) === Math.sign(tot)
+        ? `De ${depart} à ${arrivee}, émissions opérationnelles (${s(op)}) et émissions totales (${s(tot)}) vont dans le même sens`
+        : `De ${depart} à ${arrivee}, les émissions opérationnelles font ${s(op)} mais les émissions totales font ${s(tot)}`;
+    const texte = donnees.map((d) => `${d.mesure} : ${s(d.pourcent)}`).join(" ; ") + ".";
+
+    const fig = Plot.plot(
+      optionsPeriode(donnees, {
+        titre,
+        sousTitre:
+          depart === 2019
+            ? "L'électricité n'est pas publiée pour 2019 : elle n'apparaît pas pour ce départ."
+            : "Variation entre les deux années choisies. Source : rapport environnemental de Google 2025.",
+      }),
+    );
+    const svg = fig.tagName === "svg" ? fig : fig.querySelector("svg");
+    svg?.setAttribute("role", "img");
+    svg?.setAttribute("aria-label", texte);
+    conteneur.append(fig);
+    lecture.textContent = titre;
+
+    // intro animée une seule fois ; ensuite simple fondu court (transform/opacity)
+    if (!premier) {
+      conteneur.classList.add("in");
+      fig.animate?.([{ opacity: 0.4 }, { opacity: 1 }], { duration: 300, easing: "cubic-bezier(0.2,0.7,0.2,1)" });
+    }
+    premier = false;
+  }
+
+  selDepart.addEventListener("change", () => { majArrivees(); dessiner(); });
+  selArrivee.addEventListener("change", dessiner);
+  majArrivees();
+  dessiner(); // appel initial
+</script>

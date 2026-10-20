@@ -1,0 +1,59 @@
+---
+// V2 — ROUTE A (build) : trois chiffres par entreprise, figés (Stanford FMTI, décembre 2025).
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "./PlotFigure.astro";
+import fmti from "../assets/fmti.json";
+import { ENTREPRISES, COULEUR_ENTREPRISE } from "../lib/donnees";
+
+const fr = (x: number) => x.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const alt =
+  "Barres horizontales : part des critères de transparence satisfaits, par domaine. " +
+  ["Upstream", "Model", "Downstream"]
+    .map((d) => `${d} : ` + fmti.filter((x) => x.domaine === d).map((x) => `${x.entreprise} ${x.satisfaits} sur ${x.total}`).join(", "))
+    .join(" ; ") + ".";
+
+const amont = (e: string) => fmti.find((x) => x.domaine === "Upstream" && x.entreprise === e)!.satisfaits;
+const totalAmont = fmti.find((x) => x.domaine === "Upstream")!.total;
+
+const options = {
+  title: `En amont, Google satisfait ${amont("Google")} critères sur ${totalAmont}, OpenAI ${amont("OpenAI")} et Mistral ${amont("Mistral")}`,
+  subtitle: "Part des critères de transparence satisfaits par les trois entreprises selon les domaines du FMTI 2025.",
+  width: 950,
+  height: 400,
+  marginTop: 70,
+  marginBottom: 55,
+  marginLeft: 80,
+  marginRight: 35,
+  x: { domain: [0, 100], grid: true, label: "Critères satisfaits (%)" },
+  y: { domain: [...ENTREPRISES], label: null },
+  fx: { domain: ["Upstream", "Model", "Downstream"], label: null },
+  color: { domain: [...ENTREPRISES], range: ENTREPRISES.map((e) => COULEUR_ENTREPRISE[e]), legend: true, label: "Entreprise" },
+  marks: [
+    Plot.ruleX([0]),
+    Plot.barX(fmti, {
+      fx: "domaine",
+      y: "entreprise",
+      x: "pourcentage",
+      fill: "entreprise",
+      inset: 5,
+      className: "barre-pos",
+      title: (d) => `${d.entreprise} - ${d.domaine}\n${d.satisfaits} critères sur ${d.total}\n${fr(d.pourcentage)} %`,
+    }),
+    // second repère : la valeur écrite à droite de chaque barre
+    Plot.text(fmti, {
+      fx: "domaine",
+      y: "entreprise",
+      x: "pourcentage",
+      text: (d) => `${d.satisfaits}/${d.total}`,
+      dx: 7,
+      textAnchor: "start",
+      fontSize: 11,
+      fill: "currentColor",
+    }),
+  ],
+  caption:
+    "Source : Stanford CRFM, Foundation Model Transparency Index, décembre 2025. Scores calculés à partir des 100 critères. Upstream : 34 critères ; Model : 30 ; Downstream : 36. Les scores mesurent la transparence, pas les émissions de CO₂ ni la performance environnementale.",
+};
+---
+
+<div class="figure-sae"><PlotFigure options={options} alt={alt} /></div>
