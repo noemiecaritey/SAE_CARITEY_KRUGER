@@ -1,4 +1,4 @@
-- URL site WEB : sae-konstance-noemie.netlify.app
+- URL site WEB : https://sae303-konstance-noemie.netlify.app/
 - URL Notebook Observable : https://observablehq.com/d/18018990b0accaa7
 - Nom :CARITEY
 - Prénom : Noémie
