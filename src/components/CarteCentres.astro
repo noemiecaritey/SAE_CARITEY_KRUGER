@@ -9,6 +9,16 @@ const m2 = import.meta.glob("../assets/france_metropole.json", { eager: true, im
 const centres = Object.values(m1)[0] as { lieux: any[]; statistiques: any } | undefined;
 const france = Object.values(m2)[0] as any | undefined;
 
+// Animation : les points apparaissent en commençant par ceux qui sont le plus près d'une grande ville.
+// On trie seulement l'ORDRE de dessin (aucune donnée n'est changée ni ajoutée).
+const GRANDES_VILLES: [number, number][] = [
+  [2.35, 48.86], [5.37, 43.3], [4.84, 45.76], [1.44, 43.6], [7.27, 43.7],
+  [-1.55, 47.22], [7.75, 48.57], [3.88, 43.61], [-0.58, 44.84], [3.06, 50.63],
+];
+const distanceVille = (d: any) =>
+  Math.min(...GRANDES_VILLES.map(([lo, la]) => Math.hypot((d.longitude - lo) * Math.cos((la * Math.PI) / 180), d.latitude - la)));
+const lieuxOrdonnes = centres ? [...centres.lieux].sort((a, b) => distanceVille(a) - distanceVille(b)) : [];
+
 let options: any = null;
 let alt = "";
 if (centres) {
@@ -27,8 +37,8 @@ if (centres) {
     projection: { type: "mercator", domain: france ?? { type: "MultiPoint", coordinates: centres.lieux.map((d: any) => [d.longitude, d.latitude]) }, inset: 15 },
     marks: [
       ...(france ? [Plot.geo(france, { fill: "#F1F5F4", stroke: "#94A3A8", strokeWidth: 1.2 })] : []),
-      Plot.dot(centres.lieux, {
-        x: "longitude", y: "latitude", r: 4, fill: "#7A4FD0", fillOpacity: 0.75, stroke: "#FFFFFF", strokeWidth: 0.6,
+      Plot.dot(lieuxOrdonnes, {
+        className: "points-centres", x: "longitude", y: "latitude", r: 4, fill: "#7A4FD0", fillOpacity: 0.75, stroke: "#FFFFFF", strokeWidth: 0.6,
         title: (d: any) => `${d.nom}\nExploitant : ${d.operateur}\nType OSM : ${d.typeGeometrie}\nIdentifiant : ${d.id}`,
       }),
     ],

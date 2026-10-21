@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @import "./animations.css";
 
-/* DaisyUI 5 : composants (btn, card, badge, table, select, navbar, footer...) avec un thÃ¨me aux couleurs de la charte.
-   La palette de DONNÃ‰ES des graphiques reste indÃ©pendante (voir src/lib/donnees.ts). */
+/* DaisyUI 5 : composants (btn, card, badge, table, select, navbar, footer...) avec un thème aux couleurs de la charte.
+   La palette de DONNÉES des graphiques reste indépendante (voir src/lib/donnees.ts). */
 @plugin "daisyui" {
   themes: false;
 }
@@ -40,8 +40,8 @@
   --noise: 0;
 }
 
-/* Palette de CHARTE (Mahina #002A38, Hibiscus #ED583F, Lanikai #c9dca0, Plumeria #FFB2B2) â€” jamais reprise telle quelle dans les graphiques.
-   Les noms --color-vert/fonce/doux sont historiques : ils dÃ©signent maintenant le bleu nuit, le rose clair, etc. */
+/* Palette de CHARTE (Mahina #002A38, Hibiscus #ED583F, Lanikai #c9dca0, Plumeria #FFB2B2) — jamais reprise telle quelle dans les graphiques.
+   Les noms --color-vert/fonce/doux sont historiques : ils désignent maintenant le bleu nuit, le rose clair, etc. */
 @theme {
   --color-fond: #f3f8ec;
   --color-carte: #e4f0d6;
@@ -64,7 +64,7 @@
 }
 .tabulaire { font-variant-numeric: tabular-nums; }
 
-/* Contenu Ã©ditorial */
+/* Contenu éditorial */
 .prose-sae p { margin: 0 0 1rem; max-width: 68ch; }
 .prose-sae ul, .prose-sae ol { margin: 0 0 1rem 1.25rem; max-width: 68ch; }
 .prose-sae ul { list-style: disc; } .prose-sae ol { list-style: decimal; }
@@ -85,10 +85,10 @@
 .tableau thead th { background: var(--color-carte); }
 .pastille { display: inline-block; padding: .1rem .55rem; border-radius: 999px; font-size: .75rem; font-weight: 700; }
 
-/* Menu d'ancres : l'entrÃ©e active garde un texte lisible (blanc sur vert) */
+/* Menu d'ancres : l'entrée active garde un texte lisible (blanc sur vert) */
 .menu-item.active { background: var(--color-vert); color: #fff; }
 
-/* RÃ©glages DaisyUI */
+/* Réglages DaisyUI */
 .card.card-body { display: block; }           /* contenu en flux normal (texte en ligne dans les cartes) */
 .badge.pastille { height: auto; white-space: normal; padding: .1rem .6rem; font-weight: 700; }
 .navbar { min-height: 3.5rem; }
@@ -98,22 +98,22 @@
   color: #002a38; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .titre-section::after { content: ""; display: block; width: 64px; height: 6px; border-radius: 4px; background: #d2dc62; margin-top: .9rem; box-shadow: 0 0 0 1px #085e5133; }
 
-/* Bandeau d'ouverture : dÃ©gradÃ© doux + deux halos */
+/* Bandeau d'ouverture : dégradé doux + deux halos */
 .hero { position: relative; isolation: isolate;
-  /* photo d'arbre en fond (dÃ©corative) ; voile vert clair Ã  gauche pour garder le texte lisible */
+  /* photo d'arbre en fond (décorative) ; voile vert clair à gauche pour garder le texte lisible */
   background:
     linear-gradient(90deg, #f3f8ecf5 0%, #f3f8ecdd 42%, #f3f8ec55 100%),
     url("/arbre.jpg") 70% 60% / cover no-repeat;
   border-bottom: 1px solid #c9dca0; }
 
-/* Fonds des 4 actes : dÃ©gradÃ©s trÃ¨s doux qui s'enchaÃ®nent */
+/* Fonds des 4 actes : dégradés très doux qui s'enchaînent */
 #contexte { background: linear-gradient(180deg, #e4f0d6, #eef6e4); }
 #exploration { background: linear-gradient(180deg, #f3f8ec, #f9fcf5); }
 #revelation { background: linear-gradient(180deg, #e9f2c4, #f3f8dc); }
 #conclusion { background: linear-gradient(180deg, #f3f8ec, #f9fcf5); }
 main section.item { border-top: 1px solid #c9dca0; }
 
-/* En-tÃªte, cartes, figures, tableaux */
+/* En-tête, cartes, figures, tableaux */
 header.sticky { box-shadow: 0 1px 0 #c9dca0, 0 6px 18px -12px #002a3855; }
 .card { box-shadow: 0 1px 2px #002a3814; transition: box-shadow 200ms, transform 200ms; }
 .card:hover { box-shadow: 0 10px 24px -14px #002a3866; }
@@ -128,8 +128,135 @@ header.sticky { box-shadow: 0 1px 0 #c9dca0, 0 6px 18px -12px #002a3855; }
 ::selection { background: #d2dc62; color: #002a38; }
 .btn { font-family: var(--font-titre); font-weight: 800; }
 
-/* Touches de la palette : Hibiscus (corail) pour les repÃ¨res, Plumeria (rose) pour les halos */
+/* Touches de la palette : Hibiscus (corail) pour les repères, Plumeria (rose) pour les halos */
 .hero h1::after { content: ""; display: block; width: 88px; height: 8px; border-radius: 8px; background: #ed583f; margin-top: 1.25rem; }
 .footer { background: #085e51; color: #f3f8ec; border-top: 0; }
 .footer a { color: #d2dc62; }
 .menu-item.active { background: #085e51; }
+
+/* ---------- Un accent de couleur par acte (repère de structure, JAMAIS une couleur de donnée) ----------
+   Couleurs tirées de la charte (olive, vert d'eau, hibiscus, bleu nuit) : elles ne reprennent aucune couleur des graphiques.
+   Elles accompagnent toujours un texte (« 01 · Contexte »...) : la couleur n'est pas le seul repère. */
+:root {
+  --acte-1: #6f8a12;
+  --acte-2: #0b8f7e;
+  --acte-3: #e2492f;
+  --acte-4: #002a38;
+}
+#contexte { --acte: var(--acte-1); }
+#exploration { --acte: var(--acte-2); }
+#revelation { --acte: var(--acte-3); }
+#conclusion { --acte: var(--acte-4); }
+
+/* Pastille devant « 01 · Contexte », « 02 · Exploration »... et trait sous le titre de la section */
+section.item .eyebrow { display: inline-flex; align-items: center; gap: .55rem; }
+section.item .eyebrow::before { content: ""; width: .7rem; height: .7rem; border-radius: 50%; background: var(--acte); box-shadow: 0 0 0 2px #fff; flex: none; }
+section.item .titre-section::after { background: var(--acte); }
+
+/* Même couleur dans le menu d'ancres (pastille devant le libellé) */
+.menu-item::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: var(--pastille, transparent); box-shadow: 0 0 0 1.5px #fff; flex: none; }
+.menu-item[href="#contexte"] { --pastille: var(--acte-1); }
+.menu-item[href="#exploration"] { --pastille: var(--acte-2); }
+.menu-item[href="#revelation"] { --pastille: var(--acte-3); }
+.menu-item[href="#conclusion"] { --pastille: var(--acte-4); }
+
+/* ---------- Survol et focus : texte vert foncé -> fond vert + texte blanc (contraste blanc sur #085e51 ≈ 8:1) ---------- */
+:where(p, li, td, th, dd, figcaption, caption) a:not(.btn):hover,
+:where(p, li, td, th, dd, figcaption, caption) a:not(.btn):focus-visible {
+  background: #085e51; color: #fff; text-decoration-color: transparent; border-radius: .25rem; box-shadow: 0 0 0 .2rem #085e51;
+}
+.btn-primary:hover, .btn-primary:focus-visible { background-color: #04372f; border-color: #04372f; color: #fff; }
+.btn-outline.btn-primary:hover, .btn-outline.btn-primary:focus-visible { background-color: #085e51; border-color: #085e51; color: #fff; }
+.menu-item:not(.active):hover, .menu-item:not(.active):focus-visible { background: #085e51; color: #fff; }
+.menu-item.active:hover { background: #04372f; }
+.mise-en-avant button:not([aria-pressed="true"]):hover, .mise-en-avant button:not([aria-pressed="true"]):focus-visible { background: #085e51; color: #fff; border-color: #085e51; }
+.footer a:hover { color: #eef2b8; }
+.footer a:focus-visible { outline-color: #d2dc62; }
+@media (forced-colors: active) {
+  section.item .eyebrow::before, .menu-item::before { forced-color-adjust: none; }
+}
+
+/* ---------- Essai : sections plus contrastées (retour possible : supprimer ce bloc) ----------
+   Contexte et Exploration clairs, Révélation sombre (le moment fort), Conclusion jaune-vert doux. */
+#contexte { background: linear-gradient(180deg, #dcebc4, #e9f3d6); }
+#exploration { background: linear-gradient(180deg, #ffffff, #f6faee); }
+#conclusion { background: linear-gradient(180deg, #eef2b8, #e3edb9); }
+#revelation { background: linear-gradient(180deg, #073b35, #0b4a42); color: #f3f8ec; border-top-color: #085e51; }
+#revelation :is(h2, h3, h4) { color: #ffffff; }
+#revelation .text-fonce, #revelation .prose-sae strong { color: #ffffff; }
+#revelation .prose-sae a, #revelation > div > p a { color: #d2dc62; }
+#revelation .titre-section::after { box-shadow: 0 0 0 1px #ffffff33; }
+/* les cartes, figures et tableaux restent blancs avec un texte foncé */
+#revelation :is(.figure-sae, .card, .tableau, .overflow-x-auto, .fiche-viz, .alert) { color: #0f2a33; }
+#revelation :is(.figure-sae, .card, .overflow-x-auto, .fiche-viz, .alert) :is(h2, h3, h4, strong, .text-fonce) { color: var(--color-fonce); }
+#revelation :is(.card, .overflow-x-auto, .fiche-viz, .alert) a { color: var(--color-vert); }
+/* bordures des sections plus nettes */
+main section.item { border-top: 3px solid var(--acte, #c9dca0); }
+
+/* ---------- Essai 2 : vert + bleu clair, plus de contraste (retour possible : supprimer ce bloc) ----------
+   Bleu clair = Lanikai/secondaire de la charte (#b1d9dd) et bleu nuit Mahina (#002a38). Aucun n'est une couleur de donnée. */
+:root { --bleu-clair: #b1d9dd; --bleu-pale: #e3f3f5; --bleu-nuit: #002a38; }
+
+/* Les 4 actes : vert tendre, bleu clair, bleu nuit (moment fort), jaune-vert */
+#exploration { background: linear-gradient(180deg, #cfe8ee, #e3f3f5); }
+#revelation { background: linear-gradient(180deg, #002a38, #0b3d4f); border-top-color: #0b3d4f; }
+#conclusion { background: linear-gradient(180deg, #eef2b8, #dcebc4); }
+
+/* En-tête et pied de page */
+header.sticky { background: #eef8fa; border-bottom: 1px solid #b1d9dd; }
+.footer { background: #002a38; color: #e3f3f5; }
+.footer a { color: #b1d9dd; }
+.footer a:hover { color: #ffffff; }
+
+/* Figures, cartes, tableaux : bordures bleutées et trait de couleur d'acte en haut des cartes */
+.figure-sae { border-color: #9fc9d1; box-shadow: 0 12px 30px -20px #002a38aa; }
+.overflow-x-auto { border-color: #9fc9d1; }
+.tableau th, .tableau td { border-color: #cfe3e7; }
+.tableau thead th { background: #cfe8ee; color: #00323f; }
+.tableau tbody tr:nth-child(even) > * { background: #f3fafb; }
+section.item .card { border-top: 4px solid var(--acte); }
+
+/* Textes un peu plus foncés pour renforcer le contraste */
+body { color: #0b2530; }
+.prose-sae p, .prose-sae li { color: #0b2530; }
+#revelation .prose-sae p, #revelation .prose-sae li { color: #f3f8ec; }
+#revelation :is(.figure-sae, .card, .overflow-x-auto, .fiche-viz, .alert) :is(p, li) { color: #0b2530; }
+
+/* Pastille d'acte : liseré plus net sur fond foncé */
+#revelation .eyebrow { background: #e3f3f5; border-color: #b1d9dd; }
+
+/* ---------- Essai 3 : bleu et orange en plus du vert, toujours lisible (retour possible : supprimer ce bloc) ----------
+   Orange = décor et appels à l'action seulement (jamais dans les graphiques, où l'ambre est la couleur de Mistral).
+   Contrastes : blanc sur #c2410c ≈ 5,2:1 ; #9a3412 sur #eef2b8 ≈ 5,5:1 ; #0b4a5e sur #cfe8ee ≈ 7:1. */
+
+/* Pastille d'acte : une teinte par acte */
+#contexte .eyebrow { background: #f1f6c9; border-color: #c5d66a; }
+#exploration .eyebrow { background: #ffffff; border-color: #7cc3d0; }
+#revelation .eyebrow { background: #ffe3cf; border-color: #f0a56b; }
+#conclusion .eyebrow { background: #e3f3f5; border-color: #7cc3d0; }
+
+/* Titres d'actes : une couleur par acte */
+#exploration h2 { color: #0b4a5e; }
+#conclusion h2 { color: #9a3412; }
+
+/* Liens de l'acte 2 en bleu profond */
+#exploration .prose-sae a { color: #0b5a73; }
+
+/* Surligneur orange pâle sous les mots en gras du texte (sur fond clair) ; sur le bleu nuit : orange profond translucide */
+.prose-sae strong { background: linear-gradient(transparent 64%, #ffd9b8 64%); }
+#revelation .prose-sae strong { background: linear-gradient(transparent 64%, #c2410c99 64%); }
+#revelation :is(.card, .fiche-viz, .alert, .overflow-x-auto) strong { background: linear-gradient(transparent 64%, #ffd9b8 64%); }
+
+/* Boutons du bandeau : orange pour l'action principale, bleu profond pour le second */
+.hero .btn-primary:not(.btn-outline) { background: #c2410c; border-color: #c2410c; color: #fff; }
+.hero .btn-primary:not(.btn-outline):hover, .hero .btn-primary:not(.btn-outline):focus-visible { background: #9a3412; border-color: #9a3412; color: #fff; }
+.hero .btn-outline.btn-primary { color: #0b4a5e; border-color: #0b4a5e; }
+.hero .btn-outline.btn-primary:hover, .hero .btn-outline.btn-primary:focus-visible { background: #0b4a5e; border-color: #0b4a5e; color: #fff; }
+
+/* En-têtes de tableaux : bleu à l'acte 2, orange pâle à l'acte 4 */
+#conclusion .tableau thead th { background: #ffe6d1; color: #7c2d12; }
+#conclusion .tableau tbody tr:nth-child(even) > * { background: #fff8f2; }
+
+/* Cartes : liseré gauche discret en bleu pour casser le tout vert */
+#contexte .card { border-left: 4px solid #7cc3d0; }
+#conclusion .card { border-left: 4px solid #f0a56b; }

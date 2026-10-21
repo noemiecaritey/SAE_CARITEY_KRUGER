@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TestReutilisation from "../components/TestReutilisation.astro";
 import TableControleCompar from "../components/TableControleCompar.astro";
 import TableNettoyageOSM from "../components/TableNettoyageOSM.astro";
 import registre from "../assets/registre.json";
@@ -64,7 +63,7 @@ const doublons = [...comptes].filter(([, n]) => n > 1);
     <p class="reveal mt-4 max-w-3xl">Pour répondre à notre problématique, nous utilisons des sources publiques, des rapports environnementaux d'entreprises et des travaux de recherche. Tout ce qui a été retiré ou transformé est écrit ici, avec la raison. Chaque jointure est contrôlée : on liste ce qui ne trouve pas de correspondance.</p>
 
     <nav aria-label="Sur cette page" class="reveal mt-6 flex flex-wrap gap-3 text-sm">
-      <a href="#sources">Sources</a><a href="#cinq">Les 5 questions</a><a href="#jointures">Nettoyage et jointures</a><a href="#osm">OpenStreetMap</a><a href="#limites">Limites</a><a href="#donnees">Données</a><a href="#annexe">Annexe TP5</a>
+      <a href="#sources">Sources</a><a href="#cinq">Les 5 questions</a><a href="#jointures">Nettoyage et jointures</a><a href="#osm">OpenStreetMap</a><a href="#limites">Limites</a><a href="#donnees">Données</a>
     </nav>
 
     <h2 id="sources" class="reveal text-2xl mt-12">Sources</h2>
@@ -146,7 +145,7 @@ const doublons = [...comptes].filter(([, n]) => n > 1);
         </table>
       </div>
     ) : (
-      <p class="reveal mt-3 alert alert-warning text-sm" role="status">Contrôle disponible quand le fichier des définitions <code>Dec2025_indicators.csv</code> est fourni au script <code>npm run donnees</code>. Sans lui, le domaine de chaque critère est déduit de l'ordre des lignes (34 Upstream, 30 Model, 36 Downstream), ordre qui redonne exactement les totaux attendus.</p>
+      <p class="reveal mt-3 alert alert-info alert-soft text-sm" role="status"><strong>Limite de notre contrôle :</strong>&nbsp;nous n'avons pas utilisé le fichier des définitions de Stanford (<code>Dec2025_indicators.csv</code>), donc la jointure entre les critères et leurs définitions n'a pas pu être contrôlée ligne par ligne. Le domaine de chaque critère (34 Upstream, 30 Model, 36 Downstream) est déduit de l'ordre des lignes du fichier des scores. Cet ordre redonne exactement les totaux attendus, mais ce n'est pas une vérification complète.</p>
     )}
     <p class="reveal mt-2 text-sm">Une jointure réussie ne garantit pas que les données d'origine sont exactes. Nous utilisons les critères et les scores définis par Stanford : cet indice mesure la transparence des développeurs, pas directement leurs performances environnementales. Les critères du fichier des scores sont conservés même sans définition correspondante.</p>
 
@@ -228,11 +227,5 @@ const doublons = [...comptes].filter(([, n]) => n > 1);
       {dispo("centres_donnees.json") && <li><a href="/donnees/centres_donnees.json" download>centres_donnees.json</a> (centres de données OSM nettoyés)</li>}
       <li><a href="https://observablehq.com/d/18018990b0accaa7">Notebook Observable</a> (code, jointures, brouillons des graphiques)</li>
     </ul>
-
-    <h2 id="annexe" class="reveal text-2xl mt-12">Annexe technique · Test de réutilisation (TP5)</h2>
-    <div class="prose-sae reveal mt-3">
-      <p>Nous avons testé la fonction qui construit le graphique des variations (<code>optionsPeriode()</code>, dans <code>src/lib/periode.ts</code>) en lui transmettant seulement deux indicateurs issus de notre jeu de données. Le graphique obtenu affiche uniquement ces deux indicateurs : la fonction utilise les données reçues en paramètre, sans dépendre d'un état global. C'est la même fonction que celle du graphique interactif.</p>
-    </div>
-    <div class="reveal mt-4"><TestReutilisation /></div>
   </div>
 </Layout>

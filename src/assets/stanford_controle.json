@@ -1,0 +1,14 @@
+{
+ "criteresScores": 100,
+ "definitions": 100,
+ "sansDefinition": 0,
+ "sansScore": 0,
+ "doublonsScores": 0,
+ "doublonsDefinitions": 0,
+ "valeursInvalides": 0,
+ "scores": {
+  "Google": 41,
+  "OpenAI": 35,
+  "Mistral": 18
+ }
+}

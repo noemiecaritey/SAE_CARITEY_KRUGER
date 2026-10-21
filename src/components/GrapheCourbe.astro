@@ -28,7 +28,7 @@ const options = {
   y: { label: "Millions de tonnes de CO₂e", domain: [0, Math.max(...donnees.map((d) => d.emissions)) * 1.2], grid: true },
   marks: [
     Plot.lineY(donnees, { x: "annee", y: "emissions", stroke: "#B66A35", strokeWidth: 3, className: "courbe-trait" }),
-    Plot.dot(donnees, { x: "annee", y: "emissions", r: 6, fill: "#B66A35", title: (d) => `${d.annee} : ${fr(d.emissions)} millions de tonnes de CO₂e` }),
+    Plot.dot(donnees, { x: "annee", y: "emissions", r: 6, fill: "#B66A35", className: "courbe-points", title: (d) => `${d.annee} : ${fr(d.emissions)} millions de tonnes de CO₂e` }),
     Plot.text(donnees.filter((d) => d.annee === debut.annee || d.annee === fin.annee), {
       x: "annee", y: "emissions", text: (d) => `${fr(d.emissions)} Mt`, dy: -18, fontWeight: "bold", fontSize: 13, fill: "#7A421E",
     }),

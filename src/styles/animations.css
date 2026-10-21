@@ -22,6 +22,20 @@
 @keyframes relief { from { opacity: 0; transform: scale(0.7); } 70% { transform: scale(1.06); } }
 @keyframes fondu { from { opacity: 0; } }
 
+/* Courbe : le trait se trace de gauche à droite, puis les points apparaissent, puis les valeurs */
+.js [data-anim]:not(.in) .courbe-trait path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js [data-anim].in .courbe-trait path { stroke-dasharray: 1; stroke-dashoffset: 0; animation: trace 1400ms var(--ease) both; }
+@keyframes trace { from { stroke-dashoffset: 1; } }
+
+/* Points (courbe et carte) : apparition une à une */
+.js [data-anim]:not(.in) circle[data-pt] { opacity: 0; }
+.js [data-anim].in circle[data-pt] { transform-box: fill-box; transform-origin: center; animation: pop 400ms var(--ease) both; animation-delay: var(--d, 0ms); }
+
+/* Matrice : survol / focus d'une entreprise, les autres colonnes s'estompent (filter, pas opacity : sans conflit avec l'animation d'entrée) */
+.plot-figure svg [data-col] { transition: filter 200ms var(--ease); }
+.plot-figure svg .estompe { filter: grayscale(1) opacity(0.22); }
+.mise-en-avant button[aria-pressed="true"] { background: #007f4f; color: #fff; border-color: #007f4f; }
+
 /* Barre de progression de lecture */
 #progression {
   position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60;
@@ -43,7 +57,12 @@
   .js .reveal:not(.in) { opacity: 1; transform: none; }
   .js [data-anim]:not(.in) svg[role="img"] :is(rect, text) { opacity: 1; }
   .js [data-anim].in svg[role="img"] :is(rect, text) { animation: none !important; }
+  .js [data-anim]:not(.in) .courbe-trait path { stroke-dasharray: none; stroke-dashoffset: 0; }
+  .js [data-anim].in .courbe-trait path, .js [data-anim].in circle[data-pt] { animation: none !important; }
+  .js [data-anim]:not(.in) circle[data-pt] { opacity: 1; }
+  .plot-figure svg [data-col] { transition: none; }
   .reveal, .menu-item { transition: none !important; }
   #progression, .hero-decor { animation: none !important; }
   .sticky-v3 { position: static !important; }
 }
+@media (prefers-reduced-motion: reduce) { a, .btn, .menu-item { transition: none !important; } }

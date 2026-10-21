@@ -25,6 +25,24 @@ function prepareGraphique(el: HTMLElement) {
     i++;
   });
   svg.querySelectorAll("text").forEach((t) => (t as SVGElement).style.setProperty("--d", `${i * 35 + 150}ms`));
+
+  // Courbe : le trait se trace (pathLength = 1 pour animer stroke-dashoffset), puis les points, puis les valeurs.
+  const trait = svg.querySelector<SVGPathElement>(".courbe-trait path");
+  if (trait) {
+    trait.setAttribute("pathLength", "1");
+    const pts = svg.querySelectorAll<SVGElement>(".courbe-points circle");
+    pts.forEach((c, k) => {
+      c.setAttribute("data-pt", "");
+      c.style.setProperty("--d", `${200 + Math.round(1200 * (k / Math.max(1, pts.length - 1)))}ms`);
+    });
+    svg.querySelectorAll<SVGElement>('g[aria-label="text"] text').forEach((t) => t.style.setProperty("--d", "1500ms"));
+  }
+
+  // Carte : les points apparaissent un par un, dans l'ordre où ils ont été dessinés (grandes villes d'abord).
+  svg.querySelectorAll<SVGElement>(".points-centres circle").forEach((c, k) => {
+    c.setAttribute("data-pt", "");
+    c.style.setProperty("--d", `${Math.min(k * 5, 2000)}ms`);
+  });
 }
 
 function compte(el: HTMLElement) {

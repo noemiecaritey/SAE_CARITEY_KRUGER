@@ -46,4 +46,55 @@ const options = {
 };
 ---
 
-<div class="figure-sae"><PlotFigure options={options} alt={alt} /></div>
+<div class="figure-sae" id="matrice-v1">
+  <!-- Amélioration progressive : sans JavaScript, la matrice reste complète et lisible. -->
+  <div class="mise-en-avant flex flex-wrap items-center gap-2 mb-3" role="group" aria-label="Mettre en avant une entreprise dans la matrice" hidden>
+    <span class="text-sm font-semibold">Mettre en avant :</span>
+    {ENTREPRISES.map((e) => <button type="button" class="btn btn-sm btn-outline rounded-full" data-ent={e} aria-pressed="false">{e}</button>)}
+    <button type="button" class="btn btn-sm btn-ghost rounded-full" data-ent="" aria-pressed="true">Tout afficher</button>
+  </div>
+  <PlotFigure options={options} alt={alt} />
+</div>
+
+<script>
+  // Survol (souris) et boutons (clavier / tactile) : une entreprise est mise en avant, les autres colonnes s'estompent.
+  const racine = document.getElementById("matrice-v1");
+  const svg = racine?.querySelector<SVGSVGElement>("svg[role=img]");
+  const barre = racine?.querySelector<HTMLElement>(".mise-en-avant");
+  if (racine && svg && barre) {
+    barre.hidden = false;
+    const etiquettes = [...svg.querySelectorAll<SVGTextElement>('g[aria-label="x-axis tick label"] text')];
+    const centres = etiquettes.map((t) => {
+      const r = t.getBoundingClientRect();
+      return { nom: (t.textContent ?? "").trim(), x: r.left + r.width / 2 };
+    });
+    const colonne = (el: Element) => {
+      const r = el.getBoundingClientRect();
+      const x = r.left + r.width / 2;
+      return centres.reduce((a, b) => (Math.abs(b.x - x) < Math.abs(a.x - x) ? b : a)).nom;
+    };
+    // on repère, pour chaque case, symbole et nom de colonne, l'entreprise à laquelle ils appartiennent
+    const elements = [
+      ...svg.querySelectorAll<SVGElement>('g[aria-label="cell"] rect'),
+      ...svg.querySelectorAll<SVGElement>('g[aria-label="text"] text'),
+      ...etiquettes,
+    ];
+    elements.forEach((el) => el.setAttribute("data-col", colonne(el)));
+
+    let choix = "";
+    const appliquer = (nom: string) => elements.forEach((el) => el.classList.toggle("estompe", !!nom && el.getAttribute("data-col") !== nom));
+    const boutons = barre.querySelectorAll<HTMLButtonElement>("button");
+    boutons.forEach((b) =>
+      b.addEventListener("click", () => {
+        choix = b.dataset.ent ?? "";
+        boutons.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        appliquer(choix);
+      }),
+    );
+    svg.addEventListener("pointerover", (e) => {
+      const c = (e.target as Element).closest("[data-col]");
+      if (c) appliquer(c.getAttribute("data-col") ?? "");
+    });
+    svg.addEventListener("pointerleave", () => appliquer(choix));
+  }
+</script>

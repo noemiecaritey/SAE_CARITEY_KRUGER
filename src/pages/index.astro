@@ -202,7 +202,7 @@ const ficheCarte: [string, string][] = [
       </div>
 
       <figure class="reveal mt-8"><GrapheV1 /></figure>
-      <FicheViz titre="Matrice de transparence" lignes={ficheV1} route={routeA("Données figées, lecture seule : le SVG est produit au build avec Plot et JSDOM et injecté dans la page. Zéro JavaScript chez le lecteur, le détail au survol vient des balises <code>title</code> du SVG.")} />
+      <FicheViz titre="Matrice de transparence" lignes={ficheV1} route={routeA("Données figées, lecture seule : le SVG est produit au build avec Plot et JSDOM et injecté dans la page ; le détail au survol vient des balises <code>title</code> du SVG. Un petit script d'amélioration progressive ajoute la mise en avant d'une entreprise (survol de la colonne, ou boutons accessibles au clavier) : sans JavaScript, la matrice reste complète. Les données ne changent pas, d'où la route A.")} />
       <div class="prose-sae reveal mt-6">
         <h3>Ce qu'il faut retenir : qui publie le plus d'informations ?</h3>
         <p>Sur les <strong>{publications.length} catégories d'informations environnementales</strong> que nous avons recherchées :</p>
@@ -311,7 +311,7 @@ const ficheCarte: [string, string][] = [
           </div>
         </div>
       </div>
-      <FicheViz titre="Comparaison des variations Google" lignes={ficheV3} route={routeA("Trois valeurs figées lues dans le rapport 2026 : export au build, aucune interaction nécessaire.")} />
+      <FicheViz titre="Comparaison des variations Google" lignes={ficheV3} route={routeA("Trois valeurs figées lues dans le rapport 2026 : export au build, aucune interaction nécessaire. Les barres s'étirent depuis l'axe zéro à l'arrivée dans l'écran (animation purement visuelle, désactivée avec « réduire les animations »).")} />
 
       <div class="prose-sae reveal mt-6">
         <h3>Ce qu'il faut retenir : Google en 2025</h3>
@@ -334,7 +334,7 @@ const ficheCarte: [string, string][] = [
       </div>
 
       <figure class="reveal mt-12"><GrapheCourbe /></figure>
-      <FicheViz titre="Évolution des émissions totales Google" lignes={ficheCourbe} route={routeA("Série figée de 6 points (2019-2024) : courbe construite au build, lecture seule.")} />
+      <FicheViz titre="Évolution des émissions totales Google" lignes={ficheCourbe} route={routeA("Série figée de 6 points (2019-2024) : courbe construite au build, lecture seule. Animation uniquement visuelle : le trait se trace au scroll, puis le point 2024 et sa valeur apparaissent, pour guider l'œil vers la hausse. Désactivée avec « réduire les animations », et le graphique complet est déjà dans le HTML.")} />
       <div class="prose-sae reveal mt-6">
         <h3>Ce qu'il faut retenir : les émissions totales de Google</h3>
         <p>Entre 2019 et 2024, les émissions totales déclarées de Google passent de <strong>{mt(g(2019).total)} à {mt(g(2024).total)} millions de tonnes de CO₂e</strong>, soit <strong>+{evol} %</strong>.</p>
@@ -448,7 +448,7 @@ const ficheCarte: [string, string][] = [
         <p><strong>Limites :</strong> OpenStreetMap ne recense pas tous les centres de données ; plusieurs éléments peuvent correspondre à un même site ; ils ne servent pas forcément à l'IA générative ; leur localisation ne dit rien de leur consommation ; on ne peut pas les attribuer à OpenAI, Google ou Mistral sans preuve supplémentaire.</p>
       </div>
       <figure class="reveal mt-6"><CarteCentres /></figure>
-      <FicheViz titre="Carte des centres de données en France" lignes={ficheCarte} route={routeA("Contour et points figés (extraction OpenStreetMap du 20 octobre 2026) : carte construite au build avec <code>Plot.geo</code> et <code>Plot.dot</code>, aucune interaction nécessaire.")} />
+      <FicheViz titre="Carte des centres de données en France" lignes={ficheCarte} route={routeA("Contour et points figés (extraction OpenStreetMap du 20 octobre 2026) : carte construite au build avec <code>Plot.geo</code> et <code>Plot.dot</code>, aucune interaction nécessaire. Les points apparaissent un par un en commençant par ceux qui sont le plus près d'une grande ville : seul l'ordre d'affichage change, aucune donnée n'est ajoutée ni retirée.")} />
       <div class="prose-sae reveal mt-6">
         <h3>Ce qu'il faut retenir : localiser ne veut pas dire mesurer</h3>
         <p>Notre fichier OpenStreetMap contenait <strong>384 éléments géographiques</strong>. Après les filtres et contrôles, <strong>373 éléments</strong> sont représentés sur la carte. Les points permettent de voir où des infrastructures ont été signalées, notamment autour de grandes agglomérations.</p>
